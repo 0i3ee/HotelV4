@@ -70,7 +70,7 @@
     <Compile Include="check-in.Designer.cs">
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
-    <Compile Include="connectDB.cs" />
+    <Compile Include="ClassconnectDB.cs" />
     <Compile Include="customer.cs">
       <SubType>Form</SubType>
     </Compile>
