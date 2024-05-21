@@ -5,20 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 namespace HotelV4
 {
-    class ConectDB
+    class ClassconnectDB
     {
-        public string strcon = "Data source =.; Initial catalog=dbBCSP6D; integrated security=True";
+        public string strcon = "Data source =.; Initial catalog=HotelManagement; integrated security=True";
         public SqlConnection conn = new SqlConnection();
         public SqlDataAdapter da = new SqlDataAdapter();
         public DataSet ds = new DataSet();
         public SqlCommand cmd = new SqlCommand();
-        public void connectDatabaseBCSP6D()
+        public void connectDatabase()
         {
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
+                
             }
             conn.ConnectionString = strcon;
             conn.Open();

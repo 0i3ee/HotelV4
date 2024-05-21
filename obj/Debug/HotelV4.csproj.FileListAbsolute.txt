@@ -19,3 +19,24 @@ C:\Users\LEGION 5 Pro\source\repos\HotelV4\HotelV4\obj\Debug\HotelV4.menu.resour
 C:\Users\LEGION 5 Pro\source\repos\HotelV4\HotelV4\obj\Debug\HotelV4.Revenue.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4\HotelV4\obj\Debug\HotelV4.service_payment.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4\HotelV4\obj\Debug\HotelV4.user.resources
+C:\Users\Advice\source\repos\HotelV4\bin\Debug\HotelV4.exe.config
+C:\Users\Advice\source\repos\HotelV4\bin\Debug\HotelV4.exe
+C:\Users\Advice\source\repos\HotelV4\bin\Debug\HotelV4.pdb
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.csproj.AssemblyReference.cache
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.add_room.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.add_service.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.Bookroom.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.check_in.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.customer.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.employee.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.invoice.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.login.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.menu.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.Properties.Resources.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.Revenue.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.service_payment.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.user.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.csproj.GenerateResource.cache
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.csproj.CoreCompileInputs.cache
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.exe
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.pdb
