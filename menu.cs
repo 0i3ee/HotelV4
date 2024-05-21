@@ -98,7 +98,8 @@ namespace HotelV4
             Revenue frm = new Revenue();
             frm.Show();
             this.Close();
-
+            //Nin na Hee
+            //not thing 
         }
     }
 }
