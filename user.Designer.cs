@@ -82,7 +82,7 @@ namespace HotelV4
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(784, 636);
+            this.button7.Location = new System.Drawing.Point(788, 636);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(270, 41);
             this.button7.TabIndex = 48;

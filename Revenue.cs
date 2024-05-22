@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelV4.aclass;
 
 namespace HotelV4
 {
@@ -15,6 +16,7 @@ namespace HotelV4
         public Revenue()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
     }
 }
