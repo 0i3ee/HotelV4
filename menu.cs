@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelV4.aclass;
+
 namespace HotelV4
 {
     public partial class menu : Form
@@ -15,6 +17,7 @@ namespace HotelV4
         public menu()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
 
         private void lbExit_Click(object sender, EventArgs e)
@@ -98,8 +101,6 @@ namespace HotelV4
             Revenue frm = new Revenue();
             frm.Show();
             this.Close();
-            //Nin na Hee
-            //not thing 
         }
     }
 }
