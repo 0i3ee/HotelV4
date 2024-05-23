@@ -24,8 +24,6 @@ namespace HotelV4
 
         private void login_Load(object sender, EventArgs e)
         {
-            ccd.connectDatabase();
-            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
