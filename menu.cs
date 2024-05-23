@@ -14,15 +14,22 @@ namespace HotelV4
 {
     public partial class menu : Form
     {
-        private string displayName;
-        
+
+
+
+
+
+        private string displayName; // Define displayName as a private field
+
+        // Constructor with displayName parameter
         public menu(string displayName)
         {
             InitializeComponent();
             FormMover.Moveform(this);
-            this.displayName = displayName;
+            this.displayName = displayName; // Assign the passed displayName to the private field
         }
-        
+
+
         private void lbExit_Click(object sender, EventArgs e)
         {
             

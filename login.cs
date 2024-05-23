@@ -36,17 +36,18 @@ namespace HotelV4
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string displayName = Login();
+            string displayName = Login(); // Assuming Login() method returns the display name
             if (displayName != null)
             {
                 this.Hide();
-                menu frm = new menu(displayName);
+                menu frm = new menu(displayName); // Pass displayName to the menu form constructor
                 frm.Show();
             }
             else
             {
                 MessageBox.Show("Username or Password Incorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         public string Login()
