@@ -222,27 +222,27 @@ namespace HotelV4
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(44, 155);
+            this.btnExit.Location = new System.Drawing.Point(44, 137);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(202, 27);
+            this.btnExit.Size = new System.Drawing.Size(202, 41);
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
             // btnPermission
             // 
-            this.btnPermission.Location = new System.Drawing.Point(307, 101);
+            this.btnPermission.Location = new System.Drawing.Point(307, 90);
             this.btnPermission.Name = "btnPermission";
-            this.btnPermission.Size = new System.Drawing.Size(202, 27);
+            this.btnPermission.Size = new System.Drawing.Size(202, 41);
             this.btnPermission.TabIndex = 43;
             this.btnPermission.Text = "Permission";
             this.btnPermission.UseVisualStyleBackColor = true;
             // 
             // Btnresetpass
             // 
-            this.Btnresetpass.Location = new System.Drawing.Point(44, 101);
+            this.Btnresetpass.Location = new System.Drawing.Point(44, 90);
             this.Btnresetpass.Name = "Btnresetpass";
-            this.Btnresetpass.Size = new System.Drawing.Size(202, 27);
+            this.Btnresetpass.Size = new System.Drawing.Size(202, 41);
             this.Btnresetpass.TabIndex = 42;
             this.Btnresetpass.Text = "Reset password";
             this.Btnresetpass.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@ namespace HotelV4
             // 
             this.btnAdd.Location = new System.Drawing.Point(307, 47);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(202, 27);
+            this.btnAdd.Size = new System.Drawing.Size(202, 37);
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Add Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@ namespace HotelV4
             // 
             this.btnupdate.Location = new System.Drawing.Point(44, 47);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(202, 27);
+            this.btnupdate.Size = new System.Drawing.Size(202, 37);
             this.btnupdate.TabIndex = 40;
             this.btnupdate.Text = "Employee Update";
             this.btnupdate.UseVisualStyleBackColor = true;
@@ -442,7 +442,7 @@ namespace HotelV4
             this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.Color.Red;
-            this.lbExit.Location = new System.Drawing.Point(1236, -3);
+            this.lbExit.Location = new System.Drawing.Point(1222, 6);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(26, 25);
             this.lbExit.TabIndex = 62;

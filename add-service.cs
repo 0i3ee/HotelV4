@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelV4.aclass;
+
 namespace HotelV4
 {
     public partial class add_service : Form
@@ -15,6 +17,7 @@ namespace HotelV4
         public add_service()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
     }
 }

@@ -100,6 +100,7 @@ namespace HotelV4
             this.txtPassword.Size = new System.Drawing.Size(328, 33);
             this.txtPassword.TabIndex = 40;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsername
             // 
@@ -109,6 +110,7 @@ namespace HotelV4
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(328, 33);
             this.txtUsername.TabIndex = 39;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // label5
             // 
