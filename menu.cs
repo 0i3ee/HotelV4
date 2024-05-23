@@ -8,14 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelV4.aclass;
+
 namespace HotelV4
 {
     public partial class menu : Form
     {
-        public menu()
+        private string username;
+        public menu(string username)
         {
             InitializeComponent();
+            FormMover.Moveform(this);
+            btnuser.Text = username;
+            
+
         }
+
 
         private void lbExit_Click(object sender, EventArgs e)
         {
@@ -32,7 +40,7 @@ namespace HotelV4
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            employee frm = new employee();
+            employee frm = new employee(username);
             frm.Show();
             this.Close();
         }
@@ -98,8 +106,11 @@ namespace HotelV4
             Revenue frm = new Revenue();
             frm.Show();
             this.Close();
-            //Nin na Hee
-            //not thing 
+        }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

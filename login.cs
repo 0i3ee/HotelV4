@@ -9,85 +9,73 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+
+using HotelV4.aclass;
 namespace HotelV4
 {
     public partial class login : Form
     {
-        
+        ClassconnectDB ccd = new ClassconnectDB();
         public login()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
-        ClassconnectDB cdb = new ClassconnectDB();
-        SqlDataReader dr;
 
         private void login_Load(object sender, EventArgs e)
         {
-            cdb.connectDatabase();
-
+            ccd.connectDatabase();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        private string GetMd5Hash(string input)
-        {
-            using (MD5 md5 = MD5.Create())
-            {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-                byte[] hashBytes = md5.ComputeHash(inputBytes);
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("x2"));
-                }
-                return sb.ToString();
-            }
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
-            string hashedPassword = GetMd5Hash(password);
 
-            try
+            if (Login())
             {
-                cdb.cmd = new SqlCommand("SELECT * FROM Staff WHERE UserName = @username AND PassWord = @password", cdb.conn);
-            {
-                // Using parameterized query properly
-                cdb.cmd.Parameters.Add(new SqlParameter("@username", SqlDbType.VarChar)).Value = username;
-                cdb.cmd.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar)).Value = hashedPassword;
-
-                using (SqlDataReader dr = cdb.cmd.ExecuteReader())
-                {
-                    if (dr.HasRows)
-                    {
-                        this.Hide();
-                        menu frm = new menu();
-                        frm.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ຊື່ຜູ້ໃຊ້ແລະລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ", "ຜົນການກວດສອບ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtUsername.Focus();
-                    }
-                }
+                string username = txtUsername.Text;
+                this.Hide();
+                menu frm = new menu(username);
+                frm.Show();
             }
-
+            else
+            {
+                MessageBox.Show("Username or PassWord Uncorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
-            catch(Exception ex)
-            {
-                MessageBox.Show("ເກີດຂໍ້ຜິດພາດ"+ex, "ການກວດສອບ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
-}
+        public bool Login()
+        {
+            txtPassword.Text.Trim();
+            txtUsername.Text.Trim();
+            return querycon.Instance.Login(txtUsername.Text, txtPassword.Text);
+        }
 
         private void lbExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }
