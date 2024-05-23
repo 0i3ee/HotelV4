@@ -15,8 +15,8 @@ namespace HotelV4
 {
     public partial class employee : Form
     {
-
-        public employee()
+        private string username;
+        public employee(string username)
         {
             InitializeComponent();
             FormMover.Moveform(this);
@@ -131,14 +131,15 @@ namespace HotelV4
 
         private void lbExit_Click(object sender, EventArgs e)
         {
-            menu frm = new menu();
+            
+            menu frm = new menu(username); ;
             frm.Show();
             this.Close();
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addstaff frm = new addstaff();
+            addstaff frm = new addstaff(username);
             frm.Show();
 
         }

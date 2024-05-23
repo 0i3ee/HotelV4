@@ -13,10 +13,12 @@ using HotelV4.bclass;
 
 namespace HotelV4
 {
+    
+    
     public partial class addstaff : Form
     {
-
-        public addstaff()
+        private string username;
+        public addstaff(string username)
         {
             InitializeComponent();
             FormMover.Moveform(this);
@@ -90,7 +92,7 @@ namespace HotelV4
         {
             
             InsertStaff();
-            employee frm = new employee();
+            employee frm = new employee(username);
             frm.Show();
             this.Close();
             
@@ -100,6 +102,7 @@ namespace HotelV4
 
         private void LoadFullStaffType()
         {
+
             cbsex.SelectedIndex = 0;
             DataTable table = GetFullStaffType();
             cbtype.DataSource = table;

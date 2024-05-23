@@ -34,30 +34,15 @@ namespace HotelV4.aclass
             return hashPass;
         }
 
-        internal string Login(string userName, string passWord)
+        internal bool Login(string userName, string passWord)
         {
-            string displayName = null;
-            string hashPass = HashPass(passWord);
-
-            using (SqlConnection conn = new SqlConnection("your_connection_string_here"))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("select DisplayName from Staff where UserName=@user and PassWord=@pass", conn))
-                {
-                    cmd.Parameters.AddWithValue("@user", userName);
-                    cmd.Parameters.AddWithValue("@pass", hashPass);
-
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        if (dr.Read())
-                        {
-                            displayName = dr["DisplayName"].ToString();
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return displayName;
+            string hass = HashPass(passWord);
+            ccd.cmd = new SqlCommand("select * from Staff where UserName=@user and PassWord = @pass", ccd.conn);
+            ccd.cmd.Parameters.AddWithValue("@user", userName);
+            ccd.cmd.Parameters.AddWithValue("@pass", hass);
+            dr = ccd.cmd.ExecuteReader();
+            dataTable.Load(dr);
+            return dataTable.Rows.Count > 0;
         }
 
         internal DataTable LoadFullStaffType()

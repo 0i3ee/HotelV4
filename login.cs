@@ -36,21 +36,21 @@ namespace HotelV4
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            string displayName = Login(); // Assuming Login() method returns the display name
-            if (displayName != null)
+            if (Login())
             {
+                string username = txtUsername.Text;
                 this.Hide();
-                menu frm = new menu(displayName); // Pass displayName to the menu form constructor
+                menu frm = new menu(username);
                 frm.Show();
             }
             else
             {
-                MessageBox.Show("Username or Password Incorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username or PassWord Uncorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        public string Login()
+        public bool Login()
         {
             txtPassword.Text.Trim();
             txtUsername.Text.Trim();

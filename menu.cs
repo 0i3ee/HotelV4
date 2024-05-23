@@ -14,19 +14,14 @@ namespace HotelV4
 {
     public partial class menu : Form
     {
-
-
-
-
-
-        private string displayName; // Define displayName as a private field
-
-        // Constructor with displayName parameter
-        public menu(string displayName)
+        private string username;
+        public menu(string username)
         {
             InitializeComponent();
             FormMover.Moveform(this);
-            this.displayName = displayName; // Assign the passed displayName to the private field
+            btnuser.Text = username;
+            
+
         }
 
 
@@ -45,7 +40,7 @@ namespace HotelV4
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            employee frm = new employee();
+            employee frm = new employee(username);
             frm.Show();
             this.Close();
         }
@@ -115,7 +110,7 @@ namespace HotelV4
 
         private void menu_Load(object sender, EventArgs e)
         {
-            btnuser.Text = displayName;
+            
         }
     }
 }
