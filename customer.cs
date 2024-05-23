@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelV4.aclass;
 namespace HotelV4
 {
     public partial class customer : Form
@@ -15,6 +16,7 @@ namespace HotelV4
         public customer()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
     }
 }

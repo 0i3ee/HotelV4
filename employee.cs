@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using HotelV4.aclass;
 namespace HotelV4
 {
     public partial class employee : Form
     {
+
         public employee()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
         ClassconnectDB cdb = new ClassconnectDB();
 
@@ -132,68 +135,9 @@ namespace HotelV4
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DateTime dobs = dob.Value;
-            DateTime sDate = startdate.Value;
-            string formattedDate = dobs.ToString("yyyy-MM-dd");
-            string formattedsDate = sDate.ToString("yyyy-MM-dd");
-            try
-            {
-                
-                if (txtusername.Text == "")
-                {
-                    MessageBox.Show("Please enter Username ");
-                    txtusername.Focus();
-                }
-                else if (txtname.Text == "")
-                {
-                    MessageBox.Show("Please enter Name");
-                    txtname.Focus();
-                }
+            addstaff frm = new addstaff();
+            frm.Show();
 
-                else if (txtidnumber.Text == "")
-                {
-                    MessageBox.Show("Please enter ID Number");
-                    txtidnumber.Focus();
-                }
-                else if (txtphonenumber.Text == "")
-                {
-                    MessageBox.Show("Please enter Phone Number");
-                    txtphonenumber.Focus();
-                }
-                else if (txtaddress.Text == "")
-                {
-                    MessageBox.Show("Please enter address");
-                    txtaddress.Focus();
-                }
-                else
-                {
-                    if (MessageBox.Show("ເຈົ້າຕ້ອງການບັນທຶກຂໍ້ມູນຫຼືບໍ່", "ຄຳຢືນຢັນ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        
-
-                        cdb.cmd = new SqlCommand("insert into Staff values(@UserName,@DisplayName,@PassWord,@IDStaffType,@IDCard,@DateOfBirth,@Sex,@Address,@PhoneNumber,@StartDay)", cdb.conn);
-                        cdb.cmd.Parameters.AddWithValue("@UserName", txtusername.Text);
-                        cdb.cmd.Parameters.AddWithValue("@DisplayName", txtname.Text);
-                        cdb.cmd.Parameters.AddWithValue("@PassWord", "123456");
-                        cdb.cmd.Parameters.AddWithValue("@IDStaffType", cbbemptype.SelectedValue);
-                        cdb.cmd.Parameters.AddWithValue("@IDCard", txtidnumber.Text);
-                        cdb.cmd.Parameters.AddWithValue("@DateOfBirth",formattedDate);
-                        cdb.cmd.Parameters.AddWithValue("@Sex", cbbsex.Text);
-                        cdb.cmd.Parameters.AddWithValue("@Address", txtaddress.Text);
-                        cdb.cmd.Parameters.AddWithValue("@PhoneNumber", txtphonenumber.Text);
-                        cdb.cmd.Parameters.AddWithValue("@StartDay", formattedsDate);
-                        cdb.cmd.ExecuteNonQuery();
-                        showdata();
-
-
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("errorr"+ex);
-            }
         }
     }
 }

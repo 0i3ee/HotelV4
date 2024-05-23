@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography;
-namespace HotelV4
+namespace HotelV4.aclass
 {
     class ClassconnectDB
     {
+
+
         public string strcon = "Data source =.; Initial catalog=HotelManagement; integrated security=True";
         public SqlConnection conn = new SqlConnection();
         public SqlDataAdapter da = new SqlDataAdapter();
@@ -25,5 +27,7 @@ namespace HotelV4
             conn.ConnectionString = strcon;
             conn.Open();
         }
+
+
     }
 }
