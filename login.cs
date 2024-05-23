@@ -35,16 +35,19 @@ namespace HotelV4
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
             if (Login())
             {
+                string username = txtUsername.Text;
                 this.Hide();
-                menu frm = new menu();
+                menu frm = new menu(username);
                 frm.Show();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Username or PassWord Uncorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         public bool Login()
@@ -57,6 +60,22 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

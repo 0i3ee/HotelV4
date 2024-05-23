@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using HotelV4.aclass;
+
 namespace HotelV4
 {
     public partial class employee : Form
     {
-
-        public employee()
+        private string username;
+        public employee(string username)
         {
             InitializeComponent();
             FormMover.Moveform(this);
@@ -30,7 +31,7 @@ namespace HotelV4
                 MessageBox.Show("Please enter search text.");
                 return;
             }
-
+            btnSearch.Text = "Cancel";
             cdb.cmd = new SqlCommand("SELECT dbo.Staff.UserName, dbo.Staff.DisplayName, dbo.StaffType.Name AS StaffTypeName, dbo.Staff.IDCard, dbo.Staff.PhoneNumber, dbo.Staff.Address FROM dbo.Staff INNER JOIN dbo.StaffType ON dbo.Staff.IDStaffType = dbo.StaffType.ID WHERE UserName LIKE @searchText OR IDCard LIKE @searchText OR PhoneNumber LIKE @searchText", cdb.conn);
             cdb.cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
 
@@ -53,6 +54,7 @@ namespace HotelV4
                 DGV.Columns["Address"].HeaderText = "Address";
 
                 DGV.Columns["StaffTypeName"].Width = 110;
+                
                 if (dataTable.Rows.Count == 0)
                 {
                     MessageBox.Show("ບໍ່ພົບຂໍ້ມູນ","ຜົນການກວດສອບ",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -119,6 +121,7 @@ namespace HotelV4
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             showdata();
+            btnSearch.Text = "Search";
         }
 
         private void lbExit_ClientSizeChanged(object sender, EventArgs e)
@@ -128,16 +131,18 @@ namespace HotelV4
 
         private void lbExit_Click(object sender, EventArgs e)
         {
-            menu frm = new menu();
+            
+            menu frm = new menu(username); ;
             frm.Show();
             this.Close();
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addstaff frm = new addstaff();
+            addstaff frm = new addstaff(username);
             frm.Show();
 
         }
+        
     }
 }
