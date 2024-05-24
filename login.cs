@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 
 using HotelV4.aclass;
+
 namespace HotelV4
 {
     public partial class login : Form
@@ -24,7 +25,7 @@ namespace HotelV4
 
         private void login_Load(object sender, EventArgs e)
         {
-            ccd.connectDatabase();
+            
             
         }
 
@@ -41,12 +42,14 @@ namespace HotelV4
                 string username = txtUsername.Text;
                 this.Hide();
                 menu frm = new menu(username);
+
                 frm.Show();
             }
             else
             {
                 MessageBox.Show("Username or PassWord Uncorrect", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
