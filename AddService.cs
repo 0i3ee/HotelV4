@@ -122,7 +122,7 @@ namespace HotelV4
         {
             if (!fCustomer.CheckFillInText(new Control[] { txtservicename, cbtypeservice, txtPrice }))
             {
-                DialogResult result = MessageBox.Show("ກະລູນາປ້ອນຂໍ້ມູນ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("Please Enter data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             //try
@@ -130,12 +130,12 @@ namespace HotelV4
                 Service serviceNow = GetServiceNow();
                 if (ServiceDao.Instance.InsertService(serviceNow))
                 {
-                    MessageBox.Show("ສຳເລັດ", "ຜົນການກວດສອບ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtservicename.Text = string.Empty;
                     txtPrice.Text = IntToString("100000");
                 }
                 else
-                    MessageBox.Show("ມີຊື່ການບໍລິການນີ້ແລ້ວ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("ServiceName Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             //}
             //catch (Exception ex)
             //{
@@ -146,7 +146,7 @@ namespace HotelV4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("ຕ້ອງການເພີ່ມຂໍ້ມູນ ຫຼື ບໍ່?", "ແຈ້ງເຕືອນ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to add data?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertService();
             add_service frm = new add_service();
