@@ -16,7 +16,6 @@ namespace HotelV4.aclass
 {
     class AccountB
     {
-       
         DataTable dataTable = new DataTable();
 
         private static AccountB instance;
@@ -79,6 +78,12 @@ namespace HotelV4.aclass
             string query = "USP_LoadFullStaff";
             return cdb.Instance.ExecuteQuery(query);
         }
+        internal DataTable LoadViewData()
+        {
+            string query = "SELECT * FROM View_1"; 
+            return cdb.Instance.ExecuteQuery(query);
+        }
+
         internal bool InsertAccount(Accout account)
         {
             string query = "EXEC USP_InsertStaff @user , @name , @pass , @idStaffType , @idCard , @dateOfBirth , @sex , @address , @phoneNumber , @startDay";
