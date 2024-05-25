@@ -11,7 +11,7 @@ namespace HotelV4.aclass
     class ServiceTypeDao
     {
         private static ServiceTypeDao instance;
-        ClassconnectDB ccd = new ClassconnectDB();
+        //cdb ccd = new cdb();
         
         DataTable dataTable = new DataTable();
         SqlDataReader dr = null;
@@ -35,7 +35,7 @@ namespace HotelV4.aclass
         //    return UpdateServiceType(serviceTypeNow.Id, serviceTypeNow.Name);
         //}
         private ServiceTypeDao() {
-            ccd.connectDatabase();
+            //ccd.connectDatabase();
         } // Private constructor to enforce singleton pattern
 
         internal DataTable LoadFullServiceType()
@@ -45,13 +45,13 @@ namespace HotelV4.aclass
             DataTable dataTable = new DataTable();
 
             // Create the SqlCommand and set its connection
-            ccd.cmd = new SqlCommand("SELECT * FROM ServiceType", ccd.conn);
+            //ccd.cmd = new SqlCommand("SELECT * FROM ServiceType", ccd.conn);
 
             // Create a SqlDataAdapter to execute the query
-            SqlDataAdapter da = new SqlDataAdapter(ccd.cmd);
+            //SqlDataAdapter da = new SqlDataAdapter(ccd.cmd);
 
             // Use the SqlDataAdapter to fill the DataTable directly
-            da.Fill(dataTable);
+            //da.Fill(dataTable);
 
             // Return the filled DataTable
             return dataTable;
@@ -66,12 +66,12 @@ namespace HotelV4.aclass
         internal DataTable Search(string name, int id)
         {
             // Define the query to search for service based on name or ID
-            ccd.cmd = new SqlCommand("SELECT * from dbo.ServiceType WHERE dbo.ServiceType.Name LIKE @Name OR dbo.ServiceType.ID = @ID", ccd.conn);
-            ccd.cmd.Parameters.AddWithValue("@Name", "%" + name + "%"); // Add wildcard characters for partial matching
-            ccd.cmd.Parameters.AddWithValue("@ID", id);
+            //ccd.cmd = new SqlCommand("SELECT * from dbo.ServiceType WHERE dbo.ServiceType.Name LIKE @Name OR dbo.ServiceType.ID = @ID", ccd.conn);
+            //ccd.cmd.Parameters.AddWithValue("@Name", "%" + name + "%"); // Add wildcard characters for partial matching
+            //ccd.cmd.Parameters.AddWithValue("@ID", id);
 
             // Execute the command
-            dr = ccd.cmd.ExecuteReader();
+            //dr = ccd.cmd.ExecuteReader();
 
             // Load search results into a DataTable
             DataTable searchResults = new DataTable();
@@ -87,9 +87,10 @@ namespace HotelV4.aclass
         {
             try
             {
-                ccd.cmd = new SqlCommand("INSERT INTO ServiceType (Name) VALUES (@name)", ccd.conn);
-                ccd.cmd.Parameters.AddWithValue("@name", name);
-                return ccd.cmd.ExecuteNonQuery() > 0;
+                //ccd.cmd = new SqlCommand("INSERT INTO ServiceType (Name) VALUES (@name)", ccd.conn);
+                //ccd.cmd.Parameters.AddWithValue("@name", name);
+                //return ccd.cmd.ExecuteNonQuery() > 0;
+                return true;
             }
             catch (Exception ex)
             {
@@ -102,13 +103,13 @@ namespace HotelV4.aclass
         {
             try
             {
-                ccd.cmd = new SqlCommand("UPDATE ServiceType SET Name = @Name WHERE ID = @ID", ccd.conn);
-                ccd.cmd.Parameters.AddWithValue("@Name", name);
-                ccd.cmd.Parameters.AddWithValue("@ID", id);
+                //ccd.cmd = new SqlCommand("UPDATE ServiceType SET Name = @Name WHERE ID = @ID", ccd.conn);
+                //ccd.cmd.Parameters.AddWithValue("@Name", name);
+                //ccd.cmd.Parameters.AddWithValue("@ID", id);
                 
 
-                int rowsAffected = ccd.cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
+                //int rowsAffected = ccd.cmd.ExecuteNonQuery();
+                return true;
 
             }
             catch (Exception ex)

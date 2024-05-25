@@ -14,22 +14,18 @@ namespace HotelV4.bclass
     class AccountTypeb
     {
         private static AccountTypeb instance;
-        ClassconnectDB ccd = new ClassconnectDB();
+        //cdb ccd = new cdb();
         SqlDataReader dr;
         DataTable dataTable = new DataTable();
 
         private AccountTypeb()
         {
-            ccd.connectDatabase();
+
         }
         internal DataTable LoadFullStaffType()
         {
-            
-            ccd.cmd = new SqlCommand("select * from StaffType", ccd.conn);
-            dr = ccd.cmd.ExecuteReader();
-            dataTable = new DataTable();
-            dataTable.Load(dr);
-            return dataTable;
+            string query = "USP_LoadFullStaffType";
+            return cdb.Instance.ExecuteQuery(query);
         }
         public static AccountTypeb Instance
         {

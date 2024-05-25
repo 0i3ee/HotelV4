@@ -16,7 +16,7 @@ namespace HotelV4
 {
     public partial class login : Form
     {
-        ClassconnectDB ccd = new ClassconnectDB();
+
         public login()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace HotelV4
         {
             txtPassword.Text.Trim();
             txtUsername.Text.Trim();
-            return querycon.Instance.Login(txtUsername.Text, txtPassword.Text);
+            return AccountB.Instance.Login(txtUsername.Text, txtPassword.Text);
         }
 
         private void lbExit_Click(object sender, EventArgs e)

@@ -118,7 +118,8 @@ namespace HotelV4
 
         private DataTable GetFullService()
         {
-            return ServiceDao.Instance.LoadFullService();
+            //return ServiceDao.Instance.LoadFullService();
+            return null;
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -168,9 +169,11 @@ namespace HotelV4
             // Retrieve search results from the database based on the search query
             // You need to implement this method according to your data access logic
             if (int.TryParse(searchQuery, out int id))
-                return ServiceDao.Instance.Search(searchQuery, id);
+                //return ServiceDao.Instance.Search(searchQuery, id);
+                return null;
             else
-                return ServiceDao.Instance.Search(searchQuery, 0);
+               //return ServiceDao.Instance.Search(searchQuery, 0);
+             return null;
         }
 
 
@@ -200,9 +203,11 @@ namespace HotelV4
         private DataTable GetSearchService()
         {
             if (int.TryParse(txtSearch.Text, out int id))
-                return ServiceDao.Instance.Search(txtSearch.Text, id);
+                //return ServiceDao.Instance.Search(txtSearch.Text, id);
+                return null;
             else
-                return ServiceDao.Instance.Search(txtSearch.Text, 0);
+                //return ServiceDao.Instance.Search(txtSearch.Text, 0);
+                return null;
         }
 
         private string StringToInt(string text)
@@ -325,7 +330,8 @@ namespace HotelV4
                     return;
                 }
 
-                bool check = ServiceDao.Instance.UpdateService(serviceNow, servicePre);
+                //bool check = ServiceDao.Instance.UpdateService(serviceNow, servicePre);
+                bool check = false;
                 if (check)
                 {
                     MessageBox.Show("Update successful.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);

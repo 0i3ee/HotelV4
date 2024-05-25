@@ -48,7 +48,7 @@ namespace HotelV4
             {
 
                     Accout accountNow = GetStaffNow();
-                    if (querycon.Instance.InsertAccount(accountNow))
+                    if (AccountB.Instance.InsertAccount(accountNow))
                     {
                         MessageBox.Show("AD Success" + txtname.Text +
                             "Pass : "+ mtpass.Text , "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -67,7 +67,7 @@ namespace HotelV4
             Accout account = new Accout();
             account.UserName = txtname.Text;
             account.DisplayName = txtdis.Text;
-            account.PassWord = querycon.Instance.HashPass(mtpass.Text);
+            account.PassWord = AccountB.Instance.HashPass(mtpass.Text);
             int index = cbtype.SelectedIndex;
             account.IdStaffType = (int)((DataTable)cbtype.DataSource).Rows[index]["id"];
             account.IdCard = txtid.Text;

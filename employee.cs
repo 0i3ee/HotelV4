@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using HotelV4.aclass;
+using HotelV4.bclass;
 
 namespace HotelV4
 {
@@ -21,107 +22,26 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
         }
-        ClassconnectDB cdb = new ClassconnectDB();
+        //cdb cdb = new cdb();
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string searchText = txtSearch.Text.Trim();
-            if (string.IsNullOrEmpty(searchText))
-            {
-                MessageBox.Show("Please enter search text.");
-                return;
-            }
-            btnSearch.Text = "Cancel";
-            cdb.cmd = new SqlCommand("SELECT dbo.Staff.UserName, dbo.Staff.DisplayName, dbo.StaffType.Name AS StaffTypeName, dbo.Staff.IDCard, dbo.Staff.PhoneNumber, dbo.Staff.Address FROM dbo.Staff INNER JOIN dbo.StaffType ON dbo.Staff.IDStaffType = dbo.StaffType.ID WHERE UserName LIKE @searchText OR IDCard LIKE @searchText OR PhoneNumber LIKE @searchText", cdb.conn);
-            cdb.cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-
-            try
-            {
-                
-                SqlDataAdapter adapter = new SqlDataAdapter(cdb.cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                // Bind the result to your UI, e.g., a DataGridView
-                DGV.DataSource = dataTable;
-
-                // Set header text for columns
-                DGV.Columns["UserName"].HeaderText = "UserName";
-                DGV.Columns["DisplayName"].HeaderText = "Name";
-                DGV.Columns["StaffTypeName"].HeaderText = "STypeName";
-                DGV.Columns["IDCard"].HeaderText = "IDCard";
-                DGV.Columns["PhoneNumber"].HeaderText = "PhoneNumber";
-                DGV.Columns["Address"].HeaderText = "Address";
-
-                DGV.Columns["StaffTypeName"].Width = 110;
-                
-                if (dataTable.Rows.Count == 0)
-                {
-                    MessageBox.Show("ບໍ່ພົບຂໍ້ມູນ","ຜົນການກວດສອບ",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
+           
 
         }
-        private void ShowStaffType()
-        {
-            SqlDataAdapter daS = new SqlDataAdapter("Select * from StaffType", cdb.conn);
-            DataSet dsS = new DataSet();
-            daS.Fill(dsS, "StaffType");
-            cbbemptype.DataSource = dsS.Tables[0];
-            cbbemptype.DisplayMember = "Name";
-            cbbemptype.ValueMember = "ID";
-        }
-        void showdata()
-        {
-            try
-            {
-                cdb.da = new SqlDataAdapter("SELECT dbo.Staff.UserName, dbo.Staff.DisplayName, dbo.StaffType.Name AS StaffTypeName, dbo.Staff.IDCard, dbo.Staff.PhoneNumber, dbo.Staff.Address FROM dbo.Staff INNER JOIN dbo.StaffType ON dbo.Staff.IDStaffType = dbo.StaffType.ID", cdb.conn);
-
-                cdb.da.Fill(cdb.ds, "employee");
-                cdb.ds.Tables[0].Clear();
-                cdb.da.Fill(cdb.ds, "employee");
-                DGV.DataSource = cdb.ds.Tables[0];
-                DGV.Refresh();
-
-
-
-                // Set header text for columns
-                DGV.Columns["UserName"].HeaderText = "UserName";
-                DGV.Columns["DisplayName"].HeaderText = "Name";
-                DGV.Columns["StaffTypeName"].HeaderText = "SaffType";
-                DGV.Columns["IDCard"].HeaderText = "IDCard";
-                DGV.Columns["PhoneNumber"].HeaderText = "PhoneNumber";
-                DGV.Columns["Address"].HeaderText = "Address";
-
-                DGV.Columns["StaffTypeName"].Width = 110;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+       
 
 
         private void employee_Load(object sender, EventArgs e)
         {
-            cdb.connectDatabase();
-            showdata();
-            ShowStaffType();
-            dob.Format = DateTimePickerFormat.Custom;
-            dob.CustomFormat = "dd-MM-yyyy";
-            startdate.Format = DateTimePickerFormat.Custom;
-            startdate.CustomFormat = "dd-MM-yyyy";
+
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            showdata();
-            btnSearch.Text = "Search";
+
+
         }
 
         private void lbExit_ClientSizeChanged(object sender, EventArgs e)
@@ -143,6 +63,111 @@ namespace HotelV4
             frm.Show();
 
         }
-        
+        public static bool CheckFillInText(Control[] controls)
+        {
+            foreach (var control in controls)
+            {
+                if (control.Text == string.Empty)
+                    return false;
+            }
+            return true;
+        }
+        private Accout GetStaffNow()
+        {
+            Accout account = new Accout();
+
+            account.UserName = txtusername.Text.ToLower();
+            int index = cbemptype.SelectedIndex;
+            account.IdStaffType = (int)((DataTable)cbemptype.DataSource).Rows[index]["id"];
+            account.DisplayName = txtname.Text;
+            account.IdCard = txtidnumber.Text;
+            account.Sex = cbbsex.Text;
+            account.DateOfBirth = dob.Value;
+            account.PhoneNumber = int.Parse(txtphonenumber.Text);
+            account.Address = txtaddress.Text;
+            account.StartDay = dos.Value;
+            return account;
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            bool isFill = employee.CheckFillInText(new Control[] { txtusername, cbemptype, txtname ,
+                                                            txtidnumber , cbbsex , txtphonenumber, txtaddress});
+            if (!isFill)
+            {
+                MessageBox.Show("No data", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                Accout accountPre = groupstaff.Tag as Accout;
+                try
+                {
+                    Accout accountnow = GetStaffNow();
+                    if (accountnow.Equals(accountPre))
+                    {
+                        MessageBox.Show("Bạn chưa thay đổi dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        bool check = AccountB.Instance.UpdateAccount(accountnow);
+                        if (check)
+                        {
+                            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            groupstaff.Tag = accountnow;
+                            if (btnCancel.Visible == false)
+                            {
+                                int index = DGV.SelectedRows[0].Index;
+                                LoadFullStaff(GetFullStaff());
+                                DGV.SelectedRows[0].Selected = false;
+                                DGV.Rows[index].Selected = true;
+                            }
+                            else
+                                btnCancel_Click(null, null);
+                        }
+                        else
+                        {
+                            if (accountnow.UserName == accountPre.UserName)
+                                MessageBox.Show("Không thể cập nhật(Trùng số chứng minh nhân dân)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            else
+                                MessageBox.Show("Không thể cập nhật(Tài khoản chưa tồn tại)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi không xác định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private DataTable GetFullStaff()
+        {
+            return AccountB.Instance.LoadFullStaff();
+        }
+        private DataTable GetFullStaffType()
+        {
+            return AccountTypeb.Instance.LoadFullStaffType();
+        }
+        private void LoadFullStaffType()
+        {
+            cbbsex.SelectedIndex = 0;
+            DataTable table = GetFullStaffType();
+            cbemptype.DataSource = table;
+            cbemptype.DisplayMember = "Name";
+            if (table.Rows.Count > 0)
+                cbemptype.SelectedIndex = 0;
+        }
+        private void LoadFullStaff(DataTable table)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = table;
+            DGV.DataSource = source;
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

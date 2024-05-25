@@ -127,15 +127,15 @@ namespace HotelV4
             }
             //try
             //{
-                Service serviceNow = GetServiceNow();
-                if (ServiceDao.Instance.InsertService(serviceNow))
-                {
-                    MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtservicename.Text = string.Empty;
-                    txtPrice.Text = IntToString("100000");
-                }
-                else
-                    MessageBox.Show("ServiceName Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //Service serviceNow = GetServiceNow();
+                //if (ServiceDao.Instance.InsertService(serviceNow))
+                //{
+                //    MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    txtservicename.Text = string.Empty;
+                //    txtPrice.Text = IntToString("100000");
+                //}
+                //else
+                //    MessageBox.Show("ServiceName Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             //}
             //catch (Exception ex)
             //{

@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
-    <Compile Include="aclass\querycon.cs" />
+    <Compile Include="bclass\AccountB.cs" />
     <Compile Include="aclass\ServiceDao.cs" />
     <Compile Include="aclass\ServiceTypeDao.cs" />
     <Compile Include="add-room.cs">
@@ -98,7 +98,7 @@
     <Compile Include="check-in.Designer.cs">
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
-    <Compile Include="aclass\ClassconnectDB.cs" />
+    <Compile Include="aclass\cdb.cs" />
     <Compile Include="customer.cs">
       <SubType>Form</SubType>
     </Compile>
