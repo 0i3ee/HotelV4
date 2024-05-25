@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using HotelV4.aclass;
+using HotelV4.bclass;
 
 namespace HotelV4
 {
@@ -20,7 +21,7 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
             btnuser.Text = username;
-            
+
 
         }
 
