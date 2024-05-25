@@ -49,6 +49,8 @@
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
     <Compile Include="aclass\querycon.cs" />
+    <Compile Include="aclass\ServiceDao.cs" />
+    <Compile Include="aclass\ServiceTypeDao.cs" />
     <Compile Include="add-room.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +63,18 @@
     <Compile Include="add-service.Designer.cs">
       <DependentUpon>add-service.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddServiceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServiceType.Designer.cs">
+      <DependentUpon>AddServiceType.cs</DependentUpon>
+    </Compile>
     <Compile Include="addstaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +82,10 @@
       <DependentUpon>addstaff.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\AccountTypeb.cs" />
+    <Compile Include="bclass\fCustomer.cs" />
+    <Compile Include="bclass\Service.cs" />
+    <Compile Include="bclass\ServiceType.cs" />
+    <Compile Include="bclass\UserSession.cs" />
     <Compile Include="Bookroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +144,12 @@
     <Compile Include="service-payment.Designer.cs">
       <DependentUpon>service-payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmServiceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceType.Designer.cs">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="add-service.resx">
       <DependentUpon>add-service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddServiceType.resx">
+      <DependentUpon>AddServiceType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addstaff.resx">
       <DependentUpon>addstaff.cs</DependentUpon>
@@ -177,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="service-payment.resx">
       <DependentUpon>service-payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceType.resx">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>

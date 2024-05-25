@@ -62,3 +62,7 @@ C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompil
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.addstaff.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.addstaff.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.AddService.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.AddServiceType.resources
+C:\Users\Advice\source\repos\HotelV4\obj\Debug\HotelV4.frmServiceType.resources
