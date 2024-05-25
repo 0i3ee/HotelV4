@@ -79,14 +79,14 @@ namespace HotelV4
 
             return account;
         }
-        //void cleardata()
-        //{
-        //    txtname.Clear();
-        //    txtaddress.Clear();
-        //    txtdis.Clear();
-        //    txtid.Clear();
-        //    txtphone.Clear();
-        //}
+        void cleardata()
+        {
+            txtname.Clear();
+            txtaddress.Clear();
+            txtdis.Clear();
+            txtid.Clear();
+            txtphone.Clear();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
