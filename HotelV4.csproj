@@ -69,6 +69,12 @@
     <Compile Include="AddService.Designer.cs">
       <DependentUpon>AddService.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddServiceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServiceType.Designer.cs">
+      <DependentUpon>AddServiceType.cs</DependentUpon>
+    </Compile>
     <Compile Include="addstaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +84,7 @@
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\fCustomer.cs" />
     <Compile Include="bclass\Service.cs" />
-    <Compile Include="bclass\serviceType.cs" />
+    <Compile Include="bclass\ServiceType.cs" />
     <Compile Include="bclass\UserSession.cs" />
     <Compile Include="Bookroom.cs">
       <SubType>Form</SubType>
@@ -138,11 +144,11 @@
     <Compile Include="service-payment.Designer.cs">
       <DependentUpon>service-payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceType.cs">
+    <Compile Include="frmServiceType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServiceType.Designer.cs">
-      <DependentUpon>ServiceType.cs</DependentUpon>
+    <Compile Include="frmServiceType.Designer.cs">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
     </Compile>
     <Compile Include="user.cs">
       <SubType>Form</SubType>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddServiceType.resx">
+      <DependentUpon>AddServiceType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addstaff.resx">
       <DependentUpon>addstaff.cs</DependentUpon>
@@ -199,8 +208,8 @@
     <EmbeddedResource Include="service-payment.resx">
       <DependentUpon>service-payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceType.resx">
-      <DependentUpon>ServiceType.cs</DependentUpon>
+    <EmbeddedResource Include="frmServiceType.resx">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>

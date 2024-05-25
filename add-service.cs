@@ -24,12 +24,13 @@ namespace HotelV4
             LoadFullService(GetFullService());
 
             cbcode.DisplayMember = "id";
-            
+
             btnCancel.Click += btnCancel_Click;
             KeyPreview = true;
-            
-            
+
+
         }
+        frmServiceType _fServiceType;
         private void FService_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 27 && btnCancel.Visible == true)
@@ -43,7 +44,7 @@ namespace HotelV4
             ;
             if (table.Rows.Count > 0)
                 cbtypeservice.SelectedIndex = 0;
-            
+
         }
         private DataTable GetFullServiceType()
         {
@@ -51,14 +52,13 @@ namespace HotelV4
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddService frm = new AddService();
-            frm.Show();
-            this.Close();
 
-            if (btnclose.Visible == false)
+            new AddService().ShowDialog();
+            if (btnCancel.Visible == false)
                 LoadFullService(GetFullService());
             else
-                btnclose_Click(null, null);
+                btnCancel_Click(null, null);
+
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace HotelV4
             DGV.DataSource = source;
             bindingservice.BindingSource = source;
             cbcode.DataSource = source;
-            DGV.Columns[1].Width =150;
+            DGV.Columns[1].Width = 150;
             DGV.Columns[2].Width = 160;
 
 
@@ -127,13 +127,13 @@ namespace HotelV4
             {
                 btnSearch_Click(sender, null);
             }
-                
+
             else
                if (e.KeyChar == 27 && btnCancel.Visible == true)
                 btnCancel_Click(sender, null);
         }
 
-        
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Trim();
@@ -261,7 +261,7 @@ namespace HotelV4
                 }
 
                 // Validate integer conversion and handle DBNull
-                
+
                 if (row.Cells[3].Value != DBNull.Value && int.TryParse(row.Cells[3].Value.ToString(), out price))
                 {
                     txtprice.Text = FormatPrice(price); // Format the price using Lao Kip formatting
@@ -290,7 +290,7 @@ namespace HotelV4
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("ຕ້ອງການແກ້ໄຂຂໍ້ມູນນີ້ຫຼືບໍ່ ?", "ແຈ້ງເຕືອນ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want update data ?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 UpdateService();
             cbcode.Focus();
@@ -370,11 +370,57 @@ namespace HotelV4
 
         private void btnEditservicetype_Click(object sender, EventArgs e)
         {
-            this.LoadFullService(GetFullService()); 
-            ServiceType frm = new ServiceType();
-            cbtypeservice.DataSource = frm.TableSerViceType;
-            frm.Show();
+            // Hide the current form
             this.Hide();
+
+            // Check if _fServiceType is null and initialize it if necessary
+            if (_fServiceType == null)
+            {
+                _fServiceType = new frmServiceType(); // Initialize _fServiceType if it's null
+            }
+
+            // Show the service type edit dialog
+            _fServiceType.ShowDialog();
+
+            // Reload full service data
+            DataTable fullServiceData = GetFullService(); // Assuming GetFullService() retrieves full service data
+
+            // Set the ComboBox DataSource to the updated service type data
+            cbtypeservice.DataSource = _fServiceType.TableSerViceType;
+
+            // Show the current form again
+            this.Show();
+        }
+
+        private void add_service_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            btnCancel_Click(sender, null);
+        }
+
+        private void txtservicename_Leave(object sender, EventArgs e)
+        {
+            if (txtservicename.Text == string.Empty)
+                txtservicename.Text = txtservicename.Tag as string;
+        }
+
+        private void txtprice_Leave(object sender, EventArgs e)
+        {
+            if (txtprice.Text == string.Empty)
+                txtprice.Text = txtprice.Tag as string;
+            else
+                txtprice.Text = IntToString(txtprice.Text);
+        }
+
+        private void txtservicename_Enter(object sender, EventArgs e)
+        {
+            txtservicename.Tag = txtservicename.Text;
+
+        }
+
+        private void txtprice_Enter(object sender, EventArgs e)
+        {
+            txtprice.Tag = txtprice.Text;
+            txtprice.Text = StringToInt(txtprice.Text);
         }
     }
 }

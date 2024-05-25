@@ -1,7 +1,7 @@
 ﻿
 namespace HotelV4
 {
-    partial class ServiceType
+    partial class frmServiceType
     {
         /// <summary>
         /// Required designer variable.
@@ -30,25 +30,25 @@ namespace HotelV4
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceType));
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServiceType));
             this.txtserviceName = new System.Windows.Forms.TextBox();
-            this.groupservice = new System.Windows.Forms.GroupBox();
+            this.groupServiceType = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbtypeserviceID = new System.Windows.Forms.ComboBox();
-            this.DGV = new System.Windows.Forms.DataGridView();
+            this.DGVS = new System.Windows.Forms.DataGridView();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingservice = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,59 +62,14 @@ namespace HotelV4
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupservice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
+            this.groupServiceType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingservice)).BeginInit();
             this.bindingservice.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // txtserviceName
             // 
@@ -124,21 +79,21 @@ namespace HotelV4
             this.txtserviceName.Size = new System.Drawing.Size(351, 35);
             this.txtserviceName.TabIndex = 5;
             // 
-            // groupservice
+            // groupServiceType
             // 
-            this.groupservice.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupservice.Controls.Add(this.label5);
-            this.groupservice.Controls.Add(this.label6);
-            this.groupservice.Controls.Add(this.txtserviceName);
-            this.groupservice.Controls.Add(this.cbtypeserviceID);
-            this.groupservice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupservice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupservice.Location = new System.Drawing.Point(21, 293);
-            this.groupservice.Name = "groupservice";
-            this.groupservice.Size = new System.Drawing.Size(618, 183);
-            this.groupservice.TabIndex = 51;
-            this.groupservice.TabStop = false;
-            this.groupservice.Text = "Infirmation Service";
+            this.groupServiceType.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupServiceType.Controls.Add(this.label5);
+            this.groupServiceType.Controls.Add(this.label6);
+            this.groupServiceType.Controls.Add(this.txtserviceName);
+            this.groupServiceType.Controls.Add(this.cbtypeserviceID);
+            this.groupServiceType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupServiceType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupServiceType.Location = new System.Drawing.Point(21, 293);
+            this.groupServiceType.Name = "groupServiceType";
+            this.groupServiceType.Size = new System.Drawing.Size(618, 183);
+            this.groupServiceType.TabIndex = 51;
+            this.groupServiceType.TabStop = false;
+            this.groupServiceType.Text = "Infirmation Service";
             // 
             // label5
             // 
@@ -167,14 +122,17 @@ namespace HotelV4
             this.cbtypeserviceID.Size = new System.Drawing.Size(351, 34);
             this.cbtypeserviceID.TabIndex = 3;
             // 
-            // DGV
+            // DGVS
             // 
-            this.DGV.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV.Location = new System.Drawing.Point(18, 61);
-            this.DGV.Name = "DGV";
-            this.DGV.Size = new System.Drawing.Size(553, 434);
-            this.DGV.TabIndex = 0;
+            this.DGVS.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DGVS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVS.Location = new System.Drawing.Point(18, 61);
+            this.DGVS.Name = "DGVS";
+            this.DGVS.Size = new System.Drawing.Size(553, 434);
+            this.DGVS.TabIndex = 0;
+            this.DGVS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVS_CellClick);
+            this.DGVS.SelectionChanged += new System.EventHandler(this.DGVS_SelectionChanged);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -236,6 +194,42 @@ namespace HotelV4
             this.bindingservice.TabIndex = 1;
             this.bindingservice.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -245,11 +239,20 @@ namespace HotelV4
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox5.Controls.Add(this.bindingservice);
-            this.groupBox5.Controls.Add(this.DGV);
+            this.groupBox5.Controls.Add(this.DGVS);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox5.Location = new System.Drawing.Point(651, 104);
@@ -267,6 +270,7 @@ namespace HotelV4
             this.btnclose.TabIndex = 5;
             this.btnclose.Text = "Close";
             this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // label2
             // 
@@ -282,7 +286,7 @@ namespace HotelV4
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 9);
+            this.label1.Location = new System.Drawing.Point(10, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(668, 64);
             this.label1.TabIndex = 53;
@@ -321,6 +325,7 @@ namespace HotelV4
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(351, 35);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // label3
             // 
@@ -365,6 +370,7 @@ namespace HotelV4
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -374,6 +380,7 @@ namespace HotelV4
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button1
             // 
@@ -384,12 +391,12 @@ namespace HotelV4
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // ServiceType
+            // frmServiceType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
-            this.Controls.Add(this.groupservice);
+            this.Controls.Add(this.groupServiceType);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -397,13 +404,15 @@ namespace HotelV4
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ServiceType";
+            this.Name = "frmServiceType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceType";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServiceType_FormClosing);
             this.Load += new System.EventHandler(this.ServiceType_Load);
-            this.groupservice.ResumeLayout(false);
-            this.groupservice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ServiceType_KeyDown);
+            this.groupServiceType.ResumeLayout(false);
+            this.groupServiceType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingservice)).EndInit();
             this.bindingservice.ResumeLayout(false);
             this.bindingservice.PerformLayout();
@@ -425,11 +434,11 @@ namespace HotelV4
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.TextBox txtserviceName;
-        private System.Windows.Forms.GroupBox groupservice;
+        private System.Windows.Forms.GroupBox groupServiceType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbtypeserviceID;
-        private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.DataGridView DGVS;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
         private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;

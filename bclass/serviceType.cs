@@ -7,19 +7,26 @@ using System.Data;
 
 namespace HotelV4.bclass
 {
-    class serviceType
+    class ServiceType
     {
         private int id;
         private string name;
-        public serviceType() { }
-        public serviceType(DataRow dataRow)
+        public ServiceType() { }
+        public ServiceType(DataRow dataRow)
         {
             Id = (int)dataRow["id"];
             Name = dataRow["name"].ToString();
         }
-        public bool Equals(serviceType serviceTypePre)
+        public override bool Equals(object obj)
         {
-            return this.name == serviceTypePre.name;
+            // If the object is null, consider it unequal
+            if (obj == null || !(obj is ServiceType))
+            {
+                return false;
+            }
+
+            // Compare the names if the object is a ServiceType instance
+            return this.name == ((ServiceType)obj).name;
         }
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }

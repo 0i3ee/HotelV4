@@ -25,11 +25,7 @@ namespace HotelV4
 
         private void login_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-            
-=======
->>>>>>> 6b9fe74d445280b872a06f6c5abf367707e8aa46
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
