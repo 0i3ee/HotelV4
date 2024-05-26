@@ -33,12 +33,13 @@ namespace HotelV4
         public frmServiceType()
         {
             InitializeComponent();
-
+            FormMover.Moveform(this);
         }
 
         public frmServiceType(DataTable table)
         {
             InitializeComponent();
+            FormMover.Moveform(this);
             this.TableSerViceType = table;
             this.cbtypeserviceID.DisplayMember = "id";
             DGVS.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -144,7 +145,7 @@ namespace HotelV4
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn cập nhật loại dịch vụ này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to update this type of service?", "Notifications", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 UpdateServiceType();
             cbtypeserviceID.Focus();
@@ -152,11 +153,11 @@ namespace HotelV4
         private void UpdateServiceType()
         {
             if (cbtypeserviceID.Text == string.Empty)
-                MessageBox.Show("Loại dịch vụ này chưa tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This service type does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             if (!fCustomer.CheckFillInText(new Control[] { txtserviceName }))
             {
-                MessageBox.Show("Không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -166,13 +167,13 @@ namespace HotelV4
                 {
                     ServiceType serviceTypeNow = GetServiceTypeNow();
                     if (serviceTypeNow.Equals(serviceTypePre))
-                        MessageBox.Show("Bạn chưa thay đổi dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("You have not changed the data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
                         bool check = ServiceTypeDAO.Instance.UpdateServiceType(serviceTypeNow);
                         if (check)
                         {
-                            MessageBox.Show("Cập nhật thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Update successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (btnCancel.Visible == false)
                             {
                                 int index = DGVS.SelectedRows[0].Index;
@@ -187,13 +188,13 @@ namespace HotelV4
                         }
                         else
                         {
-                            MessageBox.Show("Loại dịch vụ này chưa tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("This service type does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Lỗi loại dịch vụ đã có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Service type error already exists", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

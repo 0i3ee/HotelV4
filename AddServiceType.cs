@@ -17,6 +17,7 @@ namespace HotelV4
         public AddServiceType()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
         private ServiceType GetServiceTypeNow()
         {
@@ -33,25 +34,25 @@ namespace HotelV4
                     ServiceType serviceTypeNow = GetServiceTypeNow();
                     if (ServiceTypeDAO.Instance.InsertServiceType(serviceTypeNow))
                     {
-                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Added successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtserviceName.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Lỗi nhập dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Data entry error", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch
                 {
-                    MessageBox.Show("Lỗi loại dịch vụ đã có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Service type error already exists", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be left blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thêm mới loại dịch vụ không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to add a new service type?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertServiceType();
         }

@@ -16,6 +16,7 @@ namespace HotelV4
     {
         public AddService()
         {
+            FormMover.Moveform(this);
             InitializeComponent();
             LoadFullServiceType();
             txtPrice.Text = IntToString("100000");
@@ -40,8 +41,24 @@ namespace HotelV4
             Service service = new Service();
             txtservicename.Text = txtservicename.Text.Trim();
             service.Name = txtservicename.Text;
-            service.Price = int.Parse(StringToInt(txtPrice.Text));
+
+            try
+            {
+                service.Price = int.Parse(StringToInt(txtPrice.Text));
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Price format error: {ex.Message}\nPrice text: {txtPrice.Text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
             int index = cbtypeservice.SelectedIndex;
+            if (index < 0)
+            {
+                MessageBox.Show("No service type selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new InvalidOperationException("No service type selected.");
+            }
+
             service.IdServiceType = (int)((DataTable)cbtypeservice.DataSource).Rows[index]["id"];
             return service;
         }
@@ -50,66 +67,88 @@ namespace HotelV4
             table.Columns.Add("price_New", typeof(string));
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
             }
         }
+
         private string StringToInt(string text)
         {
-            if (text.Contains(".") || text.Contains(" "))
+            if (string.IsNullOrWhiteSpace(text))
+                return "0";
+
+            try
             {
-                string[] vs = text.Split(new char[] { '.', ' ' });
+                string[] vs = text.Split(new char[] { '.', ',', ' ', '₭' }, StringSplitOptions.RemoveEmptyEntries);
                 StringBuilder textNow = new StringBuilder();
-                for (int i = 0; i < vs.Length - 1; i++)
+                foreach (var part in vs)
                 {
-                    textNow.Append(vs[i]);
+                    textNow.Append(part);
                 }
                 return textNow.ToString();
             }
-            else return text;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in StringToInt: {ex.Message}\nInput text: {text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
+
         private string IntToString(string text)
         {
-            if (text == string.Empty)
-                return 0.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
-            if (text.Contains(".") || text.Contains(" "))
-                return text;
-            else
-                return (int.Parse(text).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")));
+            if (string.IsNullOrEmpty(text))
+                return 0.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+
+            try
+            {
+                int parsedInt = int.Parse(StringToInt(text)); // Use StringToInt to ensure proper format
+                return parsedInt.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Price format error in IntToString: {ex.Message}\nInput text: {text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
-        private DataTable RemoveDuplicates(DataTable table, params string[] keyColumns)
-        {
-            return table.DefaultView.ToTable(true, keyColumns);
-        }
+
+
 
         private void InsertService()
         {
             if (!fCustomer.CheckFillInText(new Control[] { txtservicename, cbtypeservice, txtPrice }))
             {
-                DialogResult result = MessageBox.Show("Không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             try
             {
                 Service serviceNow = GetServiceNow();
-                if (ServiceDao.Instance.InsertService(serviceNow))
+                bool isInserted = ServiceDao.Instance.InsertService(serviceNow);
+
+                if (isInserted)
                 {
-                    MessageBox.Show("Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtservicename.Text = string.Empty;
                     txtPrice.Text = IntToString("100000");
                 }
                 else
-                    MessageBox.Show("Dịch vụ đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                {
+                    MessageBox.Show("Service already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
+
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thêm mới dịch vụ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to add a new service?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertService();
         }

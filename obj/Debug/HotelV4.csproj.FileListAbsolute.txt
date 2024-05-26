@@ -94,3 +94,4 @@ C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.GenerateResource
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompileInputs.cache
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.frmRoomType.resources
