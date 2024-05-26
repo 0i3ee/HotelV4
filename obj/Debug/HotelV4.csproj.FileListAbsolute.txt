@@ -52,7 +52,6 @@ C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.customer.resource
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.employee.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.invoice.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.login.resources
-C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.menu.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.Properties.Resources.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.Revenue.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.service_payment.resources
@@ -95,3 +94,7 @@ C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompileInput
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.frmRoomType.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.frmRoomType.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.permission.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.add_employeeType.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.menu.resources

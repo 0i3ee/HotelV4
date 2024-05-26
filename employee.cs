@@ -67,8 +67,7 @@ namespace HotelV4
 
         private void lbExit_Click(object sender, EventArgs e)
         {
-            
-
+            this.Close();   
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
@@ -199,7 +198,7 @@ namespace HotelV4
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void Search()
@@ -268,15 +267,25 @@ namespace HotelV4
             }
             else
             {
-                txtusername.Text = dataGridStaff.CurrentRow.Cells[0].Value.ToString();
-                txtaddress.Text = dataGridStaff.CurrentRow.Cells[8].Value.ToString();
-                txtname.Text = dataGridStaff.CurrentRow.Cells[1].Value.ToString();
-                txtphonenumber.Text = dataGridStaff.CurrentRow.Cells[6].Value.ToString();
-                txtidnumber.Text = dataGridStaff.CurrentRow.Cells[3].Value.ToString();
-                dob.Text = dataGridStaff.CurrentRow.Cells[4].Value.ToString();
-                dos.Text = dataGridStaff.CurrentRow.Cells[7].Value.ToString();
-                cbbsex.Text = dataGridStaff.CurrentRow.Cells[5].Value.ToString();
-                cbemptype.Text = dataGridStaff.CurrentRow.Cells[2].Value.ToString();
+                //txtusername.Text = dataGridStaff.CurrentRow.Cells[0].Value.ToString();
+                //txtaddress.Text = dataGridStaff.CurrentRow.Cells[8].Value.ToString();
+                //txtname.Text = dataGridStaff.CurrentRow.Cells[1].Value.ToString();
+                //txtphonenumber.Text = dataGridStaff.CurrentRow.Cells[6].Value.ToString();
+                //txtidnumber.Text = dataGridStaff.CurrentRow.Cells[3].Value.ToString();
+                //dob.Text = dataGridStaff.CurrentRow.Cells[4].Value.ToString();
+                //dos.Text = dataGridStaff.CurrentRow.Cells[7].Value.ToString();
+                //cbbsex.Text = dataGridStaff.CurrentRow.Cells[5].Value.ToString();
+                //cbemptype.Text = dataGridStaff.CurrentRow.Cells[2].Value.ToString();
+
+                txtusername.Text = row.Cells[colUserName.Name].Value as string;
+                txtaddress.Text = row.Cells[colAddress.Name].Value as string;
+                txtname.Text = row.Cells[colname.Name].Value as string;
+                txtphonenumber.Text = row.Cells[colPhone.Name].Value.ToString();
+                txtidnumber.Text = row.Cells[colIDCard.Name].Value as string;
+                dob.Text = row.Cells[colDateOfBirth.Name].Value as string;
+                dos.Text = row.Cells[colStartDay.Name].Value as string;
+                cbbsex.Text = row.Cells[colSex.Name].Value as string;
+                cbemptype.SelectedIndex = (int)row.Cells[colIDStaffType.Name].Value - 1;
 
 
 
@@ -306,6 +315,22 @@ namespace HotelV4
         {
             if (e.KeyChar == 27 && btnCancel.Visible == true)
                 btnCancel_Click(sender, null);
+        }
+
+        private void btnPermission_Click(object sender, EventArgs e)
+        {
+            permission f = new permission();
+            f.ShowDialog();
+            LoadFullStaffType();
+            if (btnCancel.Visible == false)
+                LoadFullStaff(GetFullStaff());
+            else
+                btnCancel_Click(null, null);
+        }
+
+        private void employee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            btnCancel_Click(null, null);
         }
     }
 }

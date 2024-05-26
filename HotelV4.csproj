@@ -49,13 +49,20 @@
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
-    <Compile Include="aclass\RoomTypeDAO.cs" />
+    <Compile Include="bclass\bookroomb.cs" />
+    <Compile Include="bclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
     <Compile Include="AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_employeeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_employeeType.Designer.cs">
+      <DependentUpon>add_employeeType.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\AccountB.cs" />
     <Compile Include="aclass\ServiceDao.cs" />
@@ -92,8 +99,9 @@
     </Compile>
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\fCustomer.cs" />
+    <Compile Include="bclass\permissionB.cs" />
     <Compile Include="bclass\Room.cs" />
-    <Compile Include="bclass\RoomType.cs" />
+    <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
     <Compile Include="bclass\ServiceType.cs" />
     <Compile Include="bclass\StatusRoom.cs" />
@@ -153,6 +161,12 @@
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="permission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="permission.Designer.cs">
+      <DependentUpon>permission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Revenue.cs">
@@ -194,6 +208,9 @@
     <EmbeddedResource Include="addstaff.resx">
       <DependentUpon>addstaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="add_employeeType.resx">
+      <DependentUpon>add_employeeType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookroom.resx">
       <DependentUpon>Bookroom.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="permission.resx">
+      <DependentUpon>permission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
