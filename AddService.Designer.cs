@@ -86,6 +86,8 @@ namespace HotelV4
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(277, 35);
             this.txtPrice.TabIndex = 5;
+            this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
+            this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
             // 
             // txtservicename
             // 

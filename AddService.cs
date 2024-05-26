@@ -17,87 +17,42 @@ namespace HotelV4
         public AddService()
         {
             InitializeComponent();
-            txtPrice.Text = IntToString("100000");
             LoadFullServiceType();
+            txtPrice.Text = IntToString("100000");
+        }
+        
+
+        private void LoadFullServiceType()
+        {
+            DataTable table = GetFullServiceType();
+            cbtypeservice.DataSource = table;
+            cbtypeservice.DisplayMember = "name";
+            
+            if (table.Rows.Count > 0)
+                cbtypeservice.SelectedIndex = 0;
+        }
+        private DataTable GetFullServiceType()
+        {
+            return ServiceTypeDAO.Instance.LoadFullServiceType();
+        }
+        private Service GetServiceNow()
+        {
+            Service service = new Service();
+            txtservicename.Text = txtservicename.Text.Trim();
+            service.Name = txtservicename.Text;
+            service.Price = int.Parse(StringToInt(txtPrice.Text));
+            int index = cbtypeservice.SelectedIndex;
+            service.IdServiceType = (int)((DataTable)cbtypeservice.DataSource).Rows[index]["id"];
+            return service;
         }
         private void ChangePrice(DataTable table)
         {
             table.Columns.Add("price_New", typeof(string));
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CreateLaoNumberFormat());
+                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
             }
         }
-
-        private static NumberFormatInfo CreateLaoNumberFormat()
-        {
-            return new NumberFormatInfo
-            {
-                CurrencySymbol = "₭",
-                CurrencyDecimalDigits = 0,
-                CurrencyGroupSeparator = ",",
-                CurrencyDecimalSeparator = "."
-            };
-        }
-
-        private static string IntToString(string text)
-        {
-            NumberFormatInfo laoFormat = CreateLaoNumberFormat();
-
-            if (string.IsNullOrWhiteSpace(text))
-                return 0.ToString("C0", laoFormat);
-            if (text.Contains(".") || text.Contains(" "))
-                return text;
-            else
-                return int.Parse(text).ToString("C0", laoFormat);
-        }
-
-        private Service GetServiceNow()
-        {
-            Service service = new Service();
-            txtservicename.Text = txtservicename.Text.Trim();
-            service.Name = txtservicename.Text; // Corrected assignment
-            service.Price = int.Parse(StringToInt(txtPrice.Text)); // Corrected method
-            int index = cbtypeservice.SelectedIndex;
-            service.IdServiceType = (int)((DataTable)cbtypeservice.DataSource).Rows[index]["id"];
-            return service;
-        }
-        private void LoadFullServiceType()
-        {
-            DataTable table = GetFullServiceType();
-            if (table != null)
-            {
-                DataView view = new DataView(table);
-                DataTable distinctTable = view.ToTable(true, "id", "name"); // Ensure unique rows based on "id" and "name"
-                cbtypeservice.DataSource = distinctTable;
-                cbtypeservice.DisplayMember = "name";
-                if (distinctTable.Rows.Count > 0)
-                    cbtypeservice.SelectedIndex = 0;
-            }
-        }
-
-        private DataTable GetFullServiceType()
-        {
-            try
-            {
-                DataTable table = ServiceTypeDao.Instance.LoadFullServiceType();
-                return RemoveDuplicates(table, "id", "name");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading service types: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
-        private DataTable RemoveDuplicates(DataTable table, params string[] keyColumns)
-        {
-            return table.DefaultView.ToTable(true, keyColumns);
-        }
-
-
-
-
         private string StringToInt(string text)
         {
             if (text.Contains(".") || text.Contains(" "))
@@ -110,55 +65,72 @@ namespace HotelV4
                 }
                 return textNow.ToString();
             }
-            else
-            {
-                // Remove currency symbol and separators
-                text = text.Replace("₭", "").Replace(",", "").Trim();
+            else return text;
+        }
+        private string IntToString(string text)
+        {
+            if (text == string.Empty)
+                return 0.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+            if (text.Contains(".") || text.Contains(" "))
                 return text;
-            }
+            else
+                return (int.Parse(text).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")));
+        }
+        private DataTable RemoveDuplicates(DataTable table, params string[] keyColumns)
+        {
+            return table.DefaultView.ToTable(true, keyColumns);
         }
 
         private void InsertService()
         {
             if (!fCustomer.CheckFillInText(new Control[] { txtservicename, cbtypeservice, txtPrice }))
             {
-                DialogResult result = MessageBox.Show("Please Enter data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("Không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //try
-            //{
-                //Service serviceNow = GetServiceNow();
-                //if (ServiceDao.Instance.InsertService(serviceNow))
-                //{
-                //    MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    txtservicename.Text = string.Empty;
-                //    txtPrice.Text = IntToString("100000");
-                //}
-                //else
-                //    MessageBox.Show("ServiceName Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("ເກີດຂໍ້ຜິດພາດ" + ex.Message, "ແຈ້ງເຕືອນ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                Service serviceNow = GetServiceNow();
+                if (ServiceDao.Instance.InsertService(serviceNow))
+                {
+                    MessageBox.Show("Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtservicename.Text = string.Empty;
+                    txtPrice.Text = IntToString("100000");
+                }
+                else
+                    MessageBox.Show("Dịch vụ đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to add data?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm mới dịch vụ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertService();
-            add_service frm = new add_service();
-            frm.Show();
-            this.Close();
         }
 
         private void btnclose_Click(object sender, EventArgs e)
         {
-            add_service frm = new add_service();
-            frm.Show();
-            this.Close();
+            Close();
+        }
+
+        private void txtPrice_Enter(object sender, EventArgs e)
+        {
+            txtPrice.Tag = txtPrice.Text;
+            txtPrice.Text = StringToInt(txtPrice.Text);
+        }
+
+        private void txtPrice_Leave(object sender, EventArgs e)
+        {
+            if (txtPrice.Text == string.Empty)
+                txtPrice.Text = txtPrice.Tag as string;
+            else
+                txtPrice.Text = IntToString(txtPrice.Text);
         }
     }
 }

@@ -2,15 +2,13 @@
 
 namespace HotelV4.bclass
 {
-    class Service
+    public class Service
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int IdServiceType { get; set; }
-        public int Price { get; set; }
-
+        int id;
+        string name;
+        int idServiceType;
+        int price;
         public Service() { }
-
         public Service(DataRow data)
         {
             Id = (int)data["id"];
@@ -18,14 +16,17 @@ namespace HotelV4.bclass
             IdServiceType = (int)data["idServiceType"];
             Price = (int)data["Price"];
         }
-
         public bool Equals(Service servicePre)
         {
             if (servicePre == null) return false;
-            if (servicePre.IdServiceType != this.IdServiceType) return false;
-            if (servicePre.Name != this.Name) return false;
-            if (servicePre.Price != this.Price) return false;
+            if (servicePre.idServiceType != this.idServiceType) return false;
+            if (servicePre.name != this.name) return false;
+            if (servicePre.price != this.price) return false;
             return true;
         }
+        public int Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public int IdServiceType { get => idServiceType; set => idServiceType = value; }
+        public int Price { get => price; set => price = value; }
     }
 }

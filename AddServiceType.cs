@@ -18,9 +18,11 @@ namespace HotelV4
         {
             InitializeComponent();
         }
-        private string GetServiceTypeNameNow()
+        private ServiceType GetServiceTypeNow()
         {
-            return txtserviceName.Text.Trim();
+            ServiceType serviceType = new ServiceType();
+            serviceType.Name = txtserviceName.Text.Trim();
+            return serviceType;
         }
         private void InsertServiceType()
         {
@@ -28,27 +30,28 @@ namespace HotelV4
             {
                 try
                 {
-                    string serviceTypeNameNow = GetServiceTypeNameNow();
-                    if (ServiceTypeDao.Instance.InsertServiceType(serviceTypeNameNow))
+                    ServiceType serviceTypeNow = GetServiceTypeNow();
+                    if (ServiceTypeDAO.Instance.InsertServiceType(serviceTypeNow))
                     {
-                        MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtserviceName.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Add data Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi nhập dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("ມີຄວາມຜິດພາດ: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi loại dịch vụ đã có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("not make space", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want add data?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Bạn có muốn thêm mới loại dịch vụ không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertServiceType();
         }
