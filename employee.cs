@@ -105,6 +105,13 @@ namespace HotelV4
             account.StartDay = dos.Value;
             return account;
         }
+        internal static void Trim(TextBox[] textboxes)
+        {
+            for (int i = 0; i < textboxes.Length; i++)
+            {
+                textboxes[i].Text = textboxes[i].Text.Trim();
+            }
+        }
 
         private void btnupdate_Click(object sender, EventArgs e)
         {

@@ -21,6 +21,7 @@ namespace HotelV4
         public add_service()
         {
             this.DoubleBuffered = true;
+            FormMover.Moveform(this);
             InitializeComponent();
             LoadFullServiceType();
             LoadFullService(GetFullService());
@@ -82,7 +83,7 @@ namespace HotelV4
             table.Columns.Add("price_New", typeof(string));
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
             }
         }
 
@@ -155,28 +156,42 @@ namespace HotelV4
 
         private string StringToInt(string text)
         {
-            if (text.Contains(".") || text.Contains(" "))
+            if (string.IsNullOrWhiteSpace(text))
+                return "0";
+
+            try
             {
-                string[] vs = text.Split(new char[] { '.', ' ' });
+                string[] vs = text.Split(new char[] { '.', ',', ' ', '₭' }, StringSplitOptions.RemoveEmptyEntries);
                 StringBuilder textNow = new StringBuilder();
-                for (int i = 0; i < vs.Length - 1; i++)
+                foreach (var part in vs)
                 {
-                    textNow.Append(vs[i]);
+                    textNow.Append(part);
                 }
                 return textNow.ToString();
             }
-            else return text;
-        }
-        private string IntToString(string text)
-        {
-            if (text == string.Empty)
-                return 0.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
-            if (text.Contains(".") || text.Contains(" "))
-                return text;
-            else
-                return (int.Parse(text).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")));
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in StringToInt: {ex.Message}\nInput text: {text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
 
+        private string IntToString(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return 0.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+
+            try
+            {
+                int parsedInt = int.Parse(StringToInt(text)); // Use StringToInt to ensure proper format
+                return parsedInt.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Price format error in IntToString: {ex.Message}\nInput text: {text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
         private void DGV_SelectionChanged(object sender, EventArgs e)
         {
             if (DGV.SelectedRows.Count > 0)
@@ -198,7 +213,7 @@ namespace HotelV4
             {
                 txtservicename.Text = row.Cells["colName"].Value.ToString();
                 cbtypeservice.SelectedIndex = (int)row.Cells["colIdServiceType"].Value - 1;
-                txtprice.Text = ((int)row.Cells[col.Name].Value).ToString("c0", CultureInfo.CreateSpecificCulture("vi-vn"));
+                txtprice.Text = ((int)row.Cells[col.Name].Value).ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA")); 
                 Service room = new Service(((DataRowView)row.DataBoundItem).Row);
                 groupservice.Tag = room;
                 bindingNavigatorMoveFirstItem.Enabled = true;
@@ -219,7 +234,7 @@ namespace HotelV4
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn cập nhật lại dịch vụ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to update the service again?", "Notifications", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 UpdateService();
             cbcode.Focus();
@@ -227,11 +242,11 @@ namespace HotelV4
         private void UpdateService()
         {
             if (cbcode.Text == string.Empty)
-                MessageBox.Show("Dịch vụ không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Service does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             else
             if (!fCustomer.CheckFillInText(new Control[] { txtservicename, cbtypeservice, txtprice }))
             {
-                MessageBox.Show("Không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -242,14 +257,14 @@ namespace HotelV4
                     Service serviceNow = GetServiceNow();
                     if (serviceNow.Equals(servicePre))
                     {
-                        MessageBox.Show("Bạn chưa thay đổi dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("You have not changed the data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         bool check = ServiceDao.Instance.UpdateService(serviceNow, servicePre);
                         if (check)
                         {
-                            MessageBox.Show("Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Success", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             groupservice.Tag = serviceNow;
                             if (btnCancel.Visible == false)
                             {
@@ -261,12 +276,12 @@ namespace HotelV4
                                 btnCancel_Click(null, null);
                         }
                         else
-                            MessageBox.Show("Dịch vụ không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            MessageBox.Show("Service does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
