@@ -191,6 +191,7 @@ namespace HotelV4
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(221, 27);
             this.txtphone.TabIndex = 55;
+            this.txtphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtphone_KeyPress);
             // 
             // txtid
             // 
@@ -278,6 +279,7 @@ namespace HotelV4
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(221, 27);
             this.txtname.TabIndex = 34;
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
             // 
             // groupBox3
             // 
@@ -300,6 +302,7 @@ namespace HotelV4
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 

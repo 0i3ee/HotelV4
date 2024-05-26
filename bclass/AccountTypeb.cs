@@ -15,7 +15,6 @@ namespace HotelV4.bclass
     {
         private static AccountTypeb instance;
         //cdb ccd = new cdb();
-        SqlDataReader dr;
         DataTable dataTable = new DataTable();
 
         private AccountTypeb()
@@ -26,6 +25,20 @@ namespace HotelV4.bclass
         {
             string query = "USP_LoadFullStaffType";
             return cdb.Instance.ExecuteQuery(query);
+        }
+        internal int LoadStaffTypeidByName(string name)
+        {
+            string query = "SELECT id FROM StaffType WHERE Name = @Name";
+            object[] parameters = { "@Name", name };
+            DataTable dataTable = cdb.Instance.ExecuteQuery(query, parameters);
+            if (dataTable.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dataTable.Rows[0]["id"]);
+            }
+            else
+            {
+                return 0;
+            }
         }
         public static AccountTypeb Instance
         {
