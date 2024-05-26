@@ -41,7 +41,7 @@ namespace HotelV4
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            employee frm = new employee(username);
+            employee frm = new employee();
             frm.Show();
             this.Close();
         }
