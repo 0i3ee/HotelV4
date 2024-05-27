@@ -13,7 +13,6 @@ namespace HotelV4.aclass
     public class RoomTypeDAO
     {
         private static RoomTypeDAO instance;
-        #region Method
         internal DataTable LoadFullRoomType()
         {
             return cdb.Instance.ExecuteQuery("USP_LoadFullRoomType");
@@ -83,7 +82,6 @@ namespace HotelV4.aclass
             RoomType roomType = new RoomType(data.Rows[0]);
             return roomType;
         }
-        #endregion
 
     }
 }

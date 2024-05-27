@@ -46,12 +46,12 @@ namespace HotelV4
             this.btnCheckin = new System.Windows.Forms.Button();
             this.btnBookroom = new System.Windows.Forms.Button();
             this.btnservice = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.lbExit = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -154,6 +154,7 @@ namespace HotelV4
             this.btnexit.TabIndex = 3;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // btnmenu
             // 
@@ -167,6 +168,7 @@ namespace HotelV4
             this.btnmenu.Size = new System.Drawing.Size(226, 45);
             this.btnmenu.TabIndex = 2;
             this.btnmenu.UseVisualStyleBackColor = true;
+            this.btnmenu.Click += new System.EventHandler(this.btnmenu_Click);
             // 
             // btninvoice
             // 
@@ -284,17 +286,17 @@ namespace HotelV4
             this.btnservice.UseVisualStyleBackColor = false;
             this.btnservice.Click += new System.EventHandler(this.btnservice_Click);
             // 
-            // panel1
+            // panelLeft
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(226, 680);
-            this.panel1.TabIndex = 30;
+            this.panelLeft.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panelLeft.Controls.Add(this.panel4);
+            this.panelLeft.Controls.Add(this.panel3);
+            this.panelLeft.Controls.Add(this.panel2);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(226, 680);
+            this.panelLeft.TabIndex = 30;
             // 
             // lbExit
             // 
@@ -303,7 +305,7 @@ namespace HotelV4
             this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.Color.Red;
-            this.lbExit.Location = new System.Drawing.Point(1236, 0);
+            this.lbExit.Location = new System.Drawing.Point(1235, 0);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(26, 25);
             this.lbExit.TabIndex = 44;
@@ -327,7 +329,7 @@ namespace HotelV4
             this.Controls.Add(this.btnCheckin);
             this.Controls.Add(this.btnBookroom);
             this.Controls.Add(this.btnservice);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -336,7 +338,7 @@ namespace HotelV4
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +363,7 @@ namespace HotelV4
         private System.Windows.Forms.Button btnCheckin;
         private System.Windows.Forms.Button btnBookroom;
         private System.Windows.Forms.Button btnservice;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label lbExit;
     }
 }
