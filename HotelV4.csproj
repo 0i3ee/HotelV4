@@ -51,9 +51,15 @@
     <Compile Include="aclass\CustomerDAO.cs" />
     <Compile Include="aclass\CustomerTypeDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
+    <Compile Include="AddRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoomType.Designer.cs">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
+    </Compile>
     <Compile Include="bclass\bookroomb.cs" />
     <Compile Include="bclass\permissionB.cs" />
-    <Compile Include="bclass\RoomTypeDAO.cs" />
+    <Compile Include="aclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
     <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
@@ -109,11 +115,8 @@
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\Customer.cs" />
     <Compile Include="bclass\CustomerType.cs" />
-
-    <Compile Include="bclass\permissionB.cs" />
-
     <Compile Include="bclass\Room.cs" />
-    <Compile Include="aclass\RoomType.cs" />
+    <Compile Include="bclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
     <Compile Include="bclass\ServiceType.cs" />
     <Compile Include="bclass\StatusRoom.cs" />
@@ -226,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoomType.resx">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>

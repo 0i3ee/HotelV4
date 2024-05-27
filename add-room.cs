@@ -19,6 +19,7 @@ namespace HotelV4
         private frmRoomType _fRoomtType;
         public add_room()
         {
+            
             InitializeComponent();
             FormMover.Moveform(this);
             LoadFullRoomType();
@@ -99,6 +100,7 @@ namespace HotelV4
             if (table.Rows.Count > 0)
                 cbRoomType.SelectedIndex = 0;
             _fRoomtType = new frmRoomType(table);
+            txtMaxPeople.DataBindings.Clear();
             txtMaxPeople.DataBindings.Add(new Binding("Text", cbRoomType.DataSource, "limitPerson"));
         }
         private void UpdateRoom()
@@ -276,8 +278,19 @@ namespace HotelV4
             btnCancel_Click(sender, null);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnAddroomtype_Click(object sender, EventArgs e)
         {
+            new AddRoomType().ShowDialog();
+            
+            if (btnCancel.Visible == false)
+            {
+
+                LoadFullRoomType();
+            }
+                
+            else
+                btnCancel_Click(null, null);
 
         }
     }
