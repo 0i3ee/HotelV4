@@ -46,30 +46,6 @@ namespace HotelV4
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.txtRoomName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbRoomType = new System.Windows.Forms.ComboBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupRoom = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bindingRoom = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.txtMaxPeople = new System.Windows.Forms.TextBox();
-            this.cbRoomId = new System.Windows.Forms.ComboBox();
             this.colIDRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNameRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,17 +54,43 @@ namespace HotelV4
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtRoomName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cbRoomType = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bindingRoom = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupRoom = new System.Windows.Forms.GroupBox();
+            this.cbRoomId = new System.Windows.Forms.ComboBox();
+            this.txtMaxPeople = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoom)).BeginInit();
             this.bindingRoom.SuspendLayout();
+            this.groupRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnEditRoomType);
@@ -250,6 +252,70 @@ namespace HotelV4
             this.DGV.TabIndex = 0;
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
+            // colIDRoom
+            // 
+            this.colIDRoom.DataPropertyName = "id";
+            this.colIDRoom.FillWeight = 90F;
+            this.colIDRoom.HeaderText = "ID";
+            this.colIDRoom.Name = "colIDRoom";
+            this.colIDRoom.ReadOnly = true;
+            this.colIDRoom.Width = 57;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "RoomName";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 158;
+            // 
+            // colNameRoomType
+            // 
+            this.colNameRoomType.DataPropertyName = "nameRoomType";
+            this.colNameRoomType.HeaderText = "RoomType";
+            this.colNameRoomType.Name = "colNameRoomType";
+            this.colNameRoomType.ReadOnly = true;
+            this.colNameRoomType.Width = 113;
+            // 
+            // colPrice
+            // 
+            this.colPrice.DataPropertyName = "price_New";
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 150;
+            // 
+            // colLimitPerson
+            // 
+            this.colLimitPerson.DataPropertyName = "limitPerson";
+            this.colLimitPerson.HeaderText = "LimitPerson";
+            this.colLimitPerson.Name = "colLimitPerson";
+            this.colLimitPerson.ReadOnly = true;
+            this.colLimitPerson.Width = 141;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "nameStatusRoom";
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colIdRoomType
+            // 
+            this.colIdRoomType.DataPropertyName = "idRoomType";
+            this.colIdRoomType.HeaderText = "";
+            this.colIdRoomType.Name = "colIdRoomType";
+            this.colIdRoomType.ReadOnly = true;
+            this.colIdRoomType.Visible = false;
+            // 
+            // colIdStatus
+            // 
+            this.colIdStatus.DataPropertyName = "idStatusRoom";
+            this.colIdStatus.HeaderText = "";
+            this.colIdStatus.Name = "colIdStatus";
+            this.colIdStatus.ReadOnly = true;
+            this.colIdStatus.Visible = false;
+            // 
             // txtRoomName
             // 
             this.txtRoomName.Location = new System.Drawing.Point(6, 129);
@@ -280,6 +346,7 @@ namespace HotelV4
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label10);
@@ -302,6 +369,17 @@ namespace HotelV4
             this.label10.TabIndex = 33;
             this.label10.Text = "Room ID/Name:";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(249, 58);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(202, 27);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // cbRoomType
             // 
             this.cbRoomType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,6 +392,7 @@ namespace HotelV4
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox6.Controls.Add(this.bindingRoom);
             this.groupBox6.Controls.Add(this.DGV);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -323,37 +402,6 @@ namespace HotelV4
             this.groupBox6.TabIndex = 45;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Room List";
-            // 
-            // groupRoom
-            // 
-            this.groupRoom.Controls.Add(this.cbRoomId);
-            this.groupRoom.Controls.Add(this.txtMaxPeople);
-            this.groupRoom.Controls.Add(this.label15);
-            this.groupRoom.Controls.Add(this.label13);
-            this.groupRoom.Controls.Add(this.cbStatus);
-            this.groupRoom.Controls.Add(this.txtRoomRate);
-            this.groupRoom.Controls.Add(this.label8);
-            this.groupRoom.Controls.Add(this.label7);
-            this.groupRoom.Controls.Add(this.label9);
-            this.groupRoom.Controls.Add(this.label11);
-            this.groupRoom.Controls.Add(this.txtRoomName);
-            this.groupRoom.Controls.Add(this.cbRoomType);
-            this.groupRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupRoom.Location = new System.Drawing.Point(22, 197);
-            this.groupRoom.Name = "groupRoom";
-            this.groupRoom.Size = new System.Drawing.Size(458, 261);
-            this.groupRoom.TabIndex = 44;
-            this.groupRoom.TabStop = false;
-            this.groupRoom.Text = "Room Infomation";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(19, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 40;
             // 
             // bindingRoom
             // 
@@ -382,6 +430,32 @@ namespace HotelV4
             this.bindingRoom.Size = new System.Drawing.Size(741, 27);
             this.bindingRoom.TabIndex = 1;
             this.bindingRoom.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -416,16 +490,9 @@ namespace HotelV4
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -448,45 +515,31 @@ namespace HotelV4
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // bindingNavigatorAddNewItem
+            // groupRoom
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(249, 58);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(202, 27);
-            this.btnCancel.TabIndex = 36;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // txtMaxPeople
-            // 
-            this.txtMaxPeople.Location = new System.Drawing.Point(249, 206);
-            this.txtMaxPeople.Name = "txtMaxPeople";
-            this.txtMaxPeople.Size = new System.Drawing.Size(202, 29);
-            this.txtMaxPeople.TabIndex = 45;
+            this.groupRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupRoom.Controls.Add(this.cbRoomId);
+            this.groupRoom.Controls.Add(this.txtMaxPeople);
+            this.groupRoom.Controls.Add(this.label15);
+            this.groupRoom.Controls.Add(this.label13);
+            this.groupRoom.Controls.Add(this.cbStatus);
+            this.groupRoom.Controls.Add(this.txtRoomRate);
+            this.groupRoom.Controls.Add(this.label8);
+            this.groupRoom.Controls.Add(this.label7);
+            this.groupRoom.Controls.Add(this.label9);
+            this.groupRoom.Controls.Add(this.label11);
+            this.groupRoom.Controls.Add(this.txtRoomName);
+            this.groupRoom.Controls.Add(this.cbRoomType);
+            this.groupRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupRoom.Location = new System.Drawing.Point(22, 197);
+            this.groupRoom.Name = "groupRoom";
+            this.groupRoom.Size = new System.Drawing.Size(458, 261);
+            this.groupRoom.TabIndex = 44;
+            this.groupRoom.TabStop = false;
+            this.groupRoom.Text = "Room Infomation";
             // 
             // cbRoomId
             // 
@@ -497,75 +550,38 @@ namespace HotelV4
             this.cbRoomId.Size = new System.Drawing.Size(202, 27);
             this.cbRoomId.TabIndex = 46;
             // 
-            // colIDRoom
+            // txtMaxPeople
             // 
-            this.colIDRoom.DataPropertyName = "id";
-            this.colIDRoom.FillWeight = 90F;
-            this.colIDRoom.HeaderText = "ID";
-            this.colIDRoom.Name = "colIDRoom";
-            this.colIDRoom.ReadOnly = true;
-            this.colIDRoom.Width = 57;
+            this.txtMaxPeople.Location = new System.Drawing.Point(249, 206);
+            this.txtMaxPeople.Name = "txtMaxPeople";
+            this.txtMaxPeople.Size = new System.Drawing.Size(202, 29);
+            this.txtMaxPeople.TabIndex = 45;
             // 
-            // colName
+            // label2
             // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "RoomName";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 158;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(19, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 40;
             // 
-            // colNameRoomType
+            // label3
             // 
-            this.colNameRoomType.DataPropertyName = "nameRoomType";
-            this.colNameRoomType.HeaderText = "RoomType";
-            this.colNameRoomType.Name = "colNameRoomType";
-            this.colNameRoomType.ReadOnly = true;
-            this.colNameRoomType.Width = 113;
-            // 
-            // colPrice
-            // 
-            this.colPrice.DataPropertyName = "price_New";
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 158;
-            // 
-            // colLimitPerson
-            // 
-            this.colLimitPerson.DataPropertyName = "limitPerson";
-            this.colLimitPerson.HeaderText = "LimitPerson";
-            this.colLimitPerson.Name = "colLimitPerson";
-            this.colLimitPerson.ReadOnly = true;
-            this.colLimitPerson.Width = 141;
-            // 
-            // colStatus
-            // 
-            this.colStatus.DataPropertyName = "nameStatusRoom";
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colIdRoomType
-            // 
-            this.colIdRoomType.DataPropertyName = "idRoomType";
-            this.colIdRoomType.HeaderText = "";
-            this.colIdRoomType.Name = "colIdRoomType";
-            this.colIdRoomType.ReadOnly = true;
-            this.colIdRoomType.Visible = false;
-            // 
-            // colIdStatus
-            // 
-            this.colIdStatus.DataPropertyName = "idStatusRoom";
-            this.colIdStatus.HeaderText = "";
-            this.colIdStatus.Name = "colIdStatus";
-            this.colIdStatus.ReadOnly = true;
-            this.colIdStatus.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(19, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1219, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = resources.GetString("label3.Text");
             // 
             // add_room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -574,6 +590,7 @@ namespace HotelV4
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "add_room";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addroom";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_room_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.add_room_KeyPress);
@@ -583,11 +600,11 @@ namespace HotelV4
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupRoom.ResumeLayout(false);
-            this.groupRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoom)).EndInit();
             this.bindingRoom.ResumeLayout(false);
             this.bindingRoom.PerformLayout();
+            this.groupRoom.ResumeLayout(false);
+            this.groupRoom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,6 +650,8 @@ namespace HotelV4
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtMaxPeople;
+        private System.Windows.Forms.ComboBox cbRoomId;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNameRoomType;
@@ -641,7 +660,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdStatus;
-        private System.Windows.Forms.ComboBox cbRoomId;
     }
 
 }

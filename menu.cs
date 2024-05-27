@@ -96,7 +96,7 @@ namespace HotelV4
 
         private void btnCustom_Click(object sender, EventArgs e)
         {
-            customer frm = new customer();
+            fCustomer frm = new fCustomer();
             frm.Show();
             this.Close();
 
