@@ -48,7 +48,23 @@
   <ItemGroup>
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
-    <Compile Include="aclass\querycon.cs" />
+    <Compile Include="aclass\RoomDAO.cs" />
+    <Compile Include="bclass\bookroomb.cs" />
+    <Compile Include="bclass\RoomTypeDAO.cs" />
+    <Compile Include="aclass\StatusRoomDAO.cs" />
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_employeeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_employeeType.Designer.cs">
+      <DependentUpon>add_employeeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bclass\AccountB.cs" />
     <Compile Include="aclass\ServiceDao.cs" />
     <Compile Include="aclass\ServiceTypeDao.cs" />
     <Compile Include="add-room.cs">
@@ -83,8 +99,12 @@
     </Compile>
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\fCustomer.cs" />
+    <Compile Include="bclass\permissionB.cs" />
+    <Compile Include="bclass\Room.cs" />
+    <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
     <Compile Include="bclass\ServiceType.cs" />
+    <Compile Include="bclass\StatusRoom.cs" />
     <Compile Include="bclass\UserSession.cs" />
     <Compile Include="Bookroom.cs">
       <SubType>Form</SubType>
@@ -98,7 +118,7 @@
     <Compile Include="check-in.Designer.cs">
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
-    <Compile Include="aclass\ClassconnectDB.cs" />
+    <Compile Include="aclass\cdb.cs" />
     <Compile Include="customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +132,17 @@
       <DependentUpon>employee.cs</DependentUpon>
     </Compile>
     <Compile Include="aclass\FormMover.cs" />
+    <Compile Include="frmRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoomType.Designer.cs">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +160,12 @@
     </Compile>
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="permission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="permission.Designer.cs">
+      <DependentUpon>permission.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,6 +208,9 @@
     <EmbeddedResource Include="addstaff.resx">
       <DependentUpon>addstaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="add_employeeType.resx">
+      <DependentUpon>add_employeeType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookroom.resx">
       <DependentUpon>Bookroom.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +223,9 @@
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRoomType.resx">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="invoice.resx">
       <DependentUpon>invoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="permission.resx">
+      <DependentUpon>permission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -214,6 +260,17 @@
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HotelManagementDataSet.xsc">
+      <DependentUpon>HotelManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelManagementDataSet.xss">
+      <DependentUpon>HotelManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

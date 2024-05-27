@@ -67,6 +67,12 @@ namespace HotelV4
             this.DGV = new System.Windows.Forms.DataGridView();
             this.groupservice = new System.Windows.Forms.GroupBox();
             this.txtprice = new System.Windows.Forms.TextBox();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNameServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -411,11 +417,21 @@ namespace HotelV4
             // 
             // DGV
             // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
             this.DGV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV.Location = new System.Drawing.Point(18, 61);
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colName,
+            this.colPrice,
+            this.col,
+            this.colNameServiceType,
+            this.colIdServiceType});
+            this.DGV.Location = new System.Drawing.Point(15, 61);
             this.DGV.Name = "DGV";
-            this.DGV.Size = new System.Drawing.Size(553, 446);
+            this.DGV.ReadOnly = true;
+            this.DGV.Size = new System.Drawing.Size(571, 478);
             this.DGV.TabIndex = 0;
             this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
@@ -450,6 +466,59 @@ namespace HotelV4
             this.txtprice.Enter += new System.EventHandler(this.txtprice_Enter);
             this.txtprice.Leave += new System.EventHandler(this.txtprice_Leave);
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.FillWeight = 30F;
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 57;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.FillWeight = 30F;
+            this.colName.HeaderText = "ServiceName";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 250;
+            // 
+            // colPrice
+            // 
+            this.colPrice.DataPropertyName = "price_new";
+            this.colPrice.FillWeight = 30F;
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 120;
+            // 
+            // col
+            // 
+            this.col.DataPropertyName = "price";
+            this.col.FillWeight = 30F;
+            this.col.HeaderText = "price";
+            this.col.Name = "col";
+            this.col.ReadOnly = true;
+            this.col.Visible = false;
+            // 
+            // colNameServiceType
+            // 
+            this.colNameServiceType.DataPropertyName = "nameServiceType";
+            this.colNameServiceType.FillWeight = 30F;
+            this.colNameServiceType.HeaderText = "Servicetype";
+            this.colNameServiceType.Name = "colNameServiceType";
+            this.colNameServiceType.ReadOnly = true;
+            // 
+            // colIdServiceType
+            // 
+            this.colIdServiceType.DataPropertyName = "idServiceType";
+            this.colIdServiceType.FillWeight = 30F;
+            this.colIdServiceType.HeaderText = "";
+            this.colIdServiceType.Name = "colIdServiceType";
+            this.colIdServiceType.ReadOnly = true;
+            this.colIdServiceType.Visible = false;
+            // 
             // add_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +537,7 @@ namespace HotelV4
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "add_service";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_service_FormClosing);
+            this.Load += new System.EventHandler(this.add_service_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -509,6 +579,7 @@ namespace HotelV4
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.GroupBox groupservice;
         private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.BindingNavigator bindingservice;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -521,6 +592,11 @@ namespace HotelV4
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNameServiceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdServiceType;
     }
 }

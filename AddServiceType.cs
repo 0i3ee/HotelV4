@@ -17,10 +17,13 @@ namespace HotelV4
         public AddServiceType()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
         }
-        private string GetServiceTypeNameNow()
+        private ServiceType GetServiceTypeNow()
         {
-            return txtserviceName.Text.Trim();
+            ServiceType serviceType = new ServiceType();
+            serviceType.Name = txtserviceName.Text.Trim();
+            return serviceType;
         }
         private void InsertServiceType()
         {
@@ -28,27 +31,28 @@ namespace HotelV4
             {
                 try
                 {
-                    string serviceTypeNameNow = GetServiceTypeNameNow();
-                    if (ServiceTypeDao.Instance.InsertServiceType(serviceTypeNameNow))
+                    ServiceType serviceTypeNow = GetServiceTypeNow();
+                    if (ServiceTypeDAO.Instance.InsertServiceType(serviceTypeNow))
                     {
-                        MessageBox.Show("Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Added successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtserviceName.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Add data Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Data entry error", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("ມີຄວາມຜິດພາດ: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Service type error already exists", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("not make space", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be left blank", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want add data?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to add a new service type?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 InsertServiceType();
         }

@@ -17,8 +17,7 @@ namespace HotelV4
     
     public partial class addstaff : Form
     {
-        private string username;
-        public addstaff(string username)
+        public addstaff()
         {
             InitializeComponent();
             FormMover.Moveform(this);
@@ -48,7 +47,7 @@ namespace HotelV4
             {
 
                     Accout accountNow = GetStaffNow();
-                    if (querycon.Instance.InsertAccount(accountNow))
+                    if (AccountB.Instance.InsertAccount(accountNow))
                     {
                         MessageBox.Show("AD Success" + txtname.Text +
                             "Pass : "+ mtpass.Text , "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -67,7 +66,7 @@ namespace HotelV4
             Accout account = new Accout();
             account.UserName = txtname.Text;
             account.DisplayName = txtdis.Text;
-            account.PassWord = querycon.Instance.HashPass(mtpass.Text);
+            account.PassWord = AccountB.Instance.HashPass(mtpass.Text);
             int index = cbtype.SelectedIndex;
             account.IdStaffType = (int)((DataTable)cbtype.DataSource).Rows[index]["id"];
             account.IdCard = txtid.Text;
@@ -79,25 +78,29 @@ namespace HotelV4
 
             return account;
         }
-        //void cleardata()
-        //{
-        //    txtname.Clear();
-        //    txtaddress.Clear();
-        //    txtdis.Clear();
-        //    txtid.Clear();
-        //    txtphone.Clear();
-        //}
+        void cleardata()
+        {
+            txtname.Clear();
+            txtaddress.Clear();
+            txtdis.Clear();
+            txtid.Clear();
+            txtphone.Clear();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
-            InsertStaff();
-            employee frm = new employee(username);
-            frm.Show();
-            this.Close();
-            
+            DialogResult result = MessageBox.Show("Do you want to add new employees?", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.OK)
+            {
 
-
+                if (CheckDate())
+                {
+                    InsertStaff();
+                    cleardata();
+                }
+            }
+            
+                      
         }
 
         private void LoadFullStaffType()
@@ -114,6 +117,45 @@ namespace HotelV4
         private DataTable GetFullStaffType()
         {
             return AccountTypeb.Instance.LoadFullStaffType();
+        }
+
+        private void txtphone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsNumber(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == '.' || e.KeyChar == '-' ||
+                e.KeyChar == '_' || e.KeyChar == '@'))
+                e.Handled = true;
+        }
+        private bool CheckDate()
+        {
+            if (!CheckTrueDate(dob.Value, DateTime.Now))
+            {
+                MessageBox.Show("Invalid date of birth (Age must be greater than 18)", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+                if (!CheckTrueDate(dob.Value, doe.Value))
+            {
+                MessageBox.Show("Invalid employment date (Older than 18 years old)", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        private bool CheckTrueDate(DateTime date1, DateTime date2)
+        {
+            if (date2.Subtract(date1).Days < 6574)
+                return false;
+            return true;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
