@@ -52,6 +52,7 @@
     <Compile Include="aclass\CustomerTypeDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
     <Compile Include="bclass\bookroomb.cs" />
+    <Compile Include="bclass\permissionB.cs" />
     <Compile Include="bclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
     <Compile Include="AddCustomer.cs">
