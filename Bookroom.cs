@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,8 +40,8 @@ namespace HotelV4
             RoomType roomType = RoomTypeDAO.Instance.LoadRoomTypeInfo(id);
             txtRoomTypeID.Text = roomType.Id.ToString();
             txtRoomTypeName.Text = roomType.Name;
-            //CultureInfo cultureInfo = new CultureInfo("vi-vn");
-            //txbPrice.Text = roomType.Price.ToString("c0", cultureInfo);
+            CultureInfo cultureInfo = new CultureInfo("vi-vn");
+            txbPrice.Text = roomType.Price.ToString("c0", cultureInfo);
             txbAmountPeople.Text = roomType.LimitPerson.ToString();
         }
         public void LoadDate()
@@ -55,29 +56,29 @@ namespace HotelV4
         }
         public void LoadCustomerType()
         {
-            //cbCustomerType.DataSource = CustomerTypeDAO.Instance.LoadListCustomerType();
+            cbCustomerType.DataSource = CustomerTypeDAO.Instance.LoadListCustomerType();
             cbCustomerType.DisplayMember = "Name";
         }
-        //public bool IsIdCardExists(string idCard)
-        //{
-        //    return CustomerDAO.Instance.IsIdCardExists(idCard);
-        //}
+        public bool IsIdCardExists(string idCard)
+        {
+            return CustomerDAO.Instance.IsIdCardExists(idCard);
+        }
         public void InsertCustomer(string idCard, string name, int idCustomerType, DateTime dateofBirth, string address, int phonenumber, string sex, string nationality)
         {
-            //CustomerDAO.Instance.InsertCustomer(idCard, name, idCustomerType, dateofBirth, address, phonenumber, sex, nationality);
+            CustomerDAO.Instance.InsertCustomer(idCard, name, idCustomerType, dateofBirth, address, phonenumber, sex, nationality);
         }
         public void GetInfoByIdCard(string idCard)
         {
-            //Customer customer = CustomerDAO.Instance.GetInfoByIdCard(idCard);
+            Customer customer = CustomerDAO.Instance.GetInfoByIdCard(idCard);
 
-            //txbIDCard.Text = customer.IdCard.ToString();
-            //txbFullName.Text = customer.Name;
-            //txbAddress.Text = customer.Address;
-            //DateOfBirth.Value = customer.DateOfBirth;
-            //cbSex.Text = customer.Sex;
-            //txbPhoneNumber.Text = customer.PhoneNumber.ToString();
-            //cbNationality.Text = customer.Nationality;
-            //cbCustomerType.Text = CustomerTypeDAO.Instance.GetNameByIdCard(idCard);
+            txbIDCard.Text = customer.IdCard.ToString();
+            txbFullName.Text = customer.Name;
+            txbAddress.Text = customer.Address;
+            DateOfBirth.Value = customer.DateOfBirth;
+            cbSex.Text = customer.Sex;
+            txbPhoneNumber.Text = customer.PhoneNumber.ToString();
+            cbNationality.Text = customer.Nationality;
+            cbCustomerType.Text = CustomerTypeDAO.Instance.GetNameByIdCard(idCard);
         }
         public void InsertBookRoom(int idCustomer, int idRoomType, DateTime datecheckin, DateTime datecheckout, DateTime datebookroom)
         {
@@ -91,10 +92,7 @@ namespace HotelV4
         {
             dgvb.DataSource = bookroomb.Instance.LoadListBookRoom(DateTime.Now.Date);
         }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
         private void txbDays_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -143,10 +141,10 @@ namespace HotelV4
         {
             if (txbIDCardSearch.Text != String.Empty)
             {
-                //if (IsIdCardExists(txbIDCardSearch.Text))
-                //    GetInfoByIdCard(txbIDCardSearch.Text);
-                //else
-                //    MessageBox.Show("Thẻ căn cước/ CMND không tồn tại.\nVui lòng nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (IsIdCardExists(txbIDCardSearch.Text))
+                    GetInfoByIdCard(txbIDCardSearch.Text);
+                else
+                    MessageBox.Show("ID card/ID card does not exist.\nPlease re-enter.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void ClearData()
@@ -156,28 +154,28 @@ namespace HotelV4
         }
         private void btnBookRoom_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn đặt phòng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to Booking?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (txbIDCard.Text != String.Empty && txbFullName.Text != String.Empty && txbAddress.Text != String.Empty && txbPhoneNumber.Text != String.Empty && cbNationality.Text != String.Empty)
                 {
-                    //if (!IsIdCardExists(txbIDCard.Text))
-                    //{
-                    //    int idCustomerType = (cbCustomerType.SelectedItem as CustomerType).Id;
-                    //    InsertCustomer(txbIDCard.Text, txbFullName.Text, idCustomerType, dpkDateOfBirth.Value, txbAddress.Text, int.Parse(txbPhoneNumber.Text), cbSex.Text, cbNationality.Text);
-                    //}
-                    //InsertBookRoom(CustomerDAO.Instance.GetInfoByIdCard(txbIDCard.Text).Id, (cbRoomType.SelectedItem as RoomType).Id, dpkDateCheckIn.Value, dpkDateCheckOut.Value, DateTime.Now);
-                    MessageBox.Show("Đặt phòng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!IsIdCardExists(txbIDCard.Text))
+                    {
+                        int idCustomerType = (cbCustomerType.SelectedItem as CustomerType).Id;
+                        InsertCustomer(txbIDCard.Text, txbFullName.Text, idCustomerType, DateOfBirth.Value, txbAddress.Text, int.Parse(txbPhoneNumber.Text), cbSex.Text, cbNationality.Text);
+                    }
+                    InsertBookRoom(CustomerDAO.Instance.GetInfoByIdCard(txbIDCard.Text).Id, (cbRoomType.SelectedItem as RoomType).Id, DateCheckIn.Value, DateCheckOut.Value, DateTime.Now);
+                    MessageBox.Show("Booking successful.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearData();
                     LoadListBookRoom();
-                    //if (bunifuCheckbox1.Checked)
-                    //{
-                    //    this.Hide();
-                    //    fReceiveRoom fReceiveRoom = new fReceiveRoom(GetCurrentIDBookRoom(DateTime.Now.Date));
-                    //    fReceiveRoom.ShowDialog();
-                    //}
+                    if (cbgocheckin.Checked)
+                    {
+                        this.Hide();
+                        check_in frm = new check_in(GetCurrentIDBookRoom(DateTime.Now.Date));
+                        frm.ShowDialog();
+                    }
                 }
                 else
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter complete information.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -193,10 +191,10 @@ namespace HotelV4
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            //int idBookRoom = (int)dataGridViewBookRoom.SelectedRows[0].Cells[0].Value;
-            //string idCard = dataGridViewBookRoom.SelectedRows[0].Cells[2].Value.ToString();
-            //fBookRoomDetails f = new fBookRoomDetails(idBookRoom, idCard);
-            //f.ShowDialog();
+            int idBookRoom = (int)dgvb.SelectedRows[0].Cells[0].Value;
+            string idCard = dgvb.SelectedRows[0].Cells[2].Value.ToString();
+            Bookroom_Detail f = new Bookroom_Detail(idBookRoom, idCard);
+            f.ShowDialog();
             Show();
             LoadListBookRoom();
         }
