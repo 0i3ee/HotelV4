@@ -171,5 +171,10 @@ namespace HotelV4
             else
                 txtPrice.Text = IntToString(txtPrice.Text);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

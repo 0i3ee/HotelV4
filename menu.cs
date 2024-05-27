@@ -18,13 +18,27 @@ namespace HotelV4
         private string username;
         public menu(string username)
         {
+            this.username = username;
             InitializeComponent();
             FormMover.Moveform(this);
             btnuser.Text = username;
-
+            
 
         }
+        public bool IsAdmin()
+        {
+            return AccountTypeb.Instance.GetStaffTypeByUserName(username).Id == 1;
+        }
+        void fLoad()
+        {
 
+            panelLeft.Width = 177;
+
+        }
+        private bool CheckAccess(string nameform)
+        {
+            return permissionB.Instance.CheckAccess(username, nameform);
+        }
 
         private void lbExit_Click(object sender, EventArgs e)
         {
@@ -41,77 +55,150 @@ namespace HotelV4
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            employee frm = new employee();
-            frm.Show();
-            this.Close();
+            if (CheckAccess("employee"))
+            {
+                this.Hide();
+                employee frm = new employee();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
         }
 
         private void btnBookroom_Click(object sender, EventArgs e)
         {
-            Bookroom frm = new Bookroom();
-            frm.Show();
-            this.Close();
-
+            
+            if (CheckAccess("Bookroom"))
+            {
+                this.Hide();
+                Bookroom frm = new Bookroom();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCheckin_Click(object sender, EventArgs e)
         {
-            check_in frm = new check_in();
-            frm.Show();
-            this.Close();
-
+            
+            if (CheckAccess("check-in"))
+            {
+                this.Hide();
+                check_in frm = new check_in();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnaddRoom_Click(object sender, EventArgs e)
         {
-            add_room frm = new add_room();
-            frm.Show();
-            this.Close();
-
+            if (CheckAccess("invoice"))
+            {
+                this.Hide();
+                add_room frm = new add_room();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btninvoice_Click(object sender, EventArgs e)
         {
-            invoice frm = new invoice();
-            frm.Show();
-            this.Close();
-
+            
+            if (CheckAccess("invoice"))
+            {
+                this.Hide();
+                invoice frm = new invoice();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnservice_Click(object sender, EventArgs e)
         {
-            add_service frm = new add_service();
-            frm.Show();
-            this.Close();
-
+            
+            if (CheckAccess("add-service"))
+            {
+                this.Hide();
+                add_service frm = new add_service();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btbSerandpay_Click(object sender, EventArgs e)
         {
-            service_payment frm = new service_payment();
-            frm.Show();
-            this.Close();
-
+            
+            if (CheckAccess("service-payment"))
+            {
+                this.Hide();
+                service_payment frm = new service_payment();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCustom_Click(object sender, EventArgs e)
         {
-            customer frm = new customer();
-            frm.Show();
-            this.Close();
-
+            if (CheckAccess("customer"))
+            {
+                this.Hide();
+                customer frm = new customer();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
-        {
-            Revenue frm = new Revenue();
-            frm.Show();
-            this.Close();
+        {            
+            if (CheckAccess("Revenue"))
+            {
+                this.Hide();
+                Revenue frm = new Revenue();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void menu_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to exit", "Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void btnmenu_Click(object sender, EventArgs e)
+        {
+            if (panelLeft.Width == 42)
+            {
+                panelLeft.Width = 177;
+                this.Width = 1280;
+            }
+            else
+            {
+                panelLeft.Width = 42;
+                this.Width = 1280;
+            }
         }
     }
 }

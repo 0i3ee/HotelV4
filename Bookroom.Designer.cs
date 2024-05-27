@@ -30,19 +30,19 @@ namespace HotelV4
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bookroom));
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txbPhoneNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cbNationality = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cbSex = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvb = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txbPrice = new System.Windows.Forms.TextBox();
+            this.txbAmountPeople = new System.Windows.Forms.TextBox();
+            this.txtRoomTypeName = new System.Windows.Forms.TextBox();
+            this.txtRoomTypeID = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -50,13 +50,13 @@ namespace HotelV4
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbCustomerType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnSerch = new System.Windows.Forms.Button();
+            this.txbIDCardSearch = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,22 +64,24 @@ namespace HotelV4
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbAddress = new System.Windows.Forms.TextBox();
+            this.txbFullName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.txbIDCard = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.DateCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.DateCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txtDays = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvb)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,12 +89,12 @@ namespace HotelV4
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox6
+            // txbPhoneNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 234);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(202, 29);
-            this.textBox6.TabIndex = 47;
+            this.txbPhoneNumber.Location = new System.Drawing.Point(6, 234);
+            this.txbPhoneNumber.Name = "txbPhoneNumber";
+            this.txbPhoneNumber.Size = new System.Drawing.Size(202, 29);
+            this.txbPhoneNumber.TabIndex = 47;
             // 
             // label14
             // 
@@ -114,14 +116,14 @@ namespace HotelV4
             this.label15.TabIndex = 44;
             this.label15.Text = "Phone Number:";
             // 
-            // comboBox7
+            // cbNationality
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(249, 234);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(202, 27);
-            this.comboBox7.TabIndex = 45;
+            this.cbNationality.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Location = new System.Drawing.Point(249, 234);
+            this.cbNationality.Name = "cbNationality";
+            this.cbNationality.Size = new System.Drawing.Size(202, 27);
+            this.cbNationality.TabIndex = 45;
             // 
             // label13
             // 
@@ -133,18 +135,20 @@ namespace HotelV4
             this.label13.TabIndex = 43;
             this.label13.Text = "sex:";
             // 
-            // comboBox6
+            // cbSex
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(250, 173);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(202, 27);
-            this.comboBox6.TabIndex = 41;
+            this.cbSex.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.Location = new System.Drawing.Point(250, 173);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(202, 27);
+            this.cbSex.TabIndex = 41;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dataGridView1);
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.dgvb);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(817, 82);
             this.groupBox6.Name = "groupBox6";
@@ -153,21 +157,22 @@ namespace HotelV4
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of Reservation of Day";
             // 
-            // dataGridView1
+            // dgvb
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(431, 542);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvb.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvb.Location = new System.Drawing.Point(0, 27);
+            this.dgvb.Name = "dgvb";
+            this.dgvb.Size = new System.Drawing.Size(431, 543);
+            this.dgvb.TabIndex = 0;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.textBox9);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.Controls.Add(this.txbPrice);
+            this.groupBox4.Controls.Add(this.txbAmountPeople);
+            this.groupBox4.Controls.Add(this.txtRoomTypeName);
+            this.groupBox4.Controls.Add(this.txtRoomTypeID);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label18);
@@ -180,41 +185,41 @@ namespace HotelV4
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Room type infomation";
             // 
-            // textBox10
+            // txbPrice
             // 
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(35, 243);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(258, 31);
-            this.textBox10.TabIndex = 40;
+            this.txbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPrice.Location = new System.Drawing.Point(35, 243);
+            this.txbPrice.Multiline = true;
+            this.txbPrice.Name = "txbPrice";
+            this.txbPrice.Size = new System.Drawing.Size(258, 31);
+            this.txbPrice.TabIndex = 40;
             // 
-            // textBox9
+            // txbAmountPeople
             // 
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(34, 182);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(258, 31);
-            this.textBox9.TabIndex = 39;
+            this.txbAmountPeople.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAmountPeople.Location = new System.Drawing.Point(34, 182);
+            this.txbAmountPeople.Multiline = true;
+            this.txbAmountPeople.Name = "txbAmountPeople";
+            this.txbAmountPeople.Size = new System.Drawing.Size(258, 31);
+            this.txbAmountPeople.TabIndex = 39;
             // 
-            // textBox8
+            // txtRoomTypeName
             // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(35, 113);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(258, 31);
-            this.textBox8.TabIndex = 38;
+            this.txtRoomTypeName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomTypeName.Location = new System.Drawing.Point(35, 113);
+            this.txtRoomTypeName.Multiline = true;
+            this.txtRoomTypeName.Name = "txtRoomTypeName";
+            this.txtRoomTypeName.Size = new System.Drawing.Size(258, 31);
+            this.txtRoomTypeName.TabIndex = 38;
             // 
-            // textBox7
+            // txtRoomTypeID
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(34, 47);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(258, 31);
-            this.textBox7.TabIndex = 37;
+            this.txtRoomTypeID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomTypeID.Location = new System.Drawing.Point(34, 47);
+            this.txtRoomTypeID.Multiline = true;
+            this.txtRoomTypeID.Name = "txtRoomTypeID";
+            this.txtRoomTypeID.Size = new System.Drawing.Size(258, 31);
+            this.txtRoomTypeID.TabIndex = 37;
             // 
             // label16
             // 
@@ -268,14 +273,16 @@ namespace HotelV4
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox5.Controls.Add(this.txtDays);
             this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.button3);
+            this.groupBox5.Controls.Add(this.btnClose);
+            this.groupBox5.Controls.Add(this.btnCancel);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(482, 382);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(329, 261);
+            this.groupBox5.Size = new System.Drawing.Size(329, 270);
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Finding Customer";
@@ -290,24 +297,26 @@ namespace HotelV4
             this.checkBox1.Text = "Go to Check in";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnClose
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(35, 215);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(258, 35);
-            this.button4.TabIndex = 37;
-            this.button4.Text = "Close";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Location = new System.Drawing.Point(35, 215);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(258, 35);
+            this.btnClose.TabIndex = 37;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose__Click);
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(35, 157);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(258, 35);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(35, 157);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(258, 35);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // button2
             // 
@@ -318,19 +327,20 @@ namespace HotelV4
             this.button2.Text = "Book room";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // cbCustomerType
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 173);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(202, 27);
-            this.comboBox4.TabIndex = 40;
+            this.cbCustomerType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCustomerType.FormattingEnabled = true;
+            this.cbCustomerType.Location = new System.Drawing.Point(6, 173);
+            this.cbCustomerType.Name = "cbCustomerType";
+            this.cbCustomerType.Size = new System.Drawing.Size(202, 27);
+            this.cbCustomerType.TabIndex = 40;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.btnSerch);
+            this.groupBox2.Controls.Add(this.txbIDCardSearch);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(18, 251);
@@ -340,22 +350,24 @@ namespace HotelV4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Finding Customer";
             // 
-            // button1
+            // btnSerch
             // 
-            this.button1.Location = new System.Drawing.Point(250, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 27);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSerch.Location = new System.Drawing.Point(250, 58);
+            this.btnSerch.Name = "btnSerch";
+            this.btnSerch.Size = new System.Drawing.Size(202, 27);
+            this.btnSerch.TabIndex = 35;
+            this.btnSerch.Text = "Search";
+            this.btnSerch.UseVisualStyleBackColor = true;
+            this.btnSerch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox2
+            // txbIDCardSearch
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 58);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 27);
-            this.textBox2.TabIndex = 34;
+            this.txbIDCardSearch.Location = new System.Drawing.Point(6, 58);
+            this.txbIDCardSearch.Multiline = true;
+            this.txbIDCardSearch.Name = "txbIDCardSearch";
+            this.txbIDCardSearch.Size = new System.Drawing.Size(202, 27);
+            this.txbIDCardSearch.TabIndex = 34;
+            this.txbIDCardSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIDCardSearch_KeyPress);
             // 
             // label10
             // 
@@ -369,14 +381,15 @@ namespace HotelV4
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.DateCheckOut);
+            this.groupBox1.Controls.Add(this.DateCheckIn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbRoomType);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(18, 82);
             this.groupBox1.Name = "groupBox1";
@@ -419,11 +432,11 @@ namespace HotelV4
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 25);
+            this.label3.Location = new System.Drawing.Point(10, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.Size = new System.Drawing.Size(87, 19);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Kind of room:";
+            this.label3.Text = " Room Type:";
             // 
             // textBox1
             // 
@@ -432,32 +445,15 @@ namespace HotelV4
             this.textBox1.Size = new System.Drawing.Size(202, 29);
             this.textBox1.TabIndex = 33;
             // 
-            // comboBox3
+            // cbRoomType
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(250, 112);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(202, 27);
-            this.comboBox3.TabIndex = 33;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(249, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 27);
-            this.comboBox2.TabIndex = 33;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 27);
-            this.comboBox1.TabIndex = 0;
+            this.cbRoomType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoomType.FormattingEnabled = true;
+            this.cbRoomType.Location = new System.Drawing.Point(6, 51);
+            this.cbRoomType.Name = "cbRoomType";
+            this.cbRoomType.Size = new System.Drawing.Size(206, 27);
+            this.cbRoomType.TabIndex = 0;
+            this.cbRoomType.SelectedIndexChanged += new System.EventHandler(this.cbRoomType_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -472,22 +468,23 @@ namespace HotelV4
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.DateOfBirth);
+            this.groupBox3.Controls.Add(this.txbPhoneNumber);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.comboBox7);
+            this.groupBox3.Controls.Add(this.cbNationality);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.comboBox6);
-            this.groupBox3.Controls.Add(this.comboBox4);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.cbSex);
+            this.groupBox3.Controls.Add(this.cbCustomerType);
+            this.groupBox3.Controls.Add(this.txbAddress);
+            this.groupBox3.Controls.Add(this.txbFullName);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.comboBox5);
+            this.groupBox3.Controls.Add(this.txbIDCard);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(18, 380);
             this.groupBox3.Name = "groupBox3";
@@ -496,19 +493,19 @@ namespace HotelV4
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "registration Infomation";
             // 
-            // textBox5
+            // txbAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(250, 115);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 29);
-            this.textBox5.TabIndex = 39;
+            this.txbAddress.Location = new System.Drawing.Point(250, 115);
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.Size = new System.Drawing.Size(202, 29);
+            this.txbAddress.TabIndex = 39;
             // 
-            // textBox4
+            // txbFullName
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 47);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(202, 29);
-            this.textBox4.TabIndex = 38;
+            this.txbFullName.Location = new System.Drawing.Point(6, 47);
+            this.txbFullName.Name = "txbFullName";
+            this.txbFullName.Size = new System.Drawing.Size(202, 29);
+            this.txbFullName.TabIndex = 38;
             // 
             // label8
             // 
@@ -550,21 +547,13 @@ namespace HotelV4
             this.label11.TabIndex = 33;
             this.label11.Text = "firstname and lastname:";
             // 
-            // textBox3
+            // txbIDCard
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 115);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 29);
-            this.textBox3.TabIndex = 33;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(249, 51);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(202, 27);
-            this.comboBox5.TabIndex = 33;
+            this.txbIDCard.Location = new System.Drawing.Point(6, 115);
+            this.txbIDCard.Name = "txbIDCard";
+            this.txbIDCard.Size = new System.Drawing.Size(202, 29);
+            this.txbIDCard.TabIndex = 33;
+            this.txbIDCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIDCard_KeyPress);
             // 
             // label2
             // 
@@ -575,6 +564,51 @@ namespace HotelV4
             this.label2.Size = new System.Drawing.Size(1225, 13);
             this.label2.TabIndex = 38;
             this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // DateOfBirth
+            // 
+            this.DateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateOfBirth.Location = new System.Drawing.Point(250, 47);
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.Size = new System.Drawing.Size(202, 29);
+            this.DateOfBirth.TabIndex = 49;
+            this.DateOfBirth.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            // 
+            // DateCheckIn
+            // 
+            this.DateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateCheckIn.Location = new System.Drawing.Point(249, 51);
+            this.DateCheckIn.Name = "DateCheckIn";
+            this.DateCheckIn.Size = new System.Drawing.Size(202, 29);
+            this.DateCheckIn.TabIndex = 50;
+            this.DateCheckIn.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            this.DateCheckIn.ValueChanged += new System.EventHandler(this.DateCheckIn_onValueChanged);
+            // 
+            // DateCheckOut
+            // 
+            this.DateCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateCheckOut.Location = new System.Drawing.Point(249, 115);
+            this.DateCheckOut.Name = "DateCheckOut";
+            this.DateCheckOut.Size = new System.Drawing.Size(202, 29);
+            this.DateCheckOut.TabIndex = 51;
+            this.DateCheckOut.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            this.DateCheckOut.ValueChanged += new System.EventHandler(this.DateCheckOut_onValueChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(167, 524);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(258, 35);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Book room";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // txtDays
+            // 
+            this.txtDays.Location = new System.Drawing.Point(65, 63);
+            this.txtDays.Name = "txtDays";
+            this.txtDays.Size = new System.Drawing.Size(202, 29);
+            this.txtDays.TabIndex = 50;
             // 
             // Bookroom
             // 
@@ -593,7 +627,7 @@ namespace HotelV4
             this.Name = "Bookroom";
             this.Text = "Bookroom";
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvb)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -611,19 +645,19 @@ namespace HotelV4
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txbPhoneNumber;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cbNationality;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cbSex;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvb;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txbPrice;
+        private System.Windows.Forms.TextBox txbAmountPeople;
+        private System.Windows.Forms.TextBox txtRoomTypeName;
+        private System.Windows.Forms.TextBox txtRoomTypeID;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -631,13 +665,13 @@ namespace HotelV4
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbCustomerType;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnSerch;
+        private System.Windows.Forms.TextBox txbIDCardSearch;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
@@ -645,19 +679,21 @@ namespace HotelV4
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbRoomType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbAddress;
+        private System.Windows.Forms.TextBox txbFullName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TextBox txbIDCard;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker DateCheckOut;
+        private System.Windows.Forms.DateTimePicker DateCheckIn;
+        private System.Windows.Forms.DateTimePicker DateOfBirth;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtDays;
     }
 }

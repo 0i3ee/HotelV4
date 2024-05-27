@@ -26,19 +26,27 @@ namespace HotelV4.bclass
             string query = "USP_LoadFullStaffType";
             return cdb.Instance.ExecuteQuery(query);
         }
-        internal int LoadStaffTypeidByName(string name)
+        public AccountType GetStaffTypeByUserName(string username)
         {
-            string query = "SELECT id FROM StaffType WHERE Name = @Name";
-            object[] parameters = { "@Name", name };
-            DataTable dataTable = cdb.Instance.ExecuteQuery(query, parameters);
-            if (dataTable.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dataTable.Rows[0]["id"]);
-            }
-            else
-            {
-                return 0;
-            }
+            string query = "USP_GetNameStaffTypeByUserName @username";
+            AccountType staffType = new AccountType(cdb.Instance.ExecuteQuery(query, new object[] { username }).Rows[0]);
+            return staffType;
+        }
+        internal bool Delete(int idStaffType)
+        {
+            string query = "USP_DeleteStaffType @id";
+            return cdb.Instance.ExecuteNoneQuery(query, new object[] { idStaffType }) > 0;
+        }
+        internal bool Update(int idStaffType, string text)
+        {
+            string query = "USP_UpdateStaffType @id , @name";
+            return cdb.Instance.ExecuteNoneQuery(query, new object[] { idStaffType, text }) > 0;
+        }
+
+        internal bool Insert(string text)
+        {
+            string query = "USP_InsertStaffType @name";
+            return cdb.Instance.ExecuteNoneQuery(query, new object[] { text }) > 0;
         }
         public static AccountTypeb Instance
         {
