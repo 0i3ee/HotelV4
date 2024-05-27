@@ -108,6 +108,7 @@
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\Customer.cs" />
     <Compile Include="bclass\CustomerType.cs" />
+    <Compile Include="bclass\permissionB.cs" />
     <Compile Include="bclass\Room.cs" />
     <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
