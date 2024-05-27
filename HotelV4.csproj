@@ -48,10 +48,18 @@
   <ItemGroup>
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
+    <Compile Include="aclass\CustomerDAO.cs" />
+    <Compile Include="aclass\CustomerTypeDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
     <Compile Include="bclass\bookroomb.cs" />
     <Compile Include="bclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
+    <Compile Include="AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +106,13 @@
       <DependentUpon>addstaff.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\AccountTypeb.cs" />
+<<<<<<< HEAD
+    <Compile Include="bclass\Customer.cs" />
+    <Compile Include="bclass\CustomerType.cs" />
+=======
     <Compile Include="bclass\fCustomer.cs" />
     <Compile Include="bclass\permissionB.cs" />
+>>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
     <Compile Include="bclass\Room.cs" />
     <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
@@ -119,11 +132,11 @@
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
     <Compile Include="aclass\cdb.cs" />
-    <Compile Include="customer.cs">
+    <Compile Include="fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customer.Designer.cs">
-      <DependentUpon>customer.cs</DependentUpon>
+    <Compile Include="fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="employee.cs">
       <SubType>Form</SubType>
@@ -199,6 +212,12 @@
     <EmbeddedResource Include="add-service.resx">
       <DependentUpon>add-service.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,8 +236,8 @@
     <EmbeddedResource Include="check-in.resx">
       <DependentUpon>check-in.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customer.resx">
-      <DependentUpon>customer.cs</DependentUpon>
+    <EmbeddedResource Include="fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
