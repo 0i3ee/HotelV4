@@ -39,12 +39,12 @@ namespace HotelV4
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-<<<<<<< HEAD
+
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-=======
+
             this.lbExit = new System.Windows.Forms.Label();
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,11 +60,11 @@ namespace HotelV4
             this.groupBox2.Controls.Add(this.cbtypeservice);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-<<<<<<< HEAD
+
             this.groupBox2.Location = new System.Drawing.Point(12, 69);
-=======
+
             this.groupBox2.Location = new System.Drawing.Point(12, 35);
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(618, 169);
             this.groupBox2.TabIndex = 45;
@@ -132,11 +132,11 @@ namespace HotelV4
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-<<<<<<< HEAD
+
             this.groupBox1.Location = new System.Drawing.Point(12, 244);
-=======
+
             this.groupBox1.Location = new System.Drawing.Point(12, 210);
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(618, 144);
             this.groupBox1.TabIndex = 46;
@@ -163,7 +163,7 @@ namespace HotelV4
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-<<<<<<< HEAD
+
             // label3
             // 
             this.label3.AutoSize = true;
@@ -185,8 +185,7 @@ namespace HotelV4
             this.label1.Size = new System.Drawing.Size(163, 32);
             this.label1.TabIndex = 55;
             this.label1.Text = "Add Service";
-=======
-            // lbExit
+     // lbExit
             // 
             this.lbExit.AutoSize = true;
             this.lbExit.BackColor = System.Drawing.Color.Transparent;
@@ -199,20 +198,19 @@ namespace HotelV4
             this.lbExit.TabIndex = 47;
             this.lbExit.Text = "X";
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
             // 
             // AddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(639, 400);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-=======
+
             this.ClientSize = new System.Drawing.Size(646, 366);
             this.Controls.Add(this.lbExit);
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -239,11 +237,11 @@ namespace HotelV4
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnAdd;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-=======
+
         private System.Windows.Forms.Label lbExit;
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
     }
 }
