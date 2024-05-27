@@ -62,6 +62,8 @@ namespace HotelV4
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupServiceType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingservice)).BeginInit();
@@ -124,12 +126,19 @@ namespace HotelV4
             // 
             // DGVS
             // 
+            this.DGVS.AllowUserToAddRows = false;
+            this.DGVS.AllowUserToDeleteRows = false;
             this.DGVS.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGVS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colName});
+            this.DGVS.GridColor = System.Drawing.SystemColors.Control;
             this.DGVS.Location = new System.Drawing.Point(18, 61);
             this.DGVS.Name = "DGVS";
-            this.DGVS.Size = new System.Drawing.Size(553, 434);
+            this.DGVS.ReadOnly = true;
+            this.DGVS.Size = new System.Drawing.Size(560, 434);
             this.DGVS.TabIndex = 0;
             this.DGVS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVS_CellClick);
             this.DGVS.SelectionChanged += new System.EventHandler(this.DGVS_SelectionChanged);
@@ -391,6 +400,23 @@ namespace HotelV4
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "id";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 140;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.FillWeight = 90F;
+            this.colName.HeaderText = "name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 380;
+            // 
             // frmServiceType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,5 +485,7 @@ namespace HotelV4
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
     }
 }

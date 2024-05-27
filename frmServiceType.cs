@@ -16,7 +16,7 @@ namespace HotelV4
 
     public partial class frmServiceType : Form
     {
-        private DataTable _tableSerViceType;
+        DataTable _tableSerViceType;
         public DataTable TableSerViceType
         {
             get => _tableSerViceType;
@@ -28,18 +28,21 @@ namespace HotelV4
                 DGVS.DataSource = source;
                 bindingservice.BindingSource = source;
                 cbtypeserviceID.DataSource = source;
-                cbtypeserviceID.DisplayMember = "id"; 
             }
         }
         public frmServiceType()
         {
             InitializeComponent();
-
+            FormMover.Moveform(this);
         }
 
-        public frmServiceType(DataTable table) : this()
+        public frmServiceType(DataTable table)
         {
+            InitializeComponent();
+            FormMover.Moveform(this);
             this.TableSerViceType = table;
+            this.cbtypeserviceID.DisplayMember = "id";
+            DGVS.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
         }
         private void LoadFullServiceType(DataTable table)
         {
@@ -47,35 +50,12 @@ namespace HotelV4
         }
         private DataTable GetFullServiceType()
         {
-            return ServiceTypeDao.Instance.LoadFullServiceType();
+            return ServiceTypeDAO.Instance.LoadFullServiceType();
         }
-        //private ServiceType GetServiceTypeNow()
-        //{
-        //    serviceType serviceType = new serviceType();
-        //    if (cbtypeserviceID.Text == string.Empty)
-        //        serviceType.Id = 0;
-        //    else
-        //        serviceType.Id = int.Parse(cbtypeserviceID.Text);
-        //    txtserviceName.Text = txtserviceName.Text.Trim();
-        //    serviceType.Name = txtserviceName.Text;
-        //    return serviceType;
-        //}
-        //private DataTable GetSearchServiceType(string text)
-        //{
-        //    if (int.TryParse(text, out int id))
-        //        return ServiceTypeDao.Instance.Search(text, id);
-        //    else
-        //        return ServiceTypeDao.Instance.Search(text, 0);
-        //}
+
 
         private void ServiceType_Load(object sender, EventArgs e)
         {
-            LoadFullServiceType();
-            DGVS.Columns[0].Width = 250;
-            DGVS.Columns[1].Width = 270;
-       
-
-            DGVS.Refresh();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,41 +68,25 @@ namespace HotelV4
         private void btnSearch_Click(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Trim();
-
-            if (!string.IsNullOrEmpty(txtSearch.Text))
+            if (txtSearch.Text != string.Empty)
             {
-                // Clear the DataGridView
-                DGVS.DataSource = null;
-
-                // Hide the search button and show the cancel button
+                txtserviceName.Text = string.Empty;
+                Search();
                 btnSearch.Visible = false;
                 btnCancel.Visible = true;
-
-                // Load and display search results in DataGridView
-                LoadSearchResults(txtSearch.Text);
-                DGVS.Columns[0].Width = 250;
-                DGVS.Columns[1].Width = 270;
-                DGVS.Refresh();
             }
         }
-        private void LoadFullServiceType()
-        {
-            // Load data into the DataTable
-            DataTable table = GetFullServiceType();
-
-            // Set the DataTable to the TableSerViceType property to bind it to the controls
-            this.TableSerViceType = table;
-        }
-        private void LoadSearchResults(string searchQuery)
+        private void Search()
         {
             LoadFullServiceType(GetSearchServiceType(txtSearch.Text));
         }
+
         private DataTable GetSearchServiceType(string text)
         {
             if (int.TryParse(text, out int id))
-                return ServiceTypeDao.Instance.Search(text, id);
+                return ServiceTypeDAO.Instance.Search(text, id);
             else
-                return ServiceTypeDao.Instance.Search(text, 0);
+                return ServiceTypeDAO.Instance.Search(text, 0);
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,70 +130,22 @@ namespace HotelV4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Open the AddServiceType form as a dialog
             new AddServiceType().ShowDialog();
-
-            // Reload the service types or handle the cancel click event
             if (btnCancel.Visible == false)
-            {
                 LoadFullServiceType(GetFullServiceType());
-            }
             else
-            {
                 btnCancel_Click(null, null);
-            }
-
-            // Ensure the DataGridView has rows and the ComboBox has items
-            if (DGVS.RowCount > 0 && cbtypeserviceID.Items.Count > 0)
-            {
-                int newIndex = DGVS.RowCount - 1;
-                if (newIndex < cbtypeserviceID.Items.Count)
-                {
-                    cbtypeserviceID.SelectedIndex = newIndex;
-                }
-                else
-                {
-                    cbtypeserviceID.SelectedIndex = -1; // Reset if the index is out of range
-                }
-            }
-            else
-            {
-                cbtypeserviceID.SelectedIndex = -1; // Reset if there are no rows or items
-            }
+            cbtypeserviceID.SelectedIndex = DGVS.RowCount - 1;
         }
 
         private void DGVS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < DGVS.Rows.Count)
-            {
-                DataGridViewRow row = DGVS.Rows[e.RowIndex];
-
-                // Extract service type name from the second cell (index 1) and set it to txtserviceName
-                txtserviceName.Text = row.Cells[1].Value?.ToString() ?? string.Empty;
-
-                // Extract ID from the first cell (index 0) and set it to cbtypeserviceID
-                if (row.Cells[0] != null && row.Cells[0].Value != DBNull.Value && int.TryParse(row.Cells[0].Value.ToString(), out int id))
-                {
-                    // Find the index of the item in the ComboBox with the corresponding ID
-                    for (int i = 0; i < cbtypeserviceID.Items.Count; i++)
-                    {
-                        if (cbtypeserviceID.Items[i].ToString() == id.ToString())
-                        {
-                            cbtypeserviceID.SelectedIndex = i;
-                            break;
-                        }
-                    }
-                }
-                else
-                {
-                    cbtypeserviceID.SelectedIndex = -1; // Reset if the ID is invalid
-                }
-            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want update data?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to update this type of service?", "Notifications", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 UpdateServiceType();
             cbtypeserviceID.Focus();
@@ -239,7 +155,7 @@ namespace HotelV4
             if (cbtypeserviceID.Text == string.Empty)
                 MessageBox.Show("This service type does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-           if (!fCustomer.CheckFillInText(new Control[] { txtserviceName }))
+            if (!fCustomer.CheckFillInText(new Control[] { txtserviceName }))
             {
                 MessageBox.Show("Cannot be blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -254,7 +170,7 @@ namespace HotelV4
                         MessageBox.Show("You have not changed the data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
-                        bool check = ServiceTypeDao.Instance.UpdateServiceType(serviceTypeNow);
+                        bool check = ServiceTypeDAO.Instance.UpdateServiceType(serviceTypeNow);
                         if (check)
                         {
                             MessageBox.Show("Update successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -282,14 +198,31 @@ namespace HotelV4
                 }
             }
         }
+        private void ChangeText(DataGridViewRow row)
+        {
+            if (row.IsNewRow)
+            {
+                bindingNavigatorMoveFirstItem.Enabled = false;
+                bindingNavigatorMovePreviousItem.Enabled = false;
+                txtserviceName.Text = string.Empty;
+            }
+            else
+            {
+                txtserviceName.Text = row.Cells["colName"].Value.ToString();
+                ServiceType roomType = new ServiceType(((DataRowView)row.DataBoundItem).Row);
+                groupServiceType.Tag = roomType;
+                bindingNavigatorMoveFirstItem.Enabled = true;
+                bindingNavigatorMovePreviousItem.Enabled = true;
+            }
+        }
 
         private void DGVS_SelectionChanged(object sender, EventArgs e)
         {
-            //if (DGVS.SelectedRows.Count > 0)
-            //{
-            //    DataGridViewRow row = DGVS.SelectedRows[0];
-            //    ChangeText(row);
-            //}
+            if (DGVS.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = DGVS.SelectedRows[0];
+                ChangeText(row);
+            }
         }
     }
 }

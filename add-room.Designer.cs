@@ -29,46 +29,71 @@ namespace HotelV4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_room));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEditRoomType = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.txtRoomRate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DGV = new System.Windows.Forms.DataGridView();
+            this.colIDRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNameRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLimitPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtRoomName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bindingRoom = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupRoom = new System.Windows.Forms.GroupBox();
+            this.cbRoomId = new System.Windows.Forms.ComboBox();
+            this.txtMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoom)).BeginInit();
+            this.bindingRoom.SuspendLayout();
+            this.groupRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.btnEditRoomType);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 464);
             this.groupBox1.Name = "groupBox1";
@@ -77,41 +102,45 @@ namespace HotelV4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Function";
             // 
-            // button5
+            // btnClose
             // 
-            this.button5.Location = new System.Drawing.Point(238, 124);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(202, 27);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Close";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(238, 124);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(202, 27);
+            this.btnClose.TabIndex = 39;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button4
+            // btnUpdate
             // 
-            this.button4.Location = new System.Drawing.Point(10, 124);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 27);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "Room Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(10, 124);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(202, 27);
+            this.btnUpdate.TabIndex = 38;
+            this.btnUpdate.Text = "Room Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button3
+            // btnEditRoomType
             // 
-            this.button3.Location = new System.Drawing.Point(238, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 27);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Edit Room type";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditRoomType.Location = new System.Drawing.Point(238, 70);
+            this.btnEditRoomType.Name = "btnEditRoomType";
+            this.btnEditRoomType.Size = new System.Drawing.Size(202, 27);
+            this.btnEditRoomType.TabIndex = 37;
+            this.btnEditRoomType.Text = "Edit Room type";
+            this.btnEditRoomType.UseVisualStyleBackColor = true;
+            this.btnEditRoomType.Click += new System.EventHandler(this.btnEditRoomType_Click);
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(6, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 27);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Add Room";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(6, 70);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(202, 27);
+            this.btnAdd.TabIndex = 36;
+            this.btnAdd.Text = "Add Room";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label15
             // 
@@ -133,37 +162,21 @@ namespace HotelV4
             this.label13.TabIndex = 43;
             this.label13.Text = "Maximum number of people";
             // 
-            // comboBox6
+            // cbStatus
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(249, 208);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(202, 27);
-            this.comboBox6.TabIndex = 41;
+            this.cbStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(6, 208);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(202, 27);
+            this.cbStatus.TabIndex = 40;
             // 
-            // comboBox4
+            // txtRoomRate
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 208);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(202, 27);
-            this.comboBox4.TabIndex = 40;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(249, 129);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 29);
-            this.textBox5.TabIndex = 39;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 47);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(202, 29);
-            this.textBox4.TabIndex = 38;
+            this.txtRoomRate.Location = new System.Drawing.Point(249, 129);
+            this.txtRoomRate.Name = "txtRoomRate";
+            this.txtRoomRate.Size = new System.Drawing.Size(202, 29);
+            this.txtRoomRate.TabIndex = 39;
             // 
             // label8
             // 
@@ -212,48 +225,131 @@ namespace HotelV4
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(245, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.Size = new System.Drawing.Size(79, 19);
             this.label9.TabIndex = 34;
-            this.label9.Text = "Received date:";
+            this.label9.Text = "RoomType:";
             // 
-            // dataGridView1
+            // DGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(735, 509);
-            this.dataGridView1.TabIndex = 0;
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDRoom,
+            this.colName,
+            this.colNameRoomType,
+            this.colPrice,
+            this.colLimitPerson,
+            this.colStatus,
+            this.colIdRoomType,
+            this.colIdStatus});
+            this.DGV.Location = new System.Drawing.Point(6, 85);
+            this.DGV.Name = "DGV";
+            this.DGV.ReadOnly = true;
+            this.DGV.Size = new System.Drawing.Size(735, 509);
+            this.DGV.TabIndex = 0;
+            this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
-            // textBox3
+            // colIDRoom
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 29);
-            this.textBox3.TabIndex = 33;
+            this.colIDRoom.DataPropertyName = "id";
+            this.colIDRoom.FillWeight = 90F;
+            this.colIDRoom.HeaderText = "ID";
+            this.colIDRoom.Name = "colIDRoom";
+            this.colIDRoom.ReadOnly = true;
+            this.colIDRoom.Width = 57;
             // 
-            // button1
+            // colName
             // 
-            this.button1.Location = new System.Drawing.Point(250, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 27);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "RoomName";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 158;
             // 
-            // textBox2
+            // colNameRoomType
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 58);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 27);
-            this.textBox2.TabIndex = 34;
+            this.colNameRoomType.DataPropertyName = "nameRoomType";
+            this.colNameRoomType.HeaderText = "RoomType";
+            this.colNameRoomType.Name = "colNameRoomType";
+            this.colNameRoomType.ReadOnly = true;
+            this.colNameRoomType.Width = 113;
+            // 
+            // colPrice
+            // 
+            this.colPrice.DataPropertyName = "price_New";
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 158;
+            // 
+            // colLimitPerson
+            // 
+            this.colLimitPerson.DataPropertyName = "limitPerson";
+            this.colLimitPerson.HeaderText = "LimitPerson";
+            this.colLimitPerson.Name = "colLimitPerson";
+            this.colLimitPerson.ReadOnly = true;
+            this.colLimitPerson.Width = 141;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "nameStatusRoom";
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colIdRoomType
+            // 
+            this.colIdRoomType.DataPropertyName = "idRoomType";
+            this.colIdRoomType.HeaderText = "";
+            this.colIdRoomType.Name = "colIdRoomType";
+            this.colIdRoomType.ReadOnly = true;
+            this.colIdRoomType.Visible = false;
+            // 
+            // colIdStatus
+            // 
+            this.colIdStatus.DataPropertyName = "idStatusRoom";
+            this.colIdStatus.HeaderText = "";
+            this.colIdStatus.Name = "colIdStatus";
+            this.colIdStatus.ReadOnly = true;
+            this.colIdStatus.Visible = false;
+            // 
+            // txtRoomName
+            // 
+            this.txtRoomName.Location = new System.Drawing.Point(6, 129);
+            this.txtRoomName.Name = "txtRoomName";
+            this.txtRoomName.Size = new System.Drawing.Size(202, 29);
+            this.txtRoomName.TabIndex = 33;
+            this.txtRoomName.Enter += new System.EventHandler(this.txtRoomName_Enter);
+            this.txtRoomName.Leave += new System.EventHandler(this.txtRoomName_Leave);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(250, 58);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(202, 27);
+            this.btnSearch.TabIndex = 35;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 58);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(202, 27);
+            this.txtSearch.TabIndex = 34;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(22, 68);
             this.groupBox2.Name = "groupBox2";
@@ -272,18 +368,32 @@ namespace HotelV4
             this.label10.TabIndex = 33;
             this.label10.Text = "Room ID/Name:";
             // 
-            // comboBox5
+            // btnCancel
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(249, 51);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(202, 27);
-            this.comboBox5.TabIndex = 33;
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(249, 58);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(202, 27);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cbRoomType
+            // 
+            this.cbRoomType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoomType.FormattingEnabled = true;
+            this.cbRoomType.Location = new System.Drawing.Point(249, 51);
+            this.cbRoomType.Name = "cbRoomType";
+            this.cbRoomType.Size = new System.Drawing.Size(202, 27);
+            this.cbRoomType.TabIndex = 33;
+            this.cbRoomType.SelectedIndexChanged += new System.EventHandler(this.cbRoomType_SelectedIndexChanged);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dataGridView1);
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox6.Controls.Add(this.bindingRoom);
+            this.groupBox6.Controls.Add(this.DGV);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(497, 68);
             this.groupBox6.Name = "groupBox6";
@@ -292,27 +402,159 @@ namespace HotelV4
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Room List";
             // 
-            // groupBox3
+            // bindingRoom
             // 
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.comboBox6);
-            this.groupBox3.Controls.Add(this.comboBox4);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.comboBox5);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(22, 197);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(458, 261);
-            this.groupBox3.TabIndex = 44;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Room Infomation";
+            this.bindingRoom.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingRoom.CountItem = this.bindingNavigatorCountItem;
+            this.bindingRoom.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingRoom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingRoom.Location = new System.Drawing.Point(3, 25);
+            this.bindingRoom.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingRoom.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingRoom.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingRoom.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingRoom.Name = "bindingRoom";
+            this.bindingRoom.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingRoom.Size = new System.Drawing.Size(741, 27);
+            this.bindingRoom.TabIndex = 1;
+            this.bindingRoom.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // groupRoom
+            // 
+            this.groupRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupRoom.Controls.Add(this.cbRoomId);
+            this.groupRoom.Controls.Add(this.txtMaxPeople);
+            this.groupRoom.Controls.Add(this.label15);
+            this.groupRoom.Controls.Add(this.label13);
+            this.groupRoom.Controls.Add(this.cbStatus);
+            this.groupRoom.Controls.Add(this.txtRoomRate);
+            this.groupRoom.Controls.Add(this.label8);
+            this.groupRoom.Controls.Add(this.label7);
+            this.groupRoom.Controls.Add(this.label9);
+            this.groupRoom.Controls.Add(this.label11);
+            this.groupRoom.Controls.Add(this.txtRoomName);
+            this.groupRoom.Controls.Add(this.cbRoomType);
+            this.groupRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupRoom.Location = new System.Drawing.Point(22, 197);
+            this.groupRoom.Name = "groupRoom";
+            this.groupRoom.Size = new System.Drawing.Size(458, 261);
+            this.groupRoom.TabIndex = 44;
+            this.groupRoom.TabStop = false;
+            this.groupRoom.Text = "Room Infomation";
+            // 
+            // cbRoomId
+            // 
+            this.cbRoomId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoomId.FormattingEnabled = true;
+            this.cbRoomId.Location = new System.Drawing.Point(6, 51);
+            this.cbRoomId.Name = "cbRoomId";
+            this.cbRoomId.Size = new System.Drawing.Size(202, 27);
+            this.cbRoomId.TabIndex = 46;
+            // 
+            // txtMaxPeople
+            // 
+            this.txtMaxPeople.Location = new System.Drawing.Point(249, 206);
+            this.txtMaxPeople.Name = "txtMaxPeople";
+            this.txtMaxPeople.Size = new System.Drawing.Size(202, 29);
+            this.txtMaxPeople.TabIndex = 45;
             // 
             // label2
             // 
@@ -320,11 +562,10 @@ namespace HotelV4
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(19, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1225, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 40;
-            this.label2.Text = resources.GetString("label2.Text");
             // 
-            // addroom
+            // add_room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,18 +574,24 @@ namespace HotelV4
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupRoom);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "addroom";
+            this.Name = "add_room";
             this.Text = "addroom";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_room_FormClosing);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.add_room_KeyPress);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingRoom)).EndInit();
+            this.bindingRoom.ResumeLayout(false);
+            this.bindingRoom.PerformLayout();
+            this.groupRoom.ResumeLayout(false);
+            this.groupRoom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,31 +600,52 @@ namespace HotelV4
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnEditRoomType;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.TextBox txtRoomRate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.TextBox txtRoomName;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbRoomType;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupRoom;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingNavigator bindingRoom;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtMaxPeople;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNameRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLimitPerson;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdStatus;
+        private System.Windows.Forms.ComboBox cbRoomId;
     }
 
 }
