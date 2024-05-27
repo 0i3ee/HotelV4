@@ -52,6 +52,7 @@
     <Compile Include="aclass\CustomerTypeDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
     <Compile Include="bclass\bookroomb.cs" />
+    <Compile Include="bclass\permissionB.cs" />
     <Compile Include="bclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
     <Compile Include="AddCustomer.cs">
@@ -108,13 +109,21 @@
     <Compile Include="bclass\AccountTypeb.cs" />
     <Compile Include="bclass\Customer.cs" />
     <Compile Include="bclass\CustomerType.cs" />
+
     <Compile Include="bclass\permissionB.cs" />
+
     <Compile Include="bclass\Room.cs" />
     <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
     <Compile Include="bclass\ServiceType.cs" />
     <Compile Include="bclass\StatusRoom.cs" />
     <Compile Include="bclass\UserSession.cs" />
+    <Compile Include="Bookroom-Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookroom-Detail.Designer.cs">
+      <DependentUpon>Bookroom-Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bookroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +155,9 @@
     </Compile>
     <Compile Include="frmRoomType.Designer.cs">
       <DependentUpon>frmRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementDataSet.cs">
+      <DependentUpon>HotelManagementDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="HotelManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
