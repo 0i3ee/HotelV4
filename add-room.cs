@@ -54,7 +54,7 @@ namespace HotelV4
             this.Hide();
             _fRoomtType.ShowDialog();
             LoadFullRoom(GetFullRoom());
-            //cbRoomType.DataSource = _fRoomtType.TableRoomType;
+            cbRoomType.DataSource = _fRoomtType.TableRoomType;
             txtRoomRate.DataBindings.Clear();
             txtMaxPeople.DataBindings.Clear();
             txtRoomRate.DataBindings.Add(new Binding("Text", cbRoomType.DataSource, "price_new"));
@@ -69,7 +69,7 @@ namespace HotelV4
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn cập nhật lại phòng?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult result = MessageBox.Show("Do you want to update the room?", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.OK)
                 UpdateRoom();
             cbRoomId.Focus();
@@ -98,19 +98,19 @@ namespace HotelV4
             cbRoomType.DisplayMember = "Name";
             if (table.Rows.Count > 0)
                 cbRoomType.SelectedIndex = 0;
-            //_fRoomtType = new frmRoomType(table);
+            _fRoomtType = new frmRoomType(table);
             txtMaxPeople.DataBindings.Add(new Binding("Text", cbRoomType.DataSource, "limitPerson"));
         }
         private void UpdateRoom()
         {
             if (cbRoomId.Text == string.Empty)
             {
-                MessageBox.Show("Phòng này chưa tồn tại\n", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("This room does not exist\n", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             if (!fCustomer.CheckFillInText(new Control[] { txtRoomName, cbStatus, cbRoomType }))
             {
-                MessageBox.Show("Không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot be blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -121,14 +121,14 @@ namespace HotelV4
                     Room roomNow = GetRoomNow();
                     if (roomNow.Equals(roomPre))
                     {
-                        MessageBox.Show("Bạn chưa thay đổi dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("You have not changed the data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         bool check = RoomDAO.Instance.UpdateCustomer(roomNow);
                         if (check)
                         {
-                            MessageBox.Show("Cập Nhật Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Update Successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             groupRoom.Tag = roomNow;
                             if (btnCancel.Visible == false)
                             {
@@ -139,12 +139,12 @@ namespace HotelV4
                             else btnCancel_Click(null, null);
                         }
                         else
-                            MessageBox.Show("Phòng này chưa tồn tại\n", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            MessageBox.Show("This room does not exist\n", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Lỗi cập nhật phòng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error updating this room", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -274,6 +274,11 @@ namespace HotelV4
         private void add_room_FormClosing(object sender, FormClosingEventArgs e)
         {
             btnCancel_Click(sender, null);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

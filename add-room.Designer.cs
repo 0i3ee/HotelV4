@@ -78,6 +78,8 @@ namespace HotelV4
             this.cbRoomId = new System.Windows.Forms.ComboBox();
             this.txtMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -90,6 +92,7 @@ namespace HotelV4
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnEditRoomType);
@@ -104,9 +107,9 @@ namespace HotelV4
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(238, 124);
+            this.btnClose.Location = new System.Drawing.Point(10, 127);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(202, 27);
+            this.btnClose.Size = new System.Drawing.Size(202, 40);
             this.btnClose.TabIndex = 39;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -114,9 +117,9 @@ namespace HotelV4
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(10, 124);
+            this.btnUpdate.Location = new System.Drawing.Point(10, 81);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(202, 27);
+            this.btnUpdate.Size = new System.Drawing.Size(202, 40);
             this.btnUpdate.TabIndex = 38;
             this.btnUpdate.Text = "Room Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -124,9 +127,9 @@ namespace HotelV4
             // 
             // btnEditRoomType
             // 
-            this.btnEditRoomType.Location = new System.Drawing.Point(238, 70);
+            this.btnEditRoomType.Location = new System.Drawing.Point(249, 81);
             this.btnEditRoomType.Name = "btnEditRoomType";
-            this.btnEditRoomType.Size = new System.Drawing.Size(202, 27);
+            this.btnEditRoomType.Size = new System.Drawing.Size(202, 40);
             this.btnEditRoomType.TabIndex = 37;
             this.btnEditRoomType.Text = "Edit Room type";
             this.btnEditRoomType.UseVisualStyleBackColor = true;
@@ -134,9 +137,9 @@ namespace HotelV4
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 70);
+            this.btnAdd.Location = new System.Drawing.Point(10, 35);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(202, 27);
+            this.btnAdd.Size = new System.Drawing.Size(202, 40);
             this.btnAdd.TabIndex = 36;
             this.btnAdd.Text = "Add Room";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -282,7 +285,7 @@ namespace HotelV4
             this.colPrice.HeaderText = "Price";
             this.colPrice.Name = "colPrice";
             this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 158;
+            this.colPrice.Width = 150;
             // 
             // colLimitPerson
             // 
@@ -565,11 +568,32 @@ namespace HotelV4
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 40;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(19, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1219, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(249, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 40);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Add Room Type";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // add_room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -578,6 +602,7 @@ namespace HotelV4
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "add_room";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addroom";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_room_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.add_room_KeyPress);
@@ -637,6 +662,8 @@ namespace HotelV4
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtMaxPeople;
+        private System.Windows.Forms.ComboBox cbRoomId;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNameRoomType;
@@ -645,7 +672,7 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdStatus;
-        private System.Windows.Forms.ComboBox cbRoomId;
+        private System.Windows.Forms.Button button1;
     }
 
 }

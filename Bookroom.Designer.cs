@@ -37,6 +37,7 @@ namespace HotelV4
             this.label13 = new System.Windows.Forms.Label();
             this.cbSex = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.dgvb = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txbPrice = new System.Windows.Forms.TextBox();
@@ -49,7 +50,8 @@ namespace HotelV4
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtDays = new System.Windows.Forms.TextBox();
+            this.cbgocheckin = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -59,6 +61,8 @@ namespace HotelV4
             this.txbIDCardSearch = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DateCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.DateCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,6 +71,7 @@ namespace HotelV4
             this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.txbFullName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,11 +80,6 @@ namespace HotelV4
             this.label11 = new System.Windows.Forms.Label();
             this.txbIDCard = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.DateCheckIn = new System.Windows.Forms.DateTimePicker();
-            this.DateCheckOut = new System.Windows.Forms.DateTimePicker();
-            this.button5 = new System.Windows.Forms.Button();
-            this.txtDays = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvb)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -95,6 +95,7 @@ namespace HotelV4
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.Size = new System.Drawing.Size(202, 29);
             this.txbPhoneNumber.TabIndex = 47;
+            this.txbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPhoneNumber_KeyPress);
             // 
             // label14
             // 
@@ -120,6 +121,21 @@ namespace HotelV4
             // 
             this.cbNationality.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Items.AddRange(new object[] {
+            "Lao",
+            "Chinese",
+            "Thai",
+            "Australian",
+            "French",
+            "Japanese",
+            "Spanish",
+            "Russian",
+            "American",
+            "British",
+            "Mexican",
+            "Irish",
+            "German",
+            "Brazilian"});
             this.cbNationality.Location = new System.Drawing.Point(249, 234);
             this.cbNationality.Name = "cbNationality";
             this.cbNationality.Size = new System.Drawing.Size(202, 27);
@@ -139,6 +155,9 @@ namespace HotelV4
             // 
             this.cbSex.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSex.FormattingEnabled = true;
+            this.cbSex.Items.AddRange(new object[] {
+            "Male",
+            "FeMale"});
             this.cbSex.Location = new System.Drawing.Point(250, 173);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(202, 27);
@@ -150,12 +169,22 @@ namespace HotelV4
             this.groupBox6.Controls.Add(this.button5);
             this.groupBox6.Controls.Add(this.dgvb);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(817, 82);
+            this.groupBox6.Location = new System.Drawing.Point(735, 82);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(431, 570);
+            this.groupBox6.Size = new System.Drawing.Size(513, 570);
             this.groupBox6.TabIndex = 45;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of Reservation of Day";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(331, 526);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 35);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Detail";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // dgvb
             // 
@@ -163,7 +192,7 @@ namespace HotelV4
             this.dgvb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvb.Location = new System.Drawing.Point(0, 27);
             this.dgvb.Name = "dgvb";
-            this.dgvb.Size = new System.Drawing.Size(431, 543);
+            this.dgvb.Size = new System.Drawing.Size(513, 491);
             this.dgvb.TabIndex = 0;
             // 
             // groupBox4
@@ -180,7 +209,7 @@ namespace HotelV4
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(482, 82);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(329, 292);
+            this.groupBox4.Size = new System.Drawing.Size(247, 292);
             this.groupBox4.TabIndex = 43;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Room type infomation";
@@ -188,37 +217,37 @@ namespace HotelV4
             // txbPrice
             // 
             this.txbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPrice.Location = new System.Drawing.Point(35, 243);
+            this.txbPrice.Location = new System.Drawing.Point(20, 243);
             this.txbPrice.Multiline = true;
             this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(258, 31);
+            this.txbPrice.Size = new System.Drawing.Size(206, 31);
             this.txbPrice.TabIndex = 40;
             // 
             // txbAmountPeople
             // 
             this.txbAmountPeople.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbAmountPeople.Location = new System.Drawing.Point(34, 182);
+            this.txbAmountPeople.Location = new System.Drawing.Point(19, 182);
             this.txbAmountPeople.Multiline = true;
             this.txbAmountPeople.Name = "txbAmountPeople";
-            this.txbAmountPeople.Size = new System.Drawing.Size(258, 31);
+            this.txbAmountPeople.Size = new System.Drawing.Size(206, 31);
             this.txbAmountPeople.TabIndex = 39;
             // 
             // txtRoomTypeName
             // 
             this.txtRoomTypeName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomTypeName.Location = new System.Drawing.Point(35, 113);
+            this.txtRoomTypeName.Location = new System.Drawing.Point(20, 113);
             this.txtRoomTypeName.Multiline = true;
             this.txtRoomTypeName.Name = "txtRoomTypeName";
-            this.txtRoomTypeName.Size = new System.Drawing.Size(258, 31);
+            this.txtRoomTypeName.Size = new System.Drawing.Size(206, 31);
             this.txtRoomTypeName.TabIndex = 38;
             // 
             // txtRoomTypeID
             // 
             this.txtRoomTypeID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomTypeID.Location = new System.Drawing.Point(34, 47);
+            this.txtRoomTypeID.Location = new System.Drawing.Point(19, 47);
             this.txtRoomTypeID.Multiline = true;
             this.txtRoomTypeID.Name = "txtRoomTypeID";
-            this.txtRoomTypeID.Size = new System.Drawing.Size(258, 31);
+            this.txtRoomTypeID.Size = new System.Drawing.Size(206, 31);
             this.txtRoomTypeID.TabIndex = 37;
             // 
             // label16
@@ -275,34 +304,41 @@ namespace HotelV4
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox5.Controls.Add(this.txtDays);
-            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.cbgocheckin);
             this.groupBox5.Controls.Add(this.btnClose);
             this.groupBox5.Controls.Add(this.btnCancel);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(482, 382);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(329, 270);
+            this.groupBox5.Size = new System.Drawing.Size(247, 270);
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Finding Customer";
             // 
-            // checkBox1
+            // txtDays
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(35, 42);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(144, 25);
-            this.checkBox1.TabIndex = 38;
-            this.checkBox1.Text = "Go to Check in";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtDays.Location = new System.Drawing.Point(19, 73);
+            this.txtDays.Name = "txtDays";
+            this.txtDays.Size = new System.Drawing.Size(206, 29);
+            this.txtDays.TabIndex = 50;
+            // 
+            // cbgocheckin
+            // 
+            this.cbgocheckin.AutoSize = true;
+            this.cbgocheckin.Location = new System.Drawing.Point(35, 42);
+            this.cbgocheckin.Name = "cbgocheckin";
+            this.cbgocheckin.Size = new System.Drawing.Size(144, 25);
+            this.cbgocheckin.TabIndex = 38;
+            this.cbgocheckin.Text = "Go to Check in";
+            this.cbgocheckin.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(35, 215);
+            this.btnClose.Location = new System.Drawing.Point(19, 213);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(258, 35);
+            this.btnClose.Size = new System.Drawing.Size(207, 35);
             this.btnClose.TabIndex = 37;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -310,9 +346,9 @@ namespace HotelV4
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(35, 157);
+            this.btnCancel.Location = new System.Drawing.Point(19, 161);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(258, 35);
+            this.btnCancel.Size = new System.Drawing.Size(207, 35);
             this.btnCancel.TabIndex = 36;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -320,12 +356,13 @@ namespace HotelV4
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(35, 98);
+            this.button2.Location = new System.Drawing.Point(19, 107);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 35);
+            this.button2.Size = new System.Drawing.Size(207, 35);
             this.button2.TabIndex = 35;
             this.button2.Text = "Book room";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnBookRoom_Click);
             // 
             // cbCustomerType
             // 
@@ -397,6 +434,26 @@ namespace HotelV4
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "registration Infomation";
+            // 
+            // DateCheckOut
+            // 
+            this.DateCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateCheckOut.Location = new System.Drawing.Point(249, 115);
+            this.DateCheckOut.Name = "DateCheckOut";
+            this.DateCheckOut.Size = new System.Drawing.Size(202, 29);
+            this.DateCheckOut.TabIndex = 51;
+            this.DateCheckOut.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            this.DateCheckOut.ValueChanged += new System.EventHandler(this.DateCheckOut_onValueChanged);
+            // 
+            // DateCheckIn
+            // 
+            this.DateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateCheckIn.Location = new System.Drawing.Point(249, 51);
+            this.DateCheckIn.Name = "DateCheckIn";
+            this.DateCheckIn.Size = new System.Drawing.Size(202, 29);
+            this.DateCheckIn.TabIndex = 50;
+            this.DateCheckIn.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            this.DateCheckIn.ValueChanged += new System.EventHandler(this.DateCheckIn_onValueChanged);
             // 
             // label6
             // 
@@ -493,6 +550,15 @@ namespace HotelV4
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "registration Infomation";
             // 
+            // DateOfBirth
+            // 
+            this.DateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateOfBirth.Location = new System.Drawing.Point(250, 47);
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.Size = new System.Drawing.Size(202, 29);
+            this.DateOfBirth.TabIndex = 49;
+            this.DateOfBirth.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
+            // 
             // txbAddress
             // 
             this.txbAddress.Location = new System.Drawing.Point(250, 115);
@@ -565,51 +631,6 @@ namespace HotelV4
             this.label2.TabIndex = 38;
             this.label2.Text = resources.GetString("label2.Text");
             // 
-            // DateOfBirth
-            // 
-            this.DateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateOfBirth.Location = new System.Drawing.Point(250, 47);
-            this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(202, 29);
-            this.DateOfBirth.TabIndex = 49;
-            this.DateOfBirth.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
-            // 
-            // DateCheckIn
-            // 
-            this.DateCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateCheckIn.Location = new System.Drawing.Point(249, 51);
-            this.DateCheckIn.Name = "DateCheckIn";
-            this.DateCheckIn.Size = new System.Drawing.Size(202, 29);
-            this.DateCheckIn.TabIndex = 50;
-            this.DateCheckIn.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
-            this.DateCheckIn.ValueChanged += new System.EventHandler(this.DateCheckIn_onValueChanged);
-            // 
-            // DateCheckOut
-            // 
-            this.DateCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateCheckOut.Location = new System.Drawing.Point(249, 115);
-            this.DateCheckOut.Name = "DateCheckOut";
-            this.DateCheckOut.Size = new System.Drawing.Size(202, 29);
-            this.DateCheckOut.TabIndex = 51;
-            this.DateCheckOut.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
-            this.DateCheckOut.ValueChanged += new System.EventHandler(this.DateCheckOut_onValueChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(167, 524);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(258, 35);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Book room";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // txtDays
-            // 
-            this.txtDays.Location = new System.Drawing.Point(65, 63);
-            this.txtDays.Name = "txtDays";
-            this.txtDays.Size = new System.Drawing.Size(202, 29);
-            this.txtDays.TabIndex = 50;
-            // 
             // Bookroom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,7 +685,7 @@ namespace HotelV4
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbgocheckin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button button2;

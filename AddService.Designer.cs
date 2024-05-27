@@ -39,7 +39,12 @@ namespace HotelV4
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnclose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+
             this.lbExit = new System.Windows.Forms.Label();
+
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +60,16 @@ namespace HotelV4
             this.groupBox2.Controls.Add(this.cbtypeservice);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+
+            this.groupBox2.Location = new System.Drawing.Point(12, 69);
+
             this.groupBox2.Location = new System.Drawing.Point(12, 35);
+
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(618, 169);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add Service";
+            this.groupBox2.Text = "Service Info";
             // 
             // label5
             // 
@@ -123,7 +132,11 @@ namespace HotelV4
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+
+            this.groupBox1.Location = new System.Drawing.Point(12, 244);
+
             this.groupBox1.Location = new System.Drawing.Point(12, 210);
+
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(618, 144);
             this.groupBox1.TabIndex = 46;
@@ -150,7 +163,29 @@ namespace HotelV4
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lbExit
+
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(9, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(619, 13);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "_________________________________________________________________________________" +
+    "_____________________";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 32);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Add Service";
+     // lbExit
             // 
             this.lbExit.AutoSize = true;
             this.lbExit.BackColor = System.Drawing.Color.Transparent;
@@ -168,8 +203,14 @@ namespace HotelV4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.ClientSize = new System.Drawing.Size(639, 400);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+
             this.ClientSize = new System.Drawing.Size(646, 366);
             this.Controls.Add(this.lbExit);
+
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -196,6 +237,11 @@ namespace HotelV4
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnAdd;
+
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Label lbExit;
+
     }
 }

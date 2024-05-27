@@ -79,7 +79,6 @@ C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.AddServiceType.resource
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.addstaff.resources
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.Bookroom.resources
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.check_in.resources
-C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.customer.resources
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.employee.resources
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.invoice.resources
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.login.resources
@@ -94,7 +93,18 @@ C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompileInput
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.frmRoomType.resources
+<<<<<<< HEAD
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.AddRoom.resources
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.AddCustomer.resources
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.fCustomer.resources
+=======
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.frmRoomType.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.permission.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.add_employeeType.resources
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.menu.resources
+>>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.add_employeeType.resources
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.permission.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.AddCustomer.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.AddRoom.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.fCustomer.resources

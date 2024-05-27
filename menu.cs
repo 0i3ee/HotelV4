@@ -152,15 +152,18 @@ namespace HotelV4
 
         private void btnCustom_Click(object sender, EventArgs e)
         {
+
+          
             if (CheckAccess("customer"))
             {
                 this.Hide();
-                customer frm = new customer();
+                fCustomer frm = new fCustomer();
                 frm.ShowDialog();
                 this.Show();
             }
             else
                 MessageBox.Show("You Can't access.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)

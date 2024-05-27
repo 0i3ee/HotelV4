@@ -13,10 +13,21 @@ namespace HotelV4
 {
     public partial class check_in : Form
     {
+        List<int> ListIDCustomer = new List<int>();
+        int IDBookRoom = -1;
+        //DateTime dateCheckIn;
+        public check_in(int idBookRoom)
+        {
+            IDBookRoom = idBookRoom;
+            InitializeComponent();
+            //LoadData();
+            //ShowBookRoomInfo(IDBookRoom);
+        }
         public check_in()
         {
             InitializeComponent();
-            FormMover.Moveform(this);
+            //LoadData();
+
         }
     }
 }
