@@ -78,10 +78,9 @@ namespace HotelV4
             this.cbRoomId = new System.Windows.Forms.ComboBox();
             this.txtMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
+
             this.label3 = new System.Windows.Forms.Label();
-=======
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -256,7 +255,7 @@ namespace HotelV4
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
             // colIDRoom
-<<<<<<< HEAD
+
             // 
             this.colIDRoom.DataPropertyName = "id";
             this.colIDRoom.FillWeight = 90F;
@@ -555,8 +554,7 @@ namespace HotelV4
             this.cbRoomId.TabIndex = 46;
             // 
             // txtMaxPeople
-=======
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
+
             // 
             this.txtMaxPeople.Location = new System.Drawing.Point(249, 206);
             this.txtMaxPeople.Name = "txtMaxPeople";

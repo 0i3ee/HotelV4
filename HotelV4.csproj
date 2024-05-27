@@ -106,13 +106,8 @@
       <DependentUpon>addstaff.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\AccountTypeb.cs" />
-<<<<<<< HEAD
     <Compile Include="bclass\Customer.cs" />
     <Compile Include="bclass\CustomerType.cs" />
-=======
-    <Compile Include="bclass\fCustomer.cs" />
-    <Compile Include="bclass\permissionB.cs" />
->>>>>>> 6731144483b709caa33442300ed5ae3834609c8b
     <Compile Include="bclass\Room.cs" />
     <Compile Include="aclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
@@ -208,6 +203,7 @@
     </Compile>
     <EmbeddedResource Include="add-room.resx">
       <DependentUpon>add-room.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="add-service.resx">
       <DependentUpon>add-service.cs</DependentUpon>
