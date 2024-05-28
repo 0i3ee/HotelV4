@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HotelV4.aclass;
+using HotelV4.bclass;
+
 namespace HotelV4
 {
     public partial class Bookroom_Detail : Form
@@ -19,6 +22,7 @@ namespace HotelV4
             idBookRoom = _idBookRoom;
             idCard = _idCard;
             InitializeComponent();
+            FormMover.Moveform(this);
             //LoadRoomType();
             //LoadCustomerType();
             //LoadData();

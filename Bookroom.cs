@@ -20,6 +20,7 @@ namespace HotelV4
         public Bookroom()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
             LoadData();
         }
         public void LoadData()
