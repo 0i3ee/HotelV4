@@ -29,7 +29,7 @@ namespace HotelV4.bclass
         {
             string query = "USP_LoadBookRoomsByDate @date";
             DataRow dataRow = cdb.Instance.ExecuteQuery(query, new object[] { dateTime }).Rows[0];
-            return (int)dataRow["Mã đặt phòng"];
+            return (int)dataRow["ReceiveRoomID"];
         }
         public bool IsIDBookRoomExists(int idBookRoom)
         {

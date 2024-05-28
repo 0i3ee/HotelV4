@@ -32,6 +32,7 @@ namespace HotelV4
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_room));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddroomtype = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEditRoomType = new System.Windows.Forms.Button();
@@ -79,7 +80,7 @@ namespace HotelV4
             this.txtMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddroomtype = new System.Windows.Forms.Button();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -104,6 +105,16 @@ namespace HotelV4
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Function";
+            // 
+            // btnAddroomtype
+            // 
+            this.btnAddroomtype.Location = new System.Drawing.Point(249, 35);
+            this.btnAddroomtype.Name = "btnAddroomtype";
+            this.btnAddroomtype.Size = new System.Drawing.Size(202, 40);
+            this.btnAddroomtype.TabIndex = 41;
+            this.btnAddroomtype.Text = "Add Room Type";
+            this.btnAddroomtype.UseVisualStyleBackColor = true;
+            this.btnAddroomtype.Click += new System.EventHandler(this.btnAddroomtype_Click);
             // 
             // btnClose
             // 
@@ -446,7 +457,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -578,21 +589,26 @@ namespace HotelV4
             this.label3.TabIndex = 48;
             this.label3.Text = resources.GetString("label3.Text");
             // 
-            // btnAddroomtype
+            // lbExit
             // 
-            this.btnAddroomtype.Location = new System.Drawing.Point(249, 35);
-            this.btnAddroomtype.Name = "btnAddroomtype";
-            this.btnAddroomtype.Size = new System.Drawing.Size(202, 40);
-            this.btnAddroomtype.TabIndex = 41;
-            this.btnAddroomtype.Text = "Add Room Type";
-            this.btnAddroomtype.UseVisualStyleBackColor = true;
-            this.btnAddroomtype.Click += new System.EventHandler(this.btnAddroomtype_Click);
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1222, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 49;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // add_room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -673,6 +689,7 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdStatus;
         private System.Windows.Forms.Button btnAddroomtype;
+        private System.Windows.Forms.Label lbExit;
     }
 
 }

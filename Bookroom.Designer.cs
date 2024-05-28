@@ -79,6 +79,7 @@ namespace HotelV4
             this.label11 = new System.Windows.Forms.Label();
             this.txbIDCard = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvb)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -170,14 +171,14 @@ namespace HotelV4
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(735, 82);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(513, 570);
+            this.groupBox6.Size = new System.Drawing.Size(684, 570);
             this.groupBox6.TabIndex = 45;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of Reservation of Day";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(331, 526);
+            this.button5.Location = new System.Drawing.Point(507, 524);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(171, 35);
             this.button5.TabIndex = 39;
@@ -187,11 +188,14 @@ namespace HotelV4
             // 
             // dgvb
             // 
+            this.dgvb.AllowUserToAddRows = false;
+            this.dgvb.AllowUserToDeleteRows = false;
             this.dgvb.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvb.Location = new System.Drawing.Point(0, 27);
+            this.dgvb.Location = new System.Drawing.Point(6, 28);
             this.dgvb.Name = "dgvb";
-            this.dgvb.Size = new System.Drawing.Size(513, 491);
+            this.dgvb.ReadOnly = true;
+            this.dgvb.Size = new System.Drawing.Size(672, 491);
             this.dgvb.TabIndex = 0;
             // 
             // groupBox4
@@ -253,7 +257,7 @@ namespace HotelV4
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(31, 221);
+            this.label16.Location = new System.Drawing.Point(16, 221);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 19);
             this.label16.TabIndex = 36;
@@ -263,7 +267,7 @@ namespace HotelV4
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(31, 88);
+            this.label17.Location = new System.Drawing.Point(16, 91);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(120, 19);
             this.label17.TabIndex = 35;
@@ -273,7 +277,7 @@ namespace HotelV4
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(30, 158);
+            this.label18.Location = new System.Drawing.Point(15, 160);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(178, 19);
             this.label18.TabIndex = 34;
@@ -283,7 +287,7 @@ namespace HotelV4
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(30, 25);
+            this.label19.Location = new System.Drawing.Point(16, 25);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(117, 19);
             this.label19.TabIndex = 33;
@@ -312,7 +316,7 @@ namespace HotelV4
             this.groupBox5.Size = new System.Drawing.Size(247, 270);
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Finding Customer";
+            this.groupBox5.Text = "Function";
             // 
             // cbgocheckin
             // 
@@ -424,7 +428,7 @@ namespace HotelV4
             this.groupBox1.Size = new System.Drawing.Size(458, 163);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "registration Infomation";
+            this.groupBox1.Text = "Registration Infomation";
             // 
             // DateCheckOut
             // 
@@ -540,7 +544,7 @@ namespace HotelV4
             this.groupBox3.Size = new System.Drawing.Size(458, 272);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "registration Infomation";
+            this.groupBox3.Text = "Customer Infomation";
             // 
             // DateOfBirth
             // 
@@ -619,15 +623,30 @@ namespace HotelV4
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(12, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1225, 13);
+            this.label2.Size = new System.Drawing.Size(1405, 13);
             this.label2.TabIndex = 38;
             this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1393, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 46;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // Bookroom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.ClientSize = new System.Drawing.Size(1431, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
@@ -707,5 +726,6 @@ namespace HotelV4
         private System.Windows.Forms.DateTimePicker DateCheckIn;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lbExit;
     }
 }

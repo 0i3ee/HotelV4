@@ -1,7 +1,7 @@
 ﻿
 namespace HotelV4
 {
-    partial class AddCustomer
+    partial class UpdateCustomerInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,12 @@ namespace HotelV4
         /// </summary>
         private void InitializeComponent()
         {
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtIDcard = new System.Windows.Forms.TextBox();
             this.cbCusType = new System.Windows.Forms.ComboBox();
@@ -42,19 +48,80 @@ namespace HotelV4
             this.label13 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.datepickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.dbo = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(6, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(493, 13);
+            this.label3.TabIndex = 79;
+            this.label3.Text = "_________________________________________________________________________________" +
+    "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 32);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Update Customer";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(10, 378);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(486, 136);
+            this.groupBox1.TabIndex = 77;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Function";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(259, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 48);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(11, 82);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(221, 48);
+            this.btnClose.TabIndex = 39;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(11, 28);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(221, 48);
+            this.btnUpdate.TabIndex = 38;
+            this.btnUpdate.Text = "Save Change";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox4
             // 
@@ -71,16 +138,16 @@ namespace HotelV4
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.textBox6);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.datepickerDateOfBirth);
+            this.groupBox4.Controls.Add(this.dbo);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.txtFullname);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 58);
+            this.groupBox4.Location = new System.Drawing.Point(10, 73);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(486, 299);
-            this.groupBox4.TabIndex = 68;
+            this.groupBox4.TabIndex = 76;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Customer Info";
             // 
@@ -215,13 +282,13 @@ namespace HotelV4
             this.label12.TabIndex = 50;
             this.label12.Text = "Sex:";
             // 
-            // datepickerDateOfBirth
+            // dbo
             // 
-            this.datepickerDateOfBirth.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datepickerDateOfBirth.Location = new System.Drawing.Point(256, 62);
-            this.datepickerDateOfBirth.Name = "datepickerDateOfBirth";
-            this.datepickerDateOfBirth.Size = new System.Drawing.Size(221, 35);
-            this.datepickerDateOfBirth.TabIndex = 48;
+            this.dbo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dbo.Location = new System.Drawing.Point(256, 62);
+            this.dbo.Name = "dbo";
+            this.dbo.Size = new System.Drawing.Size(221, 35);
+            this.dbo.TabIndex = 48;
             // 
             // label11
             // 
@@ -262,77 +329,21 @@ namespace HotelV4
             this.txtFullname.Size = new System.Drawing.Size(221, 35);
             this.txtFullname.TabIndex = 42;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 363);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(486, 102);
-            this.groupBox1.TabIndex = 69;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Function";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(256, 28);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(221, 48);
-            this.btnClose.TabIndex = 39;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 28);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(221, 48);
-            this.btnAdd.TabIndex = 38;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(12, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(493, 13);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "_________________________________________________________________________________" +
-    "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(17, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 32);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Add Customer";
-            // 
-            // AddCustomer
+            // UpdateCustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 477);
+            this.ClientSize = new System.Drawing.Size(511, 529);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddCustomer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddCustomer";
+            this.Name = "UpdateCustomerInfo";
+            this.Text = "UpdateCustomerInfo";
+            this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,6 +351,12 @@ namespace HotelV4
 
         #endregion
 
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtIDcard;
         private System.Windows.Forms.ComboBox cbCusType;
@@ -353,15 +370,10 @@ namespace HotelV4
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker datepickerDateOfBirth;
+        private System.Windows.Forms.DateTimePicker dbo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFullname;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using HotelV4.bclass;
 
+
 namespace HotelV4.aclass
 {
     public class CustomerTypeDAO
@@ -38,6 +39,16 @@ namespace HotelV4.aclass
             return cdb.Instance.ExecuteNoneQuery(query, new object[] { customerTypeNow.Id, customerTypeNow.Name }) > 0;
         }
 
+        internal bool InsertCustomerType(string name)
+        {
+            string query = "USP_InsertCustomerType @name";
+            return cdb.Instance.ExecuteNoneQuery(query, new object[] { name }) > 0;
+        }
+        internal bool InsertCustomerType(AddCustomerType customerTypeNow)
+        {
+            return InsertCustomerType(customerTypeNow.Name);
+        }
+
         internal DataTable LoadFullCustomerType()
         {
             return cdb.Instance.ExecuteQuery("USP_LoadFullCustomerType");
@@ -48,6 +59,7 @@ namespace HotelV4.aclass
             get { if (instance == null) instance = new CustomerTypeDAO(); return instance; }
             private set => instance = value;
         }
+
 
     }
 }
