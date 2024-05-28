@@ -147,12 +147,6 @@
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
     <Compile Include="aclass\cdb.cs" />
-    <Compile Include="CustomerType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerType.Designer.cs">
-      <DependentUpon>CustomerType.cs</DependentUpon>
-    </Compile>
     <Compile Include="fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="check-in.resx">
       <DependentUpon>check-in.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerType.resx">
-      <DependentUpon>CustomerType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
