@@ -34,6 +34,7 @@ namespace HotelV4
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupCustomer = new System.Windows.Forms.GroupBox();
+            this.cbid = new System.Windows.Forms.ComboBox();
             this.txtIDcard = new System.Windows.Forms.TextBox();
             this.cbCusType = new System.Windows.Forms.ComboBox();
             this.cbSex = new System.Windows.Forms.ComboBox();
@@ -53,23 +54,6 @@ namespace HotelV4
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.cbOptionsearch = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnclose = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bindingCustomer = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.cbid = new System.Windows.Forms.ComboBox();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,20 +64,36 @@ namespace HotelV4
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdCustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bindingCustomer = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbOptionsearch = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnclose = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingCustomer)).BeginInit();
             this.bindingCustomer.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +146,15 @@ namespace HotelV4
             this.groupCustomer.TabIndex = 67;
             this.groupCustomer.TabStop = false;
             this.groupCustomer.Text = "Customer Info";
+            // 
+            // cbid
+            // 
+            this.cbid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbid.FormattingEnabled = true;
+            this.cbid.Location = new System.Drawing.Point(25, 51);
+            this.cbid.Name = "cbid";
+            this.cbid.Size = new System.Drawing.Size(221, 27);
+            this.cbid.TabIndex = 63;
             // 
             // txtIDcard
             // 
@@ -354,6 +363,84 @@ namespace HotelV4
             this.DGV.TabIndex = 0;
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 50;
+            // 
+            // colNameCustomer
+            // 
+            this.colNameCustomer.DataPropertyName = "Name";
+            this.colNameCustomer.HeaderText = "Fullname";
+            this.colNameCustomer.Name = "colNameCustomer";
+            this.colNameCustomer.ReadOnly = true;
+            // 
+            // colIDCard
+            // 
+            this.colIDCard.DataPropertyName = "idcard";
+            this.colIDCard.HeaderText = "ID Card";
+            this.colIDCard.Name = "colIDCard";
+            this.colIDCard.ReadOnly = true;
+            this.colIDCard.Width = 90;
+            // 
+            // colNameCustomerType
+            // 
+            this.colNameCustomerType.DataPropertyName = "NameCustomerType";
+            this.colNameCustomerType.HeaderText = "CusType";
+            this.colNameCustomerType.Name = "colNameCustomerType";
+            this.colNameCustomerType.ReadOnly = true;
+            // 
+            // colSex
+            // 
+            this.colSex.DataPropertyName = "sex";
+            this.colSex.FillWeight = 85F;
+            this.colSex.HeaderText = "Gender";
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            this.colSex.Visible = false;
+            this.colSex.Width = 85;
+            // 
+            // colDateOfBirth
+            // 
+            this.colDateOfBirth.DataPropertyName = "dateofbirth";
+            this.colDateOfBirth.HeaderText = "DateofBirth";
+            this.colDateOfBirth.Name = "colDateOfBirth";
+            this.colDateOfBirth.ReadOnly = true;
+            this.colDateOfBirth.Visible = false;
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "phoneNumber";
+            this.colPhone.HeaderText = "Tel";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "address";
+            this.colAddress.HeaderText = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            // 
+            // colNationality
+            // 
+            this.colNationality.DataPropertyName = "nationality";
+            this.colNationality.HeaderText = "Nationality";
+            this.colNationality.Name = "colNationality";
+            this.colNationality.ReadOnly = true;
+            this.colNationality.Width = 104;
+            // 
+            // colIdCustomerType
+            // 
+            this.colIdCustomerType.DataPropertyName = "idCustomerType";
+            this.colIdCustomerType.HeaderText = "";
+            this.colIdCustomerType.Name = "colIdCustomerType";
+            this.colIdCustomerType.ReadOnly = true;
+            this.colIdCustomerType.Visible = false;
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -366,6 +453,121 @@ namespace HotelV4
             this.groupBox6.TabIndex = 66;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of customers";
+            // 
+            // bindingCustomer
+            // 
+            this.bindingCustomer.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingCustomer.CountItem = this.bindingNavigatorCountItem;
+            this.bindingCustomer.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingCustomer.Location = new System.Drawing.Point(3, 25);
+            this.bindingCustomer.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingCustomer.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingCustomer.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingCustomer.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingCustomer.Name = "bindingCustomer";
+            this.bindingCustomer.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingCustomer.Size = new System.Drawing.Size(690, 27);
+            this.bindingCustomer.TabIndex = 1;
+            this.bindingCustomer.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // cbOptionsearch
             // 
@@ -470,208 +672,6 @@ namespace HotelV4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
-            // bindingCustomer
-            // 
-            this.bindingCustomer.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingCustomer.CountItem = this.bindingNavigatorCountItem;
-            this.bindingCustomer.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingCustomer.Location = new System.Drawing.Point(3, 25);
-            this.bindingCustomer.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingCustomer.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingCustomer.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingCustomer.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingCustomer.Name = "bindingCustomer";
-            this.bindingCustomer.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingCustomer.Size = new System.Drawing.Size(690, 27);
-            this.bindingCustomer.TabIndex = 1;
-            this.bindingCustomer.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // cbid
-            // 
-            this.cbid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbid.FormattingEnabled = true;
-            this.cbid.Location = new System.Drawing.Point(25, 51);
-            this.cbid.Name = "cbid";
-            this.cbid.Size = new System.Drawing.Size(221, 27);
-            this.cbid.TabIndex = 63;
-            // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Width = 50;
-            // 
-            // colNameCustomer
-            // 
-            this.colNameCustomer.DataPropertyName = "Name";
-            this.colNameCustomer.HeaderText = "Fullname";
-            this.colNameCustomer.Name = "colNameCustomer";
-            this.colNameCustomer.ReadOnly = true;
-            // 
-            // colIDCard
-            // 
-            this.colIDCard.DataPropertyName = "idcard";
-            this.colIDCard.HeaderText = "ID Card";
-            this.colIDCard.Name = "colIDCard";
-            this.colIDCard.ReadOnly = true;
-            this.colIDCard.Width = 90;
-            // 
-            // colNameCustomerType
-            // 
-            this.colNameCustomerType.DataPropertyName = "NameCustomerType";
-            this.colNameCustomerType.HeaderText = "CusType";
-            this.colNameCustomerType.Name = "colNameCustomerType";
-            this.colNameCustomerType.ReadOnly = true;
-            // 
-            // colSex
-            // 
-            this.colSex.DataPropertyName = "sex";
-            this.colSex.FillWeight = 85F;
-            this.colSex.HeaderText = "Gender";
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            this.colSex.Visible = false;
-            this.colSex.Width = 85;
-            // 
-            // colDateOfBirth
-            // 
-            this.colDateOfBirth.DataPropertyName = "dateofbirth";
-            this.colDateOfBirth.HeaderText = "DateofBirth";
-            this.colDateOfBirth.Name = "colDateOfBirth";
-            this.colDateOfBirth.ReadOnly = true;
-            this.colDateOfBirth.Visible = false;
-            // 
-            // colPhone
-            // 
-            this.colPhone.DataPropertyName = "phoneNumber";
-            this.colPhone.HeaderText = "Tel";
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            // 
-            // colAddress
-            // 
-            this.colAddress.DataPropertyName = "address";
-            this.colAddress.HeaderText = "Address";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            // 
-            // colNationality
-            // 
-            this.colNationality.DataPropertyName = "nationality";
-            this.colNationality.HeaderText = "Nationality";
-            this.colNationality.Name = "colNationality";
-            this.colNationality.ReadOnly = true;
-            this.colNationality.Width = 104;
-            // 
-            // colIdCustomerType
-            // 
-            this.colIdCustomerType.DataPropertyName = "idCustomerType";
-            this.colIdCustomerType.HeaderText = "";
-            this.colIdCustomerType.Name = "colIdCustomerType";
-            this.colIdCustomerType.ReadOnly = true;
-            this.colIdCustomerType.Visible = false;
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
@@ -703,12 +703,12 @@ namespace HotelV4
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingCustomer)).EndInit();
             this.bindingCustomer.ResumeLayout(false);
             this.bindingCustomer.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

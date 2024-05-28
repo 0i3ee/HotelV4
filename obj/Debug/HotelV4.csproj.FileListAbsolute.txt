@@ -61,3 +61,5 @@ C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompil
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.Bookroom_Detail.resources
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.Bookroom_Detail.resources
+C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.CustomerType.resources

@@ -1,7 +1,7 @@
 ﻿
 namespace HotelV4
 {
-    partial class AddServiceType
+    partial class CustomerType
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@ namespace HotelV4
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtserviceName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtserviceName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -41,25 +41,13 @@ namespace HotelV4
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
+            // txtserviceName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(271, 15);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "____________________________________________";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 23);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Add Service Type";
+            this.txtserviceName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtserviceName.Location = new System.Drawing.Point(20, 60);
+            this.txtserviceName.Name = "txtserviceName";
+            this.txtserviceName.Size = new System.Drawing.Size(231, 32);
+            this.txtserviceName.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -67,10 +55,10 @@ namespace HotelV4
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtserviceName);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 67);
+            this.groupBox1.Location = new System.Drawing.Point(16, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(268, 114);
-            this.groupBox1.TabIndex = 59;
+            this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ServiceTypeInfo";
             // 
@@ -84,13 +72,25 @@ namespace HotelV4
             this.label3.TabIndex = 59;
             this.label3.Text = "Service Type name";
             // 
-            // txtserviceName
+            // label1
             // 
-            this.txtserviceName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtserviceName.Location = new System.Drawing.Point(20, 60);
-            this.txtserviceName.Name = "txtserviceName";
-            this.txtserviceName.Size = new System.Drawing.Size(231, 32);
-            this.txtserviceName.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 23);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Add Service Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(271, 15);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "____________________________________________";
             // 
             // groupBox2
             // 
@@ -98,10 +98,10 @@ namespace HotelV4
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 187);
+            this.groupBox2.Location = new System.Drawing.Point(16, 178);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(268, 140);
-            this.groupBox2.TabIndex = 60;
+            this.groupBox2.TabIndex = 64;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Function";
             // 
@@ -113,7 +113,6 @@ namespace HotelV4
             this.btnClose.TabIndex = 62;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdd
             // 
@@ -123,23 +122,19 @@ namespace HotelV4
             this.btnAdd.TabIndex = 61;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // AddServiceType
+            // CustomerType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 339);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(290, 333);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddServiceType";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddServiceType";
+            this.Name = "CustomerType";
+            this.Text = "CustomerType";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -150,11 +145,11 @@ namespace HotelV4
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtserviceName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtserviceName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAdd;
