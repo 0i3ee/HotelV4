@@ -15,8 +15,10 @@ namespace HotelV4
 {
     public partial class AddRoomType : Form
     {
-        public AddRoomType()
+        private add_room _addRoomForm;
+        public AddRoomType(add_room addRoomForm)
         {
+            _addRoomForm = addRoomForm;
             InitializeComponent();
             txtPrice.Text = IntToString("100000");
 
@@ -33,6 +35,11 @@ namespace HotelV4
             try
             {
                 RoomType roomTypeNow = GetRoomTypeNow();
+                if (roomTypeNow == null)
+                {
+                    return; // Return early if roomTypeNow is null due to validation errors
+                }
+
                 bool isInserted = RoomTypeDAO.Instance.InsertRoomType(roomTypeNow);
 
                 if (isInserted)
@@ -41,17 +48,18 @@ namespace HotelV4
                     txtname.Text = string.Empty;
                     txtPrice.Text = IntToString("100000");
                     txtLimitperson.Text = string.Empty;
+
+                    // Reload room types in the main form
+                    _addRoomForm.LoadFullRoomType();
                 }
                 else
                 {
-                    // Check if insertion failed due to room type already existing
                     if (RoomTypeDAO.Instance.CheckRoomTypeExists(roomTypeNow.Name))
                     {
                         MessageBox.Show("Service already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                     else
                     {
-                        // Insertion failed due to other reasons
                         MessageBox.Show("Failed to insert service", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }

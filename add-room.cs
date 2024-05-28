@@ -92,7 +92,7 @@ namespace HotelV4
             if (table.Rows.Count > 0)
                 cbStatus.SelectedIndex = 0;
         }
-        private void LoadFullRoomType()
+        public void LoadFullRoomType()
         {
             DataTable table = GetFullRoomType();
             cbRoomType.DataSource = table;
@@ -233,18 +233,19 @@ namespace HotelV4
             table.Columns.Add("price_New", typeof(string));
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+                table.Rows[i]["price_New"] = ((int)table.Rows[i]["price"]).ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
             }
             table.Columns.Remove("price");
         }
 
         private void cbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             int index = cbRoomType.SelectedIndex;
 
             if (((DataTable)cbRoomType.DataSource).Rows[index]["Price"].ToString().Contains("."))
                 return;
-            txtRoomRate.Text = ((int)((DataTable)cbRoomType.DataSource).Rows[index]["Price"]).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+            txtRoomRate.Text = ((int)((DataTable)cbRoomType.DataSource).Rows[index]["Price"]).ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
         }
 
         private void txtRoomName_Enter(object sender, EventArgs e)
@@ -277,20 +278,22 @@ namespace HotelV4
         {
             btnCancel_Click(sender, null);
         }
-
+      
 
         private void btnAddroomtype_Click(object sender, EventArgs e)
         {
-            new AddRoomType().ShowDialog();
-            
+            new AddRoomType(this).ShowDialog();
+
             if (btnCancel.Visible == false)
             {
-
+                // Reload the room types
                 LoadFullRoomType();
             }
-                
             else
+            {
+                // Simulate a click on the cancel button
                 btnCancel_Click(null, null);
+            }
 
         }
     }
