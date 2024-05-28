@@ -20,6 +20,7 @@ namespace HotelV4
         {
             _addRoomForm = addRoomForm;
             InitializeComponent();
+            FormMover.Moveform(this);
             txtPrice.Text = IntToString("100000");
 
         }

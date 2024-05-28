@@ -252,6 +252,9 @@
     <EmbeddedResource Include="add_employeeType.resx">
       <DependentUpon>add_employeeType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bookroom-Detail.resx">
+      <DependentUpon>Bookroom-Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookroom.resx">
       <DependentUpon>Bookroom.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,7 +34,7 @@ namespace HotelV4
         public frmRoomType()
         {
             InitializeComponent();
-            
+            FormMover.Moveform(this);
         }
         public frmRoomType(DataTable table)
         {
