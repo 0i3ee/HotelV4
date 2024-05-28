@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +55,18 @@
     <Compile Include="aclass\Accout.cs" />
     <Compile Include="aclass\CustomerDAO.cs" />
     <Compile Include="aclass\CustomerTypeDAO.cs" />
+    <Compile Include="aclass\ExportToExcel.cs" />
+    <Compile Include="aclass\ReportDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
+    <Compile Include="AddRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoomType.Designer.cs">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
+    </Compile>
     <Compile Include="bclass\bookroomb.cs" />
     <Compile Include="bclass\permissionB.cs" />
-    <Compile Include="bclass\RoomTypeDAO.cs" />
+    <Compile Include="aclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
     <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
@@ -110,7 +123,7 @@
     <Compile Include="bclass\Customer.cs" />
     <Compile Include="bclass\CustomerType.cs" />
     <Compile Include="bclass\Room.cs" />
-    <Compile Include="aclass\RoomType.cs" />
+    <Compile Include="bclass\RoomType.cs" />
     <Compile Include="bclass\Service.cs" />
     <Compile Include="bclass\ServiceType.cs" />
     <Compile Include="bclass\StatusRoom.cs" />
@@ -224,6 +237,9 @@
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRoomType.resx">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +312,7 @@
     <None Include="HotelManagementDataSet.xss">
       <DependentUpon>HotelManagementDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

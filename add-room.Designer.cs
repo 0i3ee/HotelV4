@@ -79,7 +79,7 @@ namespace HotelV4
             this.txtMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddroomtype = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,7 +92,7 @@ namespace HotelV4
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAddroomtype);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnEditRoomType);
@@ -446,7 +446,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -578,15 +578,15 @@ namespace HotelV4
             this.label3.TabIndex = 48;
             this.label3.Text = resources.GetString("label3.Text");
             // 
-            // button1
+            // btnAddroomtype
             // 
-            this.button1.Location = new System.Drawing.Point(249, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 40);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Add Room Type";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddroomtype.Location = new System.Drawing.Point(249, 35);
+            this.btnAddroomtype.Name = "btnAddroomtype";
+            this.btnAddroomtype.Size = new System.Drawing.Size(202, 40);
+            this.btnAddroomtype.TabIndex = 41;
+            this.btnAddroomtype.Text = "Add Room Type";
+            this.btnAddroomtype.UseVisualStyleBackColor = true;
+            this.btnAddroomtype.Click += new System.EventHandler(this.btnAddroomtype_Click);
             // 
             // add_room
             // 
@@ -672,7 +672,7 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdStatus;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddroomtype;
     }
 
 }

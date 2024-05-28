@@ -34,6 +34,7 @@ namespace HotelV4
         public frmRoomType()
         {
             InitializeComponent();
+            
         }
         public frmRoomType(DataTable table)
         {

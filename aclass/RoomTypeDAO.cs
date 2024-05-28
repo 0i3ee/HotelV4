@@ -13,6 +13,18 @@ namespace HotelV4.aclass
     public class RoomTypeDAO
     {
         private static RoomTypeDAO instance;
+        public List<RoomType> GetRoomType(int idRoomType)
+        {
+            List<RoomType> roomTypes = new List<RoomType>();
+            string query = "USP_LoadRoomTypeByType @idRoomType";
+            DataTable dataTable = cdb.Instance.ExecuteQuery(query, new object[] { idRoomType });
+            foreach (DataRow row in dataTable.Rows)
+            {
+                RoomType roomType = new RoomType(row);
+                roomTypes.Add(roomType);
+            }
+            return roomTypes;
+        }
         internal DataTable LoadFullRoomType()
         {
             return cdb.Instance.ExecuteQuery("USP_LoadFullRoomType");
@@ -23,10 +35,31 @@ namespace HotelV4.aclass
             return cdb.Instance.ExecuteNoneQuery(query, new object[] { name, price, limitPerson }) > 0;
 
         }
+        internal bool CheckRoomTypeExists(string name)
+        {
+            string query = "SELECT COUNT(*) FROM RoomType WHERE Name = @name";
+            int count = Convert.ToInt32(cdb.Instance.ExecuteScalar(query, new object[] { name }));
+            return count > 0;
+        }
+
         internal bool InsertRoomType(RoomType roomTypeNow)
         {
-            return InsertRoomType(roomTypeNow.Name, roomTypeNow.Price, roomTypeNow.LimitPerson);
+            // Check if a room type with the same name already exists
+            bool roomTypeExists = CheckRoomTypeExists(roomTypeNow.Name);
+
+            if (roomTypeExists)
+            {
+                // If the room type already exists, return false to indicate insertion failure
+                return false;
+            }
+            else
+            {
+                // If the room type doesn't exist, insert it into the database
+                // Use the first overload to perform the insertion
+                return InsertRoomType(roomTypeNow.Name, roomTypeNow.Price, roomTypeNow.LimitPerson);
+            }
         }
+
         internal bool UpdateRoomType(RoomType roomNow, RoomType roomPre)
         {
             string query = "USP_UpdateRoomType @id , @name , @price , @limitPerson";
