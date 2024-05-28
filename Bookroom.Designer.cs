@@ -50,7 +50,6 @@ namespace HotelV4
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtDays = new System.Windows.Forms.TextBox();
             this.cbgocheckin = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@ namespace HotelV4
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDays = new System.Windows.Forms.TextBox();
             this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -303,7 +302,6 @@ namespace HotelV4
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox5.Controls.Add(this.txtDays);
             this.groupBox5.Controls.Add(this.cbgocheckin);
             this.groupBox5.Controls.Add(this.btnClose);
             this.groupBox5.Controls.Add(this.btnCancel);
@@ -315,13 +313,6 @@ namespace HotelV4
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Finding Customer";
-            // 
-            // txtDays
-            // 
-            this.txtDays.Location = new System.Drawing.Point(19, 73);
-            this.txtDays.Name = "txtDays";
-            this.txtDays.Size = new System.Drawing.Size(206, 29);
-            this.txtDays.TabIndex = 50;
             // 
             // cbgocheckin
             // 
@@ -425,7 +416,7 @@ namespace HotelV4
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDays);
             this.groupBox1.Controls.Add(this.cbRoomType);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(18, 82);
@@ -495,12 +486,13 @@ namespace HotelV4
             this.label3.TabIndex = 33;
             this.label3.Text = " Room Type:";
             // 
-            // textBox1
+            // txtDays
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 29);
-            this.textBox1.TabIndex = 33;
+            this.txtDays.Location = new System.Drawing.Point(10, 112);
+            this.txtDays.Name = "txtDays";
+            this.txtDays.ReadOnly = true;
+            this.txtDays.Size = new System.Drawing.Size(202, 29);
+            this.txtDays.TabIndex = 33;
             // 
             // cbRoomType
             // 
@@ -599,9 +591,9 @@ namespace HotelV4
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(245, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.Size = new System.Drawing.Size(85, 19);
             this.label9.TabIndex = 34;
-            this.label9.Text = "Received date:";
+            this.label9.Text = "date of birth:";
             // 
             // label11
             // 
@@ -699,7 +691,7 @@ namespace HotelV4
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDays;
         private System.Windows.Forms.ComboBox cbRoomType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -715,6 +707,5 @@ namespace HotelV4
         private System.Windows.Forms.DateTimePicker DateCheckIn;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txtDays;
     }
 }

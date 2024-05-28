@@ -18,6 +18,7 @@ namespace HotelV4
         public AddRoom()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
             LoadFullRoomType();
         }
         private void LoadFullRoomType()

@@ -78,7 +78,7 @@ namespace HotelV4
             this.groupBox5.Size = new System.Drawing.Size(592, 578);
             this.groupBox5.TabIndex = 48;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Check-in list for the day";
+            this.groupBox5.Text = "Invoice list for the day";
             // 
             // dataGridView1
             // 
