@@ -69,7 +69,6 @@ namespace HotelV4
                 MessageBox.Show($"Error: {ex.Message}", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private string StringToInt(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
