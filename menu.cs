@@ -153,15 +153,11 @@ namespace HotelV4
         private void btnCustom_Click(object sender, EventArgs e)
         {
 
-            fCustomer frm = new fCustomer();
-            frm.Show();
-            this.Close();
-
-
+          
             if (CheckAccess("customer"))
             {
                 this.Hide();
-               
+                fCustomer frm = new fCustomer();
                 frm.ShowDialog();
                 this.Show();
             }
