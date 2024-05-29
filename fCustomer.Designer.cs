@@ -85,10 +85,10 @@ namespace HotelV4
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-=======
+
+
             this.button1 = new System.Windows.Forms.Button();
->>>>>>> obee
+
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupCustomer.SuspendLayout();
@@ -499,11 +499,11 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-<<<<<<< HEAD
+
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-=======
+
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
->>>>>>> obee
+
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -586,11 +586,11 @@ namespace HotelV4
             "name",
             "IDCard",
             "NumberPhone"});
-<<<<<<< HEAD
+
             this.cbOptionsearch.Location = new System.Drawing.Point(25, 102);
-=======
+
             this.cbOptionsearch.Location = new System.Drawing.Point(28, 93);
->>>>>>> obee
+
             this.cbOptionsearch.Name = "cbOptionsearch";
             this.cbOptionsearch.Size = new System.Drawing.Size(221, 27);
             this.cbOptionsearch.TabIndex = 44;
@@ -607,15 +607,15 @@ namespace HotelV4
             // 
             // btnSearch
             // 
-<<<<<<< HEAD
+
             this.btnSearch.Location = new System.Drawing.Point(288, 101);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(221, 27);
-=======
+
             this.btnSearch.Location = new System.Drawing.Point(288, 93);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(221, 43);
->>>>>>> obee
+
             this.btnSearch.TabIndex = 36;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -626,11 +626,11 @@ namespace HotelV4
             this.txtSearch.Location = new System.Drawing.Point(288, 37);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-<<<<<<< HEAD
+
             this.txtSearch.Size = new System.Drawing.Size(221, 27);
-=======
+
             this.txtSearch.Size = new System.Drawing.Size(221, 34);
->>>>>>> obee
+
             this.txtSearch.TabIndex = 34;
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
@@ -638,11 +638,11 @@ namespace HotelV4
             // 
             this.btnclose.Location = new System.Drawing.Point(44, 94);
             this.btnclose.Name = "btnclose";
-<<<<<<< HEAD
+
             this.btnclose.Size = new System.Drawing.Size(202, 27);
-=======
+
             this.btnclose.Size = new System.Drawing.Size(202, 39);
->>>>>>> obee
+
             this.btnclose.TabIndex = 45;
             this.btnclose.Text = "Close";
             this.btnclose.UseVisualStyleBackColor = true;
@@ -652,11 +652,11 @@ namespace HotelV4
             // 
             this.btnAdd.Location = new System.Drawing.Point(307, 38);
             this.btnAdd.Name = "btnAdd";
-<<<<<<< HEAD
+
             this.btnAdd.Size = new System.Drawing.Size(202, 27);
-=======
+
             this.btnAdd.Size = new System.Drawing.Size(202, 39);
->>>>>>> obee
+
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -666,11 +666,11 @@ namespace HotelV4
             // 
             this.btnUpdate.Location = new System.Drawing.Point(44, 38);
             this.btnUpdate.Name = "btnUpdate";
-<<<<<<< HEAD
+
             this.btnUpdate.Size = new System.Drawing.Size(202, 27);
-=======
+
             this.btnUpdate.Size = new System.Drawing.Size(202, 39);
->>>>>>> obee
+
             this.btnUpdate.TabIndex = 40;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -679,10 +679,10 @@ namespace HotelV4
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-<<<<<<< HEAD
-=======
+
+
             this.groupBox3.Controls.Add(this.button1);
->>>>>>> obee
+
             this.groupBox3.Controls.Add(this.btnclose);
             this.groupBox3.Controls.Add(this.btnAdd);
             this.groupBox3.Controls.Add(this.btnUpdate);
@@ -694,8 +694,7 @@ namespace HotelV4
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Function";
             // 
-<<<<<<< HEAD
-=======
+
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(307, 94);
@@ -706,7 +705,7 @@ namespace HotelV4
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
->>>>>>> obee
+
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
