@@ -16,6 +16,11 @@ namespace HotelV4.bclass
             Id = id;
             Name = name;
         }
+        public CustomerType(string name)
+        {
+            Name = name;
+        }
+        public CustomerType(){}
         public CustomerType(DataRow row)
         {
             Id = (int)row["id"];

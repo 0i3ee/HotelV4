@@ -154,7 +154,6 @@ namespace HotelV4
         private void btnclose_Click(object sender, EventArgs e)
         {
             Close();
-
         }
     }
 }

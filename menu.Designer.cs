@@ -305,7 +305,7 @@ namespace HotelV4
             this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.Color.Red;
-            this.lbExit.Location = new System.Drawing.Point(1235, 0);
+            this.lbExit.Location = new System.Drawing.Point(1222, 7);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(26, 25);
             this.lbExit.TabIndex = 44;

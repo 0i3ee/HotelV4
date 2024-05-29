@@ -41,7 +41,7 @@ namespace HotelV4
             RoomType roomType = RoomTypeDAO.Instance.LoadRoomTypeInfo(id);
             txtRoomTypeID.Text = roomType.Id.ToString();
             txtRoomTypeName.Text = roomType.Name;
-            CultureInfo cultureInfo = new CultureInfo("vi-vn");
+            CultureInfo cultureInfo = new CultureInfo("lo-lA");
             txbPrice.Text = roomType.Price.ToString("c0", cultureInfo);
             txbAmountPeople.Text = roomType.LimitPerson.ToString();
         }
@@ -204,6 +204,11 @@ namespace HotelV4
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

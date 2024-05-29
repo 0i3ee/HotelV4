@@ -341,5 +341,18 @@ namespace HotelV4
                 text.Text = text.Tag as string;
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddCustomerType().ShowDialog();
+            if (btnCancel.Visible == false)
+            {
+                LoadFullCustomerType();
+            }
+            else
+            {
+                btnCancel_Click(null, null);
+            }
+        }
     }
 }

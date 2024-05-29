@@ -34,6 +34,7 @@ namespace HotelV4
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupCustomer = new System.Windows.Forms.GroupBox();
+            this.cbid = new System.Windows.Forms.ComboBox();
             this.txtIDcard = new System.Windows.Forms.TextBox();
             this.cbCusType = new System.Windows.Forms.ComboBox();
             this.cbSex = new System.Windows.Forms.ComboBox();
@@ -53,23 +54,6 @@ namespace HotelV4
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.cbOptionsearch = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnclose = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bindingCustomer = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.cbid = new System.Windows.Forms.ComboBox();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNameCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,20 +64,37 @@ namespace HotelV4
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdCustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bindingCustomer = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbOptionsearch = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnclose = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingCustomer)).BeginInit();
             this.bindingCustomer.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +148,15 @@ namespace HotelV4
             this.groupCustomer.TabStop = false;
             this.groupCustomer.Text = "Customer Info";
             // 
+            // cbid
+            // 
+            this.cbid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbid.FormattingEnabled = true;
+            this.cbid.Location = new System.Drawing.Point(25, 51);
+            this.cbid.Name = "cbid";
+            this.cbid.Size = new System.Drawing.Size(221, 27);
+            this.cbid.TabIndex = 63;
+            // 
             // txtIDcard
             // 
             this.txtIDcard.Location = new System.Drawing.Point(25, 155);
@@ -171,7 +181,7 @@ namespace HotelV4
             this.cbSex.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbSex.Location = new System.Drawing.Point(25, 268);
+            this.cbSex.Location = new System.Drawing.Point(25, 262);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(221, 27);
             this.cbSex.TabIndex = 60;
@@ -269,7 +279,7 @@ namespace HotelV4
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(21, 246);
+            this.label12.Location = new System.Drawing.Point(21, 240);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 19);
             this.label12.TabIndex = 50;
@@ -354,191 +364,6 @@ namespace HotelV4
             this.DGV.TabIndex = 0;
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox6.Controls.Add(this.bindingCustomer);
-            this.groupBox6.Controls.Add(this.DGV);
-            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(552, 55);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(696, 620);
-            this.groupBox6.TabIndex = 66;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "List of customers";
-            // 
-            // cbOptionsearch
-            // 
-            this.cbOptionsearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOptionsearch.FormattingEnabled = true;
-            this.cbOptionsearch.Items.AddRange(new object[] {
-            "id",
-            "name",
-            "IDCard",
-            "NumberPhone"});
-            this.cbOptionsearch.Location = new System.Drawing.Point(25, 102);
-            this.cbOptionsearch.Name = "cbOptionsearch";
-            this.cbOptionsearch.Size = new System.Drawing.Size(221, 27);
-            this.cbOptionsearch.TabIndex = 44;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Search by:";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(288, 101);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(221, 27);
-            this.btnSearch.TabIndex = 36;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(288, 37);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(221, 27);
-            this.txtSearch.TabIndex = 34;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
-            // btnclose
-            // 
-            this.btnclose.Location = new System.Drawing.Point(44, 94);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(202, 27);
-            this.btnclose.TabIndex = 45;
-            this.btnclose.Text = "Close";
-            this.btnclose.UseVisualStyleBackColor = true;
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(307, 38);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(202, 27);
-            this.btnAdd.TabIndex = 41;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(44, 38);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(202, 27);
-            this.btnUpdate.TabIndex = 40;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.Controls.Add(this.btnclose);
-            this.groupBox3.Controls.Add(this.btnAdd);
-            this.groupBox3.Controls.Add(this.btnUpdate);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(18, 532);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(558, 143);
-            this.groupBox3.TabIndex = 65;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Function";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.cbOptionsearch);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Controls.Add(this.txtSearch);
-            this.groupBox2.Controls.Add(this.btnCancel);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(18, 55);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(528, 156);
-            this.groupBox2.TabIndex = 62;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search";
-            // 
-            // bindingCustomer
-            // 
-            this.bindingCustomer.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingCustomer.CountItem = this.bindingNavigatorCountItem;
-            this.bindingCustomer.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingCustomer.Location = new System.Drawing.Point(3, 25);
-            this.bindingCustomer.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingCustomer.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingCustomer.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingCustomer.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingCustomer.Name = "bindingCustomer";
-            this.bindingCustomer.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingCustomer.Size = new System.Drawing.Size(690, 27);
-            this.bindingCustomer.TabIndex = 1;
-            this.bindingCustomer.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // cbid
-            // 
-            this.cbid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbid.FormattingEnabled = true;
-            this.cbid.Location = new System.Drawing.Point(25, 51);
-            this.cbid.Name = "cbid";
-            this.cbid.Size = new System.Drawing.Size(221, 27);
-            this.cbid.TabIndex = 63;
-            // 
             // colID
             // 
             this.colID.DataPropertyName = "id";
@@ -617,6 +442,47 @@ namespace HotelV4
             this.colIdCustomerType.ReadOnly = true;
             this.colIdCustomerType.Visible = false;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox6.Controls.Add(this.bindingCustomer);
+            this.groupBox6.Controls.Add(this.DGV);
+            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(552, 55);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(696, 620);
+            this.groupBox6.TabIndex = 66;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "List of customers";
+            // 
+            // bindingCustomer
+            // 
+            this.bindingCustomer.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingCustomer.CountItem = this.bindingNavigatorCountItem;
+            this.bindingCustomer.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingCustomer.Location = new System.Drawing.Point(3, 25);
+            this.bindingCustomer.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingCustomer.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingCustomer.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingCustomer.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingCustomer.Name = "bindingCustomer";
+            this.bindingCustomer.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingCustomer.Size = new System.Drawing.Size(690, 27);
+            this.bindingCustomer.TabIndex = 1;
+            this.bindingCustomer.Text = "bindingNavigator1";
+            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -626,6 +492,13 @@ namespace HotelV4
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -654,6 +527,26 @@ namespace HotelV4
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -671,6 +564,125 @@ namespace HotelV4
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // cbOptionsearch
+            // 
+            this.cbOptionsearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOptionsearch.FormattingEnabled = true;
+            this.cbOptionsearch.Items.AddRange(new object[] {
+            "id",
+            "name",
+            "IDCard",
+            "NumberPhone"});
+            this.cbOptionsearch.Location = new System.Drawing.Point(28, 93);
+            this.cbOptionsearch.Name = "cbOptionsearch";
+            this.cbOptionsearch.Size = new System.Drawing.Size(221, 27);
+            this.cbOptionsearch.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Search by:";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(288, 93);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(221, 43);
+            this.btnSearch.TabIndex = 36;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(288, 37);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(221, 34);
+            this.txtSearch.TabIndex = 34;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // btnclose
+            // 
+            this.btnclose.Location = new System.Drawing.Point(44, 94);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(202, 39);
+            this.btnclose.TabIndex = 45;
+            this.btnclose.Text = "Close";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(307, 38);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(202, 39);
+            this.btnAdd.TabIndex = 41;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(44, 38);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(202, 39);
+            this.btnUpdate.TabIndex = 40;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnclose);
+            this.groupBox3.Controls.Add(this.btnAdd);
+            this.groupBox3.Controls.Add(this.btnUpdate);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(18, 532);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(558, 143);
+            this.groupBox3.TabIndex = 65;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Function";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(307, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 39);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Customer Type";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.cbOptionsearch);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.txtSearch);
+            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(18, 55);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(528, 156);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
             // 
             // btnCancel
             // 
@@ -703,12 +715,12 @@ namespace HotelV4
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingCustomer)).EndInit();
             this.bindingCustomer.ResumeLayout(false);
             this.bindingCustomer.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -772,5 +784,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colNationality;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdCustomerType;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button button1;
     }
 }
