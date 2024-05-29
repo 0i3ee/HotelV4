@@ -16,6 +16,7 @@ namespace HotelV4
         public AddCustomer()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
             LoadFullCustomerType();
         }
         private void LoadFullCustomerType()

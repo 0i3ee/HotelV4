@@ -61,4 +61,12 @@ C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.csproj.CoreCompil
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.exe
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.pdb
 C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.Bookroom_Detail.resources
+<<<<<<< HEAD
 C:\Users\Advice\source\repos\HotelV4.2\obj\Debug\HotelV4.Bookroom_Detail.resources
+=======
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.AddCustomerInfo.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.ChangeRoom.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.Check_inRoomDetail.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.UpdateCustomerInfo.resources
+C:\Users\LEGION 5 Pro\source\repos\HotelV4.2\obj\Debug\HotelV4.AddCustomerType.resources
+>>>>>>> obee

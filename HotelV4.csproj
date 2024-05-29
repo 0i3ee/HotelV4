@@ -53,11 +53,20 @@
   <ItemGroup>
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
+    <Compile Include="aclass\checkinRoomDetaila.cs" />
+    <Compile Include="aclass\check_ina.cs" />
+    <Compile Include="aclass\check_indetaila.cs" />
     <Compile Include="aclass\CustomerDAO.cs" />
     <Compile Include="aclass\CustomerTypeDAO.cs" />
     <Compile Include="aclass\ExportToExcel.cs" />
     <Compile Include="aclass\ReportDAO.cs" />
     <Compile Include="aclass\RoomDAO.cs" />
+    <Compile Include="AddCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerInfo.Designer.cs">
+      <DependentUpon>AddCustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRoomType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +74,9 @@
       <DependentUpon>AddRoomType.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\bookroomb.cs" />
+    <Compile Include="bclass\check-inb.cs" />
+    <Compile Include="bclass\checkinRoomDetailb.cs" />
+    <Compile Include="bclass\check_indetailb.cs" />
     <Compile Include="bclass\permissionB.cs" />
     <Compile Include="aclass\RoomTypeDAO.cs" />
     <Compile Include="aclass\StatusRoomDAO.cs" />
@@ -140,6 +152,12 @@
     <Compile Include="Bookroom.Designer.cs">
       <DependentUpon>Bookroom.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRoom.Designer.cs">
+      <DependentUpon>ChangeRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="check-in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,18 @@
       <DependentUpon>check-in.cs</DependentUpon>
     </Compile>
     <Compile Include="aclass\cdb.cs" />
+    <Compile Include="Check-inRoomDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check-inRoomDetail.Designer.cs">
+      <DependentUpon>Check-inRoomDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerType.Designer.cs">
+      <DependentUpon>AddCustomerType.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +248,12 @@
     <Compile Include="frmServiceType.Designer.cs">
       <DependentUpon>frmServiceType.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCustomerInfo.Designer.cs">
+      <DependentUpon>UpdateCustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomerInfo.resx">
+      <DependentUpon>AddCustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRoom.resx">
       <DependentUpon>AddRoom.cs</DependentUpon>
@@ -258,8 +297,17 @@
     <EmbeddedResource Include="Bookroom.resx">
       <DependentUpon>Bookroom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeRoom.resx">
+      <DependentUpon>ChangeRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="check-in.resx">
       <DependentUpon>check-in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check-inRoomDetail.resx">
+      <DependentUpon>Check-inRoomDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomerType.resx">
+      <DependentUpon>AddCustomerType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
@@ -300,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmServiceType.resx">
       <DependentUpon>frmServiceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCustomerInfo.resx">
+      <DependentUpon>UpdateCustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
