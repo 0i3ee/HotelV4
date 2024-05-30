@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,7 @@
   <ItemGroup>
     <Compile Include="aclass\AccountType.cs" />
     <Compile Include="aclass\Accout.cs" />
+    <Compile Include="aclass\BillDAO.cs" />
     <Compile Include="aclass\checkinRoomDetaila.cs" />
     <Compile Include="aclass\check_ina.cs" />
     <Compile Include="aclass\check_indetaila.cs" />
@@ -73,6 +75,9 @@
     <Compile Include="AddRoomType.Designer.cs">
       <DependentUpon>AddRoomType.cs</DependentUpon>
     </Compile>
+    <Compile Include="bclass\Bill.cs" />
+    <Compile Include="aclass\BillDetails.cs" />
+    <Compile Include="bclass\BillDetailb.cs" />
     <Compile Include="bclass\bookroomb.cs" />
     <Compile Include="bclass\check-inb.cs" />
     <Compile Include="bclass\checkinRoomDetailb.cs" />
@@ -190,6 +195,12 @@
       <DependentUpon>employee.cs</DependentUpon>
     </Compile>
     <Compile Include="aclass\FormMover.cs" />
+    <Compile Include="fPrintBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrintBill.Designer.cs">
+      <DependentUpon>fPrintBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRoomType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +326,9 @@
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fPrintBill.resx">
+      <DependentUpon>fPrintBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRoomType.resx">
       <DependentUpon>frmRoomType.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +435,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\THEME_HOTEL_SIGN_FIVE_STARS_FACADE_BUILDING_GettyImages-1320779330-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

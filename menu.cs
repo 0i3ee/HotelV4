@@ -142,7 +142,7 @@ namespace HotelV4
             if (CheckAccess("service-payment"))
             {
                 this.Hide();
-                service_payment frm = new service_payment();
+                service_payment frm = new service_payment(username);
                 frm.ShowDialog();
                 this.Show();
             }
