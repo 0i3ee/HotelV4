@@ -31,6 +31,7 @@ namespace HotelV4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoice));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.bindingInvoice = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -99,9 +100,9 @@ namespace HotelV4
             this.groupBox5.Controls.Add(this.DGV);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox5.Location = new System.Drawing.Point(401, 88);
+            this.groupBox5.Location = new System.Drawing.Point(446, 88);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(892, 580);
+            this.groupBox5.Size = new System.Drawing.Size(938, 580);
             this.groupBox5.TabIndex = 48;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Invoice list for the day";
@@ -130,7 +131,7 @@ namespace HotelV4
             this.bindingInvoice.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingInvoice.Name = "bindingInvoice";
             this.bindingInvoice.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingInvoice.Size = new System.Drawing.Size(886, 27);
+            this.bindingInvoice.Size = new System.Drawing.Size(932, 27);
             this.bindingInvoice.TabIndex = 1;
             this.bindingInvoice.Text = "bindingNavigator1";
             // 
@@ -224,6 +225,8 @@ namespace HotelV4
             // 
             this.DGV.AllowUserToAddRows = false;
             this.DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -236,10 +239,10 @@ namespace HotelV4
             this.colPrice,
             this.Column1,
             this.Column2});
-            this.DGV.Location = new System.Drawing.Point(1, 58);
+            this.DGV.Location = new System.Drawing.Point(3, 58);
             this.DGV.Name = "DGV";
             this.DGV.ReadOnly = true;
-            this.DGV.Size = new System.Drawing.Size(886, 487);
+            this.DGV.Size = new System.Drawing.Size(933, 487);
             this.DGV.TabIndex = 0;
             // 
             // colID
@@ -328,16 +331,16 @@ namespace HotelV4
             // txbStatusRoom
             // 
             this.txbStatusRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbStatusRoom.Location = new System.Drawing.Point(212, 53);
+            this.txbStatusRoom.Location = new System.Drawing.Point(233, 53);
             this.txbStatusRoom.Name = "txbStatusRoom";
-            this.txbStatusRoom.Size = new System.Drawing.Size(167, 29);
+            this.txbStatusRoom.Size = new System.Drawing.Size(184, 29);
             this.txbStatusRoom.TabIndex = 27;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(208, 201);
+            this.label8.Location = new System.Drawing.Point(229, 195);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 19);
             this.label8.TabIndex = 26;
@@ -347,7 +350,7 @@ namespace HotelV4
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(208, 141);
+            this.label9.Location = new System.Drawing.Point(229, 141);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 19);
             this.label9.TabIndex = 25;
@@ -357,7 +360,7 @@ namespace HotelV4
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(211, 85);
+            this.label10.Location = new System.Drawing.Point(230, 85);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 17);
             this.label10.TabIndex = 24;
@@ -386,7 +389,7 @@ namespace HotelV4
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox3.Location = new System.Drawing.Point(5, 248);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(394, 278);
+            this.groupBox3.Size = new System.Drawing.Size(435, 278);
             this.groupBox3.TabIndex = 47;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Check-in information";
@@ -394,32 +397,32 @@ namespace HotelV4
             // txbFinalPrice
             // 
             this.txbFinalPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbFinalPrice.Location = new System.Drawing.Point(212, 229);
+            this.txbFinalPrice.Location = new System.Drawing.Point(233, 217);
             this.txbFinalPrice.Name = "txbFinalPrice";
-            this.txbFinalPrice.Size = new System.Drawing.Size(167, 29);
+            this.txbFinalPrice.Size = new System.Drawing.Size(184, 29);
             this.txbFinalPrice.TabIndex = 23;
             // 
             // txbDiscount
             // 
             this.txbDiscount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDiscount.Location = new System.Drawing.Point(212, 169);
+            this.txbDiscount.Location = new System.Drawing.Point(233, 163);
             this.txbDiscount.Name = "txbDiscount";
-            this.txbDiscount.Size = new System.Drawing.Size(167, 29);
+            this.txbDiscount.Size = new System.Drawing.Size(184, 29);
             this.txbDiscount.TabIndex = 22;
             // 
             // txbPrice
             // 
             this.txbPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPrice.Location = new System.Drawing.Point(212, 112);
+            this.txbPrice.Location = new System.Drawing.Point(15, 109);
             this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(167, 29);
+            this.txbPrice.Size = new System.Drawing.Size(184, 29);
             this.txbPrice.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(210, 25);
+            this.label11.Location = new System.Drawing.Point(235, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 19);
             this.label11.TabIndex = 19;
@@ -429,7 +432,7 @@ namespace HotelV4
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 201);
+            this.label7.Location = new System.Drawing.Point(12, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 19);
             this.label7.TabIndex = 18;
@@ -449,7 +452,7 @@ namespace HotelV4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 84);
+            this.label4.Location = new System.Drawing.Point(12, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 19);
             this.label4.TabIndex = 16;
@@ -461,38 +464,38 @@ namespace HotelV4
             this.comboboxID.FormattingEnabled = true;
             this.comboboxID.Location = new System.Drawing.Point(15, 53);
             this.comboboxID.Name = "comboboxID";
-            this.comboboxID.Size = new System.Drawing.Size(170, 30);
+            this.comboboxID.Size = new System.Drawing.Size(184, 30);
             this.comboboxID.TabIndex = 3;
             // 
             // txbDateCreated
             // 
             this.txbDateCreated.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDateCreated.Location = new System.Drawing.Point(15, 229);
+            this.txbDateCreated.Location = new System.Drawing.Point(16, 217);
             this.txbDateCreated.Name = "txbDateCreated";
-            this.txbDateCreated.Size = new System.Drawing.Size(170, 29);
+            this.txbDateCreated.Size = new System.Drawing.Size(183, 29);
             this.txbDateCreated.TabIndex = 7;
             // 
             // txbUser
             // 
             this.txbUser.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUser.Location = new System.Drawing.Point(16, 169);
+            this.txbUser.Location = new System.Drawing.Point(16, 163);
             this.txbUser.Name = "txbUser";
-            this.txbUser.Size = new System.Drawing.Size(169, 29);
+            this.txbUser.Size = new System.Drawing.Size(183, 29);
             this.txbUser.TabIndex = 5;
             // 
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(15, 112);
+            this.txbName.Location = new System.Drawing.Point(233, 105);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(170, 29);
+            this.txbName.Size = new System.Drawing.Size(184, 29);
             this.txbName.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 29);
+            this.label5.Location = new System.Drawing.Point(12, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 19);
             this.label5.TabIndex = 0;
@@ -516,16 +519,16 @@ namespace HotelV4
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(6, 532);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(393, 136);
+            this.groupBox4.Size = new System.Drawing.Size(434, 136);
             this.groupBox4.TabIndex = 44;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Function";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(211, 51);
+            this.btnClose.Location = new System.Drawing.Point(232, 51);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(167, 41);
+            this.btnClose.Size = new System.Drawing.Size(184, 38);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -535,7 +538,7 @@ namespace HotelV4
             // 
             this.btnInvoiceDetail.Location = new System.Drawing.Point(15, 51);
             this.btnInvoiceDetail.Name = "btnInvoiceDetail";
-            this.btnInvoiceDetail.Size = new System.Drawing.Size(169, 41);
+            this.btnInvoiceDetail.Size = new System.Drawing.Size(183, 38);
             this.btnInvoiceDetail.TabIndex = 2;
             this.btnInvoiceDetail.Text = "Invocie Detail";
             this.btnInvoiceDetail.UseVisualStyleBackColor = true;
@@ -549,7 +552,7 @@ namespace HotelV4
             "Invoice code"});
             this.cbBillSearch.Location = new System.Drawing.Point(15, 93);
             this.cbBillSearch.Name = "cbBillSearch";
-            this.cbBillSearch.Size = new System.Drawing.Size(166, 30);
+            this.cbBillSearch.Size = new System.Drawing.Size(184, 30);
             this.cbBillSearch.TabIndex = 4;
             // 
             // label3
@@ -565,9 +568,9 @@ namespace HotelV4
             // txbSearch
             // 
             this.txbSearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearch.Location = new System.Drawing.Point(199, 35);
+            this.txbSearch.Location = new System.Drawing.Point(233, 35);
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(170, 29);
+            this.txbSearch.Size = new System.Drawing.Size(184, 29);
             this.txbSearch.TabIndex = 1;
             this.txbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSearch_KeyPress);
             // 
@@ -577,7 +580,7 @@ namespace HotelV4
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(3, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1291, 13);
+            this.label2.Size = new System.Drawing.Size(1381, 13);
             this.label2.TabIndex = 46;
             this.label2.Text = resources.GetString("label2.Text");
             // 
@@ -603,16 +606,16 @@ namespace HotelV4
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(5, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 155);
+            this.groupBox1.Size = new System.Drawing.Size(435, 155);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(199, 90);
+            this.btnSearch.Location = new System.Drawing.Point(233, 90);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(170, 33);
+            this.btnSearch.Size = new System.Drawing.Size(184, 33);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -621,9 +624,9 @@ namespace HotelV4
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(197, 90);
+            this.btnCancel.Location = new System.Drawing.Point(233, 90);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(172, 33);
+            this.btnCancel.Size = new System.Drawing.Size(184, 33);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -633,7 +636,7 @@ namespace HotelV4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 680);
+            this.ClientSize = new System.Drawing.Size(1393, 680);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button1);
