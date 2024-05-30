@@ -134,5 +134,10 @@ namespace HotelV4
             if (e.KeyChar == 27 && btnCancel.Visible == true)
                 btnCancel_Click(sender, null);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

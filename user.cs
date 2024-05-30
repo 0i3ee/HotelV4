@@ -19,5 +19,15 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

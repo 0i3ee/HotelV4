@@ -132,5 +132,10 @@ namespace HotelV4
                 }
             }
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

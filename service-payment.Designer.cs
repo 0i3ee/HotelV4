@@ -279,6 +279,7 @@ namespace HotelV4
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
+            this.listViewUseService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewUseService.HideSelection = false;
             this.listViewUseService.Location = new System.Drawing.Point(6, 31);
             this.listViewUseService.Name = "listViewUseService";
@@ -306,6 +307,7 @@ namespace HotelV4
             this.columnHeader4,
             this.columnHeader5});
             this.listViewBillRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewBillRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewBillRoom.FullRowSelect = true;
             this.listViewBillRoom.HideSelection = false;
             this.listViewBillRoom.Location = new System.Drawing.Point(3, 28);

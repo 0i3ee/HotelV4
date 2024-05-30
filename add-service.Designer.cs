@@ -65,14 +65,15 @@ namespace HotelV4
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.groupservice = new System.Windows.Forms.GroupBox();
-            this.txtprice = new System.Windows.Forms.TextBox();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNameServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupservice = new System.Windows.Forms.GroupBox();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -133,7 +134,7 @@ namespace HotelV4
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 4);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(536, 64);
             this.label1.TabIndex = 46;
@@ -341,7 +342,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -436,36 +437,6 @@ namespace HotelV4
             this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
             // 
-            // groupservice
-            // 
-            this.groupservice.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupservice.Controls.Add(this.label5);
-            this.groupservice.Controls.Add(this.label6);
-            this.groupservice.Controls.Add(this.txtprice);
-            this.groupservice.Controls.Add(this.txtservicename);
-            this.groupservice.Controls.Add(this.label8);
-            this.groupservice.Controls.Add(this.cbtypeservice);
-            this.groupservice.Controls.Add(this.cbcode);
-            this.groupservice.Controls.Add(this.label4);
-            this.groupservice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupservice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupservice.Location = new System.Drawing.Point(21, 293);
-            this.groupservice.Name = "groupservice";
-            this.groupservice.Size = new System.Drawing.Size(618, 183);
-            this.groupservice.TabIndex = 44;
-            this.groupservice.TabStop = false;
-            this.groupservice.Text = "Infirmation Service";
-            // 
-            // txtprice
-            // 
-            this.txtprice.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprice.Location = new System.Drawing.Point(315, 124);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(277, 35);
-            this.txtprice.TabIndex = 5;
-            this.txtprice.Enter += new System.EventHandler(this.txtprice_Enter);
-            this.txtprice.Leave += new System.EventHandler(this.txtprice_Leave);
-            // 
             // colID
             // 
             this.colID.DataPropertyName = "id";
@@ -519,11 +490,56 @@ namespace HotelV4
             this.colIdServiceType.ReadOnly = true;
             this.colIdServiceType.Visible = false;
             // 
+            // groupservice
+            // 
+            this.groupservice.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupservice.Controls.Add(this.label5);
+            this.groupservice.Controls.Add(this.label6);
+            this.groupservice.Controls.Add(this.txtprice);
+            this.groupservice.Controls.Add(this.txtservicename);
+            this.groupservice.Controls.Add(this.label8);
+            this.groupservice.Controls.Add(this.cbtypeservice);
+            this.groupservice.Controls.Add(this.cbcode);
+            this.groupservice.Controls.Add(this.label4);
+            this.groupservice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupservice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupservice.Location = new System.Drawing.Point(21, 293);
+            this.groupservice.Name = "groupservice";
+            this.groupservice.Size = new System.Drawing.Size(618, 183);
+            this.groupservice.TabIndex = 44;
+            this.groupservice.TabStop = false;
+            this.groupservice.Text = "Infirmation Service";
+            // 
+            // txtprice
+            // 
+            this.txtprice.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Location = new System.Drawing.Point(315, 124);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(277, 35);
+            this.txtprice.TabIndex = 5;
+            this.txtprice.Enter += new System.EventHandler(this.txtprice_Enter);
+            this.txtprice.Leave += new System.EventHandler(this.txtprice_Leave);
+            // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1217, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 57;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // add_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -598,5 +614,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn col;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNameServiceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdServiceType;
+        private System.Windows.Forms.Label lbExit;
     }
 }

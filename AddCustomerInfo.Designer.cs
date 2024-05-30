@@ -32,6 +32,7 @@ namespace HotelV4
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -52,11 +53,11 @@ namespace HotelV4
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIDCardSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,6 +98,16 @@ namespace HotelV4
             this.groupBox1.TabIndex = 73;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Function";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(259, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 48);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnClose
             // 
@@ -325,16 +336,6 @@ namespace HotelV4
             this.txtFullname.Size = new System.Drawing.Size(221, 35);
             this.txtFullname.TabIndex = 42;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(259, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 48);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -378,11 +379,26 @@ namespace HotelV4
             this.label2.TabIndex = 0;
             this.label2.Text = "ID card/ID card:";
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(474, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 77;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // AddCustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 600);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -431,5 +447,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtIDCardSearch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbExit;
     }
 }

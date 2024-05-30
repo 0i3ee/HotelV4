@@ -127,5 +127,10 @@ namespace HotelV4
         {
             ClearData();
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

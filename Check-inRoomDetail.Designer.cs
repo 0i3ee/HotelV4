@@ -48,6 +48,7 @@ namespace HotelV4
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddCus = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -260,11 +261,26 @@ namespace HotelV4
             this.dgv.Size = new System.Drawing.Size(636, 342);
             this.dgv.TabIndex = 0;
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(930, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 57;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // Check_inRoomDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 541);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label2);
@@ -304,5 +320,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TextBox txtDateCheckOut;
         private System.Windows.Forms.TextBox txtDateCheckIn;
+        private System.Windows.Forms.Label lbExit;
     }
 }

@@ -30,6 +30,9 @@ namespace HotelV4
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDays = new System.Windows.Forms.TextBox();
             this.DateCheckOut = new System.Windows.Forms.DateTimePicker();
             this.DateCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,10 +44,9 @@ namespace HotelV4
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDays = new System.Windows.Forms.TextBox();
-            this.btnsave = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCusDelete = new System.Windows.Forms.Button();
+            this.btnCusUpdate = new System.Windows.Forms.Button();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txbPhoneNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,8 +64,7 @@ namespace HotelV4
             this.label16 = new System.Windows.Forms.Label();
             this.txbIDCard = new System.Windows.Forms.TextBox();
             this.btnclose = new System.Windows.Forms.Button();
-            this.btnCusUpdate = new System.Windows.Forms.Button();
-            this.btnCusDelete = new System.Windows.Forms.Button();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,34 @@ namespace HotelV4
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Check-in Information";
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(14, 349);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(207, 35);
+            this.btnsave.TabIndex = 54;
+            this.btnsave.Text = "Save Change";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 271);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 19);
+            this.label8.TabIndex = 53;
+            this.label8.Text = "Number of nights:";
+            // 
+            // txtDays
+            // 
+            this.txtDays.Location = new System.Drawing.Point(18, 295);
+            this.txtDays.Name = "txtDays";
+            this.txtDays.ReadOnly = true;
+            this.txtDays.Size = new System.Drawing.Size(202, 29);
+            this.txtDays.TabIndex = 52;
             // 
             // DateCheckOut
             // 
@@ -200,34 +229,6 @@ namespace HotelV4
             this.label7.Text = "_________________________________________________________________________________" +
     "_______________________________________________\r\n";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 271);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 19);
-            this.label8.TabIndex = 53;
-            this.label8.Text = "Number of nights:";
-            // 
-            // txtDays
-            // 
-            this.txtDays.Location = new System.Drawing.Point(18, 295);
-            this.txtDays.Name = "txtDays";
-            this.txtDays.ReadOnly = true;
-            this.txtDays.Size = new System.Drawing.Size(202, 29);
-            this.txtDays.TabIndex = 52;
-            // 
-            // btnsave
-            // 
-            this.btnsave.Location = new System.Drawing.Point(14, 349);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(207, 35);
-            this.btnsave.TabIndex = 54;
-            this.btnsave.Text = "Save Change";
-            this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -256,6 +257,26 @@ namespace HotelV4
             this.groupBox3.TabIndex = 46;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Infomation";
+            // 
+            // btnCusDelete
+            // 
+            this.btnCusDelete.Location = new System.Drawing.Point(295, 289);
+            this.btnCusDelete.Name = "btnCusDelete";
+            this.btnCusDelete.Size = new System.Drawing.Size(207, 35);
+            this.btnCusDelete.TabIndex = 56;
+            this.btnCusDelete.Text = "Delete Customer";
+            this.btnCusDelete.UseVisualStyleBackColor = true;
+            this.btnCusDelete.Click += new System.EventHandler(this.btnCusDelete_Click);
+            // 
+            // btnCusUpdate
+            // 
+            this.btnCusUpdate.Location = new System.Drawing.Point(21, 289);
+            this.btnCusUpdate.Name = "btnCusUpdate";
+            this.btnCusUpdate.Size = new System.Drawing.Size(207, 35);
+            this.btnCusUpdate.TabIndex = 55;
+            this.btnCusUpdate.Text = "Customer Update";
+            this.btnCusUpdate.UseVisualStyleBackColor = true;
+            this.btnCusUpdate.Click += new System.EventHandler(this.btnCusUpdate_Click);
             // 
             // DateOfBirth
             // 
@@ -431,31 +452,26 @@ namespace HotelV4
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // btnCusUpdate
+            // lbExit
             // 
-            this.btnCusUpdate.Location = new System.Drawing.Point(21, 289);
-            this.btnCusUpdate.Name = "btnCusUpdate";
-            this.btnCusUpdate.Size = new System.Drawing.Size(207, 35);
-            this.btnCusUpdate.TabIndex = 55;
-            this.btnCusUpdate.Text = "Customer Update";
-            this.btnCusUpdate.UseVisualStyleBackColor = true;
-            this.btnCusUpdate.Click += new System.EventHandler(this.btnCusUpdate_Click);
-            // 
-            // btnCusDelete
-            // 
-            this.btnCusDelete.Location = new System.Drawing.Point(295, 289);
-            this.btnCusDelete.Name = "btnCusDelete";
-            this.btnCusDelete.Size = new System.Drawing.Size(207, 35);
-            this.btnCusDelete.TabIndex = 56;
-            this.btnCusDelete.Text = "Delete Customer";
-            this.btnCusDelete.UseVisualStyleBackColor = true;
-            this.btnCusDelete.Click += new System.EventHandler(this.btnCusDelete_Click);
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(762, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 57;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // Bookroom_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label2);
@@ -511,5 +527,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnCusDelete;
         private System.Windows.Forms.Button btnCusUpdate;
         private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Label lbExit;
     }
 }

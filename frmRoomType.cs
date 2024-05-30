@@ -301,5 +301,10 @@ namespace HotelV4
         {
             btnCancel_Click(sender, null);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

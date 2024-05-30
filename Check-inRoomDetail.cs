@@ -86,5 +86,10 @@ namespace HotelV4
             Show();
             ShowReceiveRoom(idReceiveRoom);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
