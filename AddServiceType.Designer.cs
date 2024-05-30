@@ -45,7 +45,11 @@ namespace HotelV4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            this.label2.Location = new System.Drawing.Point(13, 41);
+
             this.label2.Location = new System.Drawing.Point(1, 41);
+
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 15);
             this.label2.TabIndex = 57;
@@ -69,7 +73,11 @@ namespace HotelV4
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 67);
             this.groupBox1.Name = "groupBox1";
+
+            this.groupBox1.Size = new System.Drawing.Size(268, 114);
+
             this.groupBox1.Size = new System.Drawing.Size(249, 114);
+
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ServiceTypeInfo";
@@ -87,7 +95,11 @@ namespace HotelV4
             // txtserviceName
             // 
             this.txtserviceName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            this.txtserviceName.Location = new System.Drawing.Point(20, 60);
+
             this.txtserviceName.Location = new System.Drawing.Point(6, 60);
+
             this.txtserviceName.Name = "txtserviceName";
             this.txtserviceName.Size = new System.Drawing.Size(231, 32);
             this.txtserviceName.TabIndex = 0;
@@ -100,7 +112,10 @@ namespace HotelV4
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 187);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(268, 140);
+
             this.groupBox2.Size = new System.Drawing.Size(249, 140);
+
             this.groupBox2.TabIndex = 60;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Function";
@@ -117,7 +132,11 @@ namespace HotelV4
             // 
             // btnAdd
             // 
+
+            this.btnAdd.Location = new System.Drawing.Point(24, 40);
+
             this.btnAdd.Location = new System.Drawing.Point(8, 50);
+
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(227, 31);
             this.btnAdd.TabIndex = 61;

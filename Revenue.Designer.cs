@@ -31,10 +31,10 @@ namespace HotelV4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revenue));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numericYear = new System.Windows.Forms.NumericUpDown();
             this.comboBoxMonth = new System.Windows.Forms.ComboBox();
@@ -56,14 +56,15 @@ namespace HotelV4
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridReport = new System.Windows.Forms.DataGridView();
-            this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRevenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnClose = new System.Windows.Forms.Button();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.savereport = new System.Windows.Forms.SaveFileDialog();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -310,6 +311,13 @@ namespace HotelV4
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel1.Text = "Export";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // dataGridReport
             // 
             this.dataGridReport.AllowUserToAddRows = false;
@@ -327,37 +335,6 @@ namespace HotelV4
             this.dataGridReport.ReadOnly = true;
             this.dataGridReport.Size = new System.Drawing.Size(541, 364);
             this.dataGridReport.TabIndex = 0;
-            // 
-            // chartReport
-            // 
-            this.chartReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            chartArea2.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartReport.Legends.Add(legend2);
-            this.chartReport.Location = new System.Drawing.Point(18, 197);
-            this.chartReport.Name = "chartReport";
-            this.chartReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.chartReport.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.Tomato,
-        System.Drawing.Color.Violet,
-        System.Drawing.Color.DeepSkyBlue,
-        System.Drawing.Color.LimeGreen};
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.IsValueShownAsLabel = true;
-            series2.LabelFormat = "{0:0.##}%";
-            series2.Legend = "Legend1";
-            series2.Name = "s1";
-            series2.XValueMember = "name";
-            series2.YValueMembers = "rate";
-            this.chartReport.Series.Add(series2);
-            this.chartReport.Size = new System.Drawing.Size(663, 436);
-            this.chartReport.TabIndex = 59;
-            this.chartReport.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Revenue rate by room type";
-            this.chartReport.Titles.Add(title2);
             // 
             // colId
             // 
@@ -396,6 +373,37 @@ namespace HotelV4
             this.colRate.ReadOnly = true;
             this.colRate.Visible = false;
             // 
+            // chartReport
+            // 
+            this.chartReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            chartArea1.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReport.Legends.Add(legend1);
+            this.chartReport.Location = new System.Drawing.Point(18, 197);
+            this.chartReport.Name = "chartReport";
+            this.chartReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartReport.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Tomato,
+        System.Drawing.Color.Violet,
+        System.Drawing.Color.DeepSkyBlue,
+        System.Drawing.Color.LimeGreen};
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.IsValueShownAsLabel = true;
+            series1.LabelFormat = "{0:0.##}%";
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            series1.XValueMember = "name";
+            series1.YValueMembers = "rate";
+            this.chartReport.Series.Add(series1);
+            this.chartReport.Size = new System.Drawing.Size(663, 436);
+            this.chartReport.TabIndex = 59;
+            this.chartReport.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Revenue rate by room type";
+            this.chartReport.Titles.Add(title1);
+            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(1025, 639);
@@ -405,13 +413,6 @@ namespace HotelV4
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(52, 24);
-            this.toolStripLabel1.Text = "Export";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // Revenue
             // 
@@ -474,5 +475,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.SaveFileDialog savereport;
     }
 }

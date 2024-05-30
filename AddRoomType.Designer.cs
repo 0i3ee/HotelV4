@@ -30,6 +30,7 @@ namespace HotelV4
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLimitperson = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@ namespace HotelV4
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
-            this.txtLimitperson = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,14 @@ namespace HotelV4
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RoomTypeInfo";
+            // 
+            // txtLimitperson
+            // 
+            this.txtLimitperson.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimitperson.Location = new System.Drawing.Point(29, 118);
+            this.txtLimitperson.Name = "txtLimitperson";
+            this.txtLimitperson.Size = new System.Drawing.Size(277, 35);
+            this.txtLimitperson.TabIndex = 8;
             // 
             // label5
             // 
@@ -176,14 +184,6 @@ namespace HotelV4
             this.lbExit.TabIndex = 59;
             this.lbExit.Text = "X";
             // 
-            // txtLimitperson
-            // 
-            this.txtLimitperson.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLimitperson.Location = new System.Drawing.Point(29, 118);
-            this.txtLimitperson.Name = "txtLimitperson";
-            this.txtLimitperson.Size = new System.Drawing.Size(277, 35);
-            this.txtLimitperson.TabIndex = 8;
-            // 
             // AddRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +196,7 @@ namespace HotelV4
             this.Controls.Add(this.lbExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddRoomType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRoomType";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

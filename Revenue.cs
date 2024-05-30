@@ -15,7 +15,7 @@ namespace HotelV4
 {
     public partial class Revenue : Form
     {
-        private SaveFileDialog saveReport = new SaveFileDialog();
+        
 
         private int month = 1;
         private int year = 1990;
@@ -24,7 +24,7 @@ namespace HotelV4
         {
             InitializeComponent();
             FormMover.Moveform(this);
-            saveReport = new SaveFileDialog
+            savereport = new SaveFileDialog
             {
                 Filter = "Excel Files|*.xls;*.xlsx|PDF Files|*.pdf|All Files|*.*",
                 Title = "Save Report",
@@ -100,25 +100,25 @@ namespace HotelV4
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            saveReport.InitialDirectory = @"M:\NUOL\py3\report3";
-            saveReport.FileName = "Monthly revenue " + month + '-' + year;
-            if (saveReport.ShowDialog() == DialogResult.Cancel)
+            savereport.InitialDirectory = @"M:\NUOL\py3\report3";
+            savereport.FileName = "Monthly revenue " + month + '-' + year;
+            if (savereport.ShowDialog() == DialogResult.Cancel)
                 return;
             else
             {
                 bool check;
                 try
                 {
-                    switch (saveReport.FilterIndex)
+                    switch (savereport.FilterIndex)
                     {
                         case 2:
-                            check = ExportToExcel.Instance.Export(dataGridReport, saveReport.FileName, ModeExportToExcel.XLSX);
+                            check = ExportToExcel.Instance.Export(dataGridReport, savereport.FileName, ModeExportToExcel.XLSX);
                             break;
                         case 3:
-                            check = ExportToExcel.Instance.Export(dataGridReport, saveReport.FileName, ModeExportToExcel.PDF);
+                            check = ExportToExcel.Instance.Export(dataGridReport, savereport.FileName, ModeExportToExcel.PDF);
                             break;
                         default:
-                            check = ExportToExcel.Instance.Export(dataGridReport, saveReport.FileName, ModeExportToExcel.XLS);
+                            check = ExportToExcel.Instance.Export(dataGridReport, savereport.FileName, ModeExportToExcel.XLS);
                             break;
                     }
                     if (check)
