@@ -120,6 +120,26 @@ namespace HotelV4
         private Bitmap bitmap;
         private void btnPrint_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            FormMover.Moveform(this);
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPrint_Click_1(object sender, EventArgs e)
+        {
             using (Graphics graphics = this.CreateGraphics())
             {
                 bitmap = new Bitmap(708, 647, graphics);
@@ -136,21 +156,6 @@ namespace HotelV4
             {
                 printDocument1.Print();
             }
-        }
-
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(bitmap, 0, 0);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            FormMover.Moveform(this);
-        }
-
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

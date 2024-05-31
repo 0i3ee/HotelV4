@@ -104,6 +104,7 @@ namespace HotelV4
             this.btnuser.TabIndex = 3;
             this.btnuser.Text = "User";
             this.btnuser.UseVisualStyleBackColor = true;
+            this.btnuser.Click += new System.EventHandler(this.btnuser_Click);
             // 
             // panel4
             // 
