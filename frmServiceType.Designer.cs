@@ -37,6 +37,8 @@ namespace HotelV4
             this.label6 = new System.Windows.Forms.Label();
             this.cbtypeserviceID = new System.Windows.Forms.ComboBox();
             this.DGVS = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
@@ -62,8 +64,7 @@ namespace HotelV4
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupServiceType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingservice)).BeginInit();
@@ -143,6 +144,23 @@ namespace HotelV4
             this.DGVS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVS_CellClick);
             this.DGVS.SelectionChanged += new System.EventHandler(this.DGVS_SelectionChanged);
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "id";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 140;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.FillWeight = 90F;
+            this.colName.HeaderText = "name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 380;
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
@@ -171,7 +189,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -400,28 +418,26 @@ namespace HotelV4
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // colID
+            // lbExit
             // 
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "id";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Width = 140;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.FillWeight = 90F;
-            this.colName.HeaderText = "name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 380;
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1214, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 57;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // frmServiceType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.groupServiceType);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label2);
@@ -487,5 +503,6 @@ namespace HotelV4
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.Label lbExit;
     }
 }

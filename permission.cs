@@ -143,5 +143,10 @@ namespace HotelV4
             idStaffType = (int)((DataTable)cbbStaffType.DataSource).Rows[index]["id"];
             LoadAccess();
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

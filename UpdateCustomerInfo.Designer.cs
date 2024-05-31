@@ -53,6 +53,7 @@ namespace HotelV4
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -329,11 +330,26 @@ namespace HotelV4
             this.txtFullname.Size = new System.Drawing.Size(221, 35);
             this.txtFullname.TabIndex = 42;
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(473, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 80;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // UpdateCustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 529);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -375,5 +391,6 @@ namespace HotelV4
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFullname;
+        private System.Windows.Forms.Label lbExit;
     }
 }

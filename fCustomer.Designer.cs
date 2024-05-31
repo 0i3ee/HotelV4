@@ -88,6 +88,7 @@ namespace HotelV4
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -695,11 +696,26 @@ namespace HotelV4
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1222, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 68;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupCustomer);
@@ -785,5 +801,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdCustomerType;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbExit;
     }
 }

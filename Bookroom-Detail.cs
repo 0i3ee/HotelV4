@@ -149,5 +149,10 @@ namespace HotelV4
                     MessageBox.Show("Delete customer information failed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
