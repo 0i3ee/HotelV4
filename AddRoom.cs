@@ -89,5 +89,10 @@ namespace HotelV4
         {
             Close();
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

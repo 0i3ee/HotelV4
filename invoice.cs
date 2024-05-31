@@ -68,16 +68,16 @@ namespace HotelV4
 
         private void btnInvoiceDetail_Click(object sender, EventArgs e)
         {
-            //if (comboboxID.Text != string.Empty)
-            //{
-            //    if (!txbStatusRoom.Text.Contains("Ch"))
-            //    {
-            //        fPrintBill.SetPrintBill(int.Parse(comboboxID.Text), txbDateCreated.Text);
-            //        fPrintBill.ShowDialog();
-            //    }
-            //    else
-            //        MessageBox.Show("Hoá đơn chưa thanh toán\nBạn không có quyền truy cập", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+            if (comboboxID.Text != string.Empty)
+            {
+                if (!txbStatusRoom.Text.Contains("Ch"))
+                {
+                    fPrintBill.SetPrintBill(int.Parse(comboboxID.Text), txbDateCreated.Text);
+                    fPrintBill.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Unpaid invoice\nYou do not have access rights", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -133,6 +133,11 @@ namespace HotelV4
         {
             if (e.KeyChar == 27 && btnCancel.Visible == true)
                 btnCancel_Click(sender, null);
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

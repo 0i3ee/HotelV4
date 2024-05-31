@@ -20,6 +20,7 @@ namespace HotelV4
         public fPrintBill()
         {
             InitializeComponent();
+            FormMover.Moveform(this);
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
         }
         public void SetPrintBill(int idBill, string dateOfCreate)
@@ -140,6 +141,16 @@ namespace HotelV4
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            FormMover.Moveform(this);
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

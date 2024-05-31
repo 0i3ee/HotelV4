@@ -70,6 +70,7 @@ namespace HotelV4
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupRoomType = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbExit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingRoomType)).BeginInit();
             this.bindingRoomType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -120,7 +121,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -484,11 +485,26 @@ namespace HotelV4
     "________________________________________________________________________________" +
     "_______________________________";
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1162, 11);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 57;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // frmRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 680);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -559,5 +575,6 @@ namespace HotelV4
         private System.Windows.Forms.DataGridViewTextBoxColumn colLimitPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn col;
+        private System.Windows.Forms.Label lbExit;
     }
 }

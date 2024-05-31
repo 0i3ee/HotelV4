@@ -89,5 +89,10 @@ namespace HotelV4
             else
                 MessageBox.Show("Please enter complete information.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

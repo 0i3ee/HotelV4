@@ -65,6 +65,7 @@ namespace HotelV4
             this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnClose = new System.Windows.Forms.Button();
             this.savereport = new System.Windows.Forms.SaveFileDialog();
+            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -136,10 +137,10 @@ namespace HotelV4
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 53);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(69, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 19);
+            this.label3.Size = new System.Drawing.Size(94, 26);
             this.label3.TabIndex = 41;
             this.label3.Text = "Mounth";
             // 
@@ -156,10 +157,10 @@ namespace HotelV4
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(515, 53);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(498, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 19);
+            this.label10.Size = new System.Drawing.Size(68, 26);
             this.label10.TabIndex = 33;
             this.label10.Text = "Year:";
             // 
@@ -237,7 +238,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -314,7 +315,7 @@ namespace HotelV4
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(52, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(41, 24);
             this.toolStripLabel1.Text = "Export";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -380,7 +381,7 @@ namespace HotelV4
             this.chartReport.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartReport.Legends.Add(legend1);
-            this.chartReport.Location = new System.Drawing.Point(18, 197);
+            this.chartReport.Location = new System.Drawing.Point(12, 197);
             this.chartReport.Name = "chartReport";
             this.chartReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chartReport.PaletteCustomColors = new System.Drawing.Color[] {
@@ -406,6 +407,7 @@ namespace HotelV4
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(1025, 639);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(215, 49);
@@ -414,11 +416,26 @@ namespace HotelV4
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.BackColor = System.Drawing.Color.Transparent;
+            this.lbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.Red;
+            this.lbExit.Location = new System.Drawing.Point(1222, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(26, 25);
+            this.lbExit.TabIndex = 61;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            // 
             // Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 700);
+            this.Controls.Add(this.lbExit);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.chartReport);
             this.Controls.Add(this.groupBox2);
@@ -476,5 +493,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.SaveFileDialog savereport;
+        private System.Windows.Forms.Label lbExit;
     }
 }

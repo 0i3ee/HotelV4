@@ -76,7 +76,8 @@
       <DependentUpon>AddRoomType.cs</DependentUpon>
     </Compile>
     <Compile Include="bclass\Bill.cs" />
-    <Compile Include="bclass\BillDetails.cs" />
+    <Compile Include="aclass\BillDetails.cs" />
+    <Compile Include="bclass\BillDetailb.cs" />
     <Compile Include="bclass\bookroomb.cs" />
     <Compile Include="bclass\check-inb.cs" />
     <Compile Include="bclass\checkinRoomDetailb.cs" />
@@ -434,6 +435,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\THEME_HOTEL_SIGN_FIVE_STARS_FACADE_BUILDING_GettyImages-1320779330-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

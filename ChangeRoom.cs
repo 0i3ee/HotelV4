@@ -68,6 +68,11 @@ namespace HotelV4
             MessageBox.Show("Room change successful!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void LoadRoomTypeInfo(int idRoom)
         {
             CultureInfo cultureInfo = new CultureInfo("lo-LA");

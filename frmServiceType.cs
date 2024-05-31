@@ -224,5 +224,10 @@ namespace HotelV4
                 ChangeText(row);
             }
         }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
