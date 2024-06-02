@@ -22,7 +22,7 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
             btnuser.Text = username;
-            
+            fLoad();
 
         }
         public bool IsAdmin()
@@ -31,8 +31,7 @@ namespace HotelV4
         }
         void fLoad()
         {
-
-            panelLeft.Width = 177;
+            panelLeft.Width = 226;
 
         }
         private bool CheckAccess(string nameform)
@@ -97,7 +96,7 @@ namespace HotelV4
 
         private void btnaddRoom_Click(object sender, EventArgs e)
         {
-            if (CheckAccess("invoice"))
+            if (CheckAccess("AddRoom"))
             {
                 this.Hide();
                 add_room frm = new add_room();
@@ -192,16 +191,27 @@ namespace HotelV4
 
         private void btnmenu_Click(object sender, EventArgs e)
         {
-            if (panelLeft.Width == 42)
+            if (panelLeft.Width == 62)
             {
-                panelLeft.Width = 177;
+                panelLeft.Width = 226;
+                rightpanel.Width = 1038;
                 this.Width = 1280;
+                btnuser.Text = username;
+                btnexit.Text = "Exit";
             }
             else
             {
-                panelLeft.Width = 42;
-                this.Width = 1280;
+                panelLeft.Width = 62;
+                rightpanel.Width = 1038;
+                this.Width = 1100;
+                btnuser.Text = "";
+                btnexit.Text = "";
             }
+        }
+
+        private void btnuser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

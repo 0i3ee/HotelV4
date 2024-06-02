@@ -287,7 +287,7 @@ namespace HotelV4
         {
             totalPrice = 0;
             Room room = flowLayoutRooms.Tag as Room;
-            AddBill(room.Id, (cbService.SelectedItem as Service).Id, int.Parse(nrudDiscout.Value.ToString()));
+            AddBill(room.Id, (cbService.SelectedItem as Service).Id, int.Parse(nrudQty.Value.ToString()));
             ShowBill(room.Id);
             nrudQty.Value = 1;
 

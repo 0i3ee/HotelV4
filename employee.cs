@@ -16,6 +16,7 @@ namespace HotelV4
 {
     public partial class employee : Form
     {
+        public static readonly string HassPass = "e10adc3949ba59abbe56e057f20f883e";
         internal employee()
         {
             InitializeComponent();
@@ -299,7 +300,26 @@ namespace HotelV4
 
         private void Btnresetpass_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DialogResult confirmResult = MessageBox.Show("Are you sure you want to reset the password?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    bool check = AccountB.Instance.ResetPassword(txtusername.Text, HassPass);
+                    if (check)
+                    {
+                        MessageBox.Show("Password reset successful\nDefault password is: 123456", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to reset password (Username does not exist)", "Result", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An unknown error occurred", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
