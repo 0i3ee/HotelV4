@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 using HotelV4.aclass;
 using HotelV4.bclass;
 
@@ -22,6 +22,7 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
             LoadFullStaffType();
+            txtphone.Text = "20";
 
         }
 
@@ -38,7 +39,14 @@ namespace HotelV4
             }
             return true;
         }
+        private int ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
 
+            // Convert the cleaned string to an integer
+            return int.Parse(numericPhoneNumber);
+        }
         private void InsertStaff()
         {
             bool isFill = CheckFillInText(new Control[] { txtname, cbtype, txtdis ,
@@ -73,7 +81,7 @@ namespace HotelV4
             account.DateOfBirth = dob.Value;
             account.Sex = cbsex.Text;
             account.Address = txtaddress.Text;
-            account.PhoneNumber = int.Parse(txtphone.Text);
+            account.PhoneNumber = ParsePhoneNumber(txtphone.Text);
             account.StartDay = doe.Value;
 
             return account;
@@ -156,6 +164,15 @@ namespace HotelV4
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtphone_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtphone.Text.StartsWith("20"))
+            {
+                txtphone.Text = "20";
+                txtphone.SelectionStart = txtphone.Text.Length;
+            }
         }
     }
 }

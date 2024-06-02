@@ -34,6 +34,7 @@ namespace HotelV4
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupCustomer = new System.Windows.Forms.GroupBox();
+            this.txtPhonenumber = new System.Windows.Forms.MaskedTextBox();
             this.cbid = new System.Windows.Forms.ComboBox();
             this.txtIDcard = new System.Windows.Forms.TextBox();
             this.cbCusType = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,6 @@ namespace HotelV4
             this.label5 = new System.Windows.Forms.Label();
             this.cbNationality = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -122,6 +122,7 @@ namespace HotelV4
             // groupCustomer
             // 
             this.groupCustomer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupCustomer.Controls.Add(this.txtPhonenumber);
             this.groupCustomer.Controls.Add(this.cbid);
             this.groupCustomer.Controls.Add(this.txtIDcard);
             this.groupCustomer.Controls.Add(this.cbCusType);
@@ -131,7 +132,6 @@ namespace HotelV4
             this.groupCustomer.Controls.Add(this.label5);
             this.groupCustomer.Controls.Add(this.cbNationality);
             this.groupCustomer.Controls.Add(this.txtAddress);
-            this.groupCustomer.Controls.Add(this.txtPhonenumber);
             this.groupCustomer.Controls.Add(this.label13);
             this.groupCustomer.Controls.Add(this.textBox6);
             this.groupCustomer.Controls.Add(this.label12);
@@ -148,6 +148,15 @@ namespace HotelV4
             this.groupCustomer.TabIndex = 67;
             this.groupCustomer.TabStop = false;
             this.groupCustomer.Text = "Customer Info";
+            // 
+            // txtPhonenumber
+            // 
+            this.txtPhonenumber.Location = new System.Drawing.Point(288, 105);
+            this.txtPhonenumber.Mask = "20-0000-0000";
+            this.txtPhonenumber.Name = "txtPhonenumber";
+            this.txtPhonenumber.Size = new System.Drawing.Size(221, 29);
+            this.txtPhonenumber.TabIndex = 65;
+            this.txtPhonenumber.TextChanged += new System.EventHandler(this.txtPhonenumber_TextChanged);
             // 
             // cbid
             // 
@@ -248,15 +257,6 @@ namespace HotelV4
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(221, 27);
             this.txtAddress.TabIndex = 55;
-            // 
-            // txtPhonenumber
-            // 
-            this.txtPhonenumber.Location = new System.Drawing.Point(288, 103);
-            this.txtPhonenumber.Multiline = true;
-            this.txtPhonenumber.Name = "txtPhonenumber";
-            this.txtPhonenumber.Size = new System.Drawing.Size(221, 27);
-            this.txtPhonenumber.TabIndex = 54;
-            this.txtPhonenumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhonenumber_KeyPress);
             // 
             // label13
             // 
@@ -497,7 +497,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -755,7 +755,6 @@ namespace HotelV4
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbNationality;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
@@ -802,5 +801,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.MaskedTextBox txtPhonenumber;
     }
 }

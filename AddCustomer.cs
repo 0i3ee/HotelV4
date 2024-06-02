@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelV4.aclass;
 using HotelV4.bclass;
+using System.Text.RegularExpressions;
 namespace HotelV4
 {
     public partial class AddCustomer : Form
@@ -18,6 +19,7 @@ namespace HotelV4
             InitializeComponent();
             FormMover.Moveform(this);
             LoadFullCustomerType();
+            txtPhonenumber.Text = "20";
         }
         private void LoadFullCustomerType()
         {
@@ -62,8 +64,18 @@ namespace HotelV4
                 return false;
             else return true;
         }
+        private int ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
+
+            // Convert the cleaned string to an integer
+            return int.Parse(numericPhoneNumber);
+        }
+        
         private void InsertCustomer()
         {
+            
             if (!CheckFillInText(new Control[] { txtPhonenumber, txtFullname, txtIDcard, cbNationality, txtAddress, cbCusType }))
             {
                 MessageBox.Show("Fields cannot be left empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,6 +109,7 @@ namespace HotelV4
             }
             return true;
         }
+
         private Customer GetCustomerNow()
         {
             employee.Trim(new TextBox[] { txtAddress, txtFullname, txtIDcard });
@@ -106,7 +119,7 @@ namespace HotelV4
             customer.IdCustomerType = (int)((DataTable)cbCusType.DataSource).Rows[id]["id"];
             customer.Name = txtFullname.Text;
             customer.Sex = cbSex.Text;
-            customer.PhoneNumber = int.Parse(txtPhonenumber.Text);
+            customer.PhoneNumber = ParsePhoneNumber(txtPhonenumber.Text);
             customer.DateOfBirth = datepickerDateOfBirth.Value;
             customer.Nationality = cbNationality.Text;
             customer.Address = txtAddress.Text;
@@ -127,6 +140,15 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPhonenumber_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtPhonenumber.Text.StartsWith("20"))
+            {
+                txtPhonenumber.Text = "20";
+                txtPhonenumber.SelectionStart = txtPhonenumber.Text.Length;
+            }
         }
     }
 }

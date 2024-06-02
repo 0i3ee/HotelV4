@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
+using System.Text.RegularExpressions;
 using HotelV4.aclass;
 using HotelV4.bclass;
 
@@ -153,6 +153,14 @@ namespace HotelV4
             txbIDCardSearch.Text = txbIDCard.Text = txbFullName.Text = txbAddress.Text = txbPhoneNumber.Text = cbNationality.Text = String.Empty;
             LoadDate();
         }
+        private int ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
+
+            // Convert the cleaned string to an integer
+            return int.Parse(numericPhoneNumber);
+        }
         private void btnBookRoom_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to Booking?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -162,7 +170,7 @@ namespace HotelV4
                     if (!IsIdCardExists(txbIDCard.Text))
                     {
                         int idCustomerType = (cbCustomerType.SelectedItem as CustomerType).Id;
-                        InsertCustomer(txbIDCard.Text, txbFullName.Text, idCustomerType, DateOfBirth.Value, txbAddress.Text, int.Parse(txbPhoneNumber.Text), cbSex.Text, cbNationality.Text);
+                        InsertCustomer(txbIDCard.Text, txbFullName.Text, idCustomerType, DateOfBirth.Value, txbAddress.Text, ParsePhoneNumber(txbPhoneNumber.Text), cbSex.Text, cbNationality.Text);
                     }
                     InsertBookRoom(CustomerDAO.Instance.GetInfoByIdCard(txbIDCard.Text).Id, (cbRoomType.SelectedItem as RoomType).Id, DateCheckIn.Value, DateCheckOut.Value, DateTime.Now);
                     MessageBox.Show("Booking successful.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -209,6 +217,34 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txbPhoneNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (e.Position < 2) // Prevent modification of the first two characters (the fixed "20")
+            {
+                ToolTip toolTip = new ToolTip();
+                toolTip.ToolTipTitle = "Invalid Input";
+                toolTip.Show("You cannot modify the fixed prefix '20'.", txbPhoneNumber, txbPhoneNumber.Location.X, txbPhoneNumber.Location.Y, 2000);
+            }
+        }
+
+        private void txbPhoneNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txbPhoneNumber.SelectionStart < 2 && (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete))
+            {
+                // Suppress the key press to prevent deletion of the fixed prefix
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txbPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (!txbPhoneNumber.Text.StartsWith("20"))
+            {
+                txbPhoneNumber.Text = "20";
+                txbPhoneNumber.SelectionStart = txbPhoneNumber.Text.Length;
+            }
         }
     }
 }

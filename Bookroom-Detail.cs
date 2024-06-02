@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 using HotelV4.aclass;
 using HotelV4.bclass;
 
@@ -28,6 +28,7 @@ namespace HotelV4
             LoadData();
             LoadDays();
             txbIDBookRoom.Text = _idBookRoom.ToString();
+            
         }
         public void LoadRoomType()
         {
@@ -44,6 +45,7 @@ namespace HotelV4
 
             GetInfoByIdCard(idCard);
         }
+
         public void GetInfoByIdCard(string idCard)
         {
             Customer customer = CustomerDAO.Instance.GetInfoByIdCard(idCard);
@@ -52,7 +54,7 @@ namespace HotelV4
             txbAddress.Text = customer.Address;
             DateOfBirth.Value = customer.DateOfBirth;
             cbSex.Text = customer.Sex;
-            txbPhoneNumber.Text = customer.PhoneNumber.ToString();
+            txbPhonenumber.Text = customer.PhoneNumber.ToString();
             cbNationality.Text = customer.Nationality;
             cbCustomerType.Text = CustomerTypeDAO.Instance.GetNameByIdCard(idCard);
         }
@@ -70,10 +72,18 @@ namespace HotelV4
         {
             return CustomerDAO.Instance.IsIdCardExists(idCard);
         }
+        private int ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
+
+            // Convert the cleaned string to an integer
+            return int.Parse(numericPhoneNumber);
+        }
         public void UpdateCustomer()
         {
             int idCustomerType = (cbCustomerType.SelectedItem as CustomerType).Id;
-            CustomerDAO.Instance.UpdateCustomer(CustomerDAO.Instance.GetInfoByIdCard(idCard).Id, txbFullName.Text, txbIDCard.Text, idCustomerType, int.Parse(txbPhoneNumber.Text), DateOfBirth.Value, txbAddress.Text, cbSex.Text, cbNationality.Text);
+            CustomerDAO.Instance.UpdateCustomer(CustomerDAO.Instance.GetInfoByIdCard(idCard).Id, txbFullName.Text, txbIDCard.Text, idCustomerType, ParsePhoneNumber(txbPhonenumber.Text), DateOfBirth.Value, txbAddress.Text, cbSex.Text, cbNationality.Text);
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -100,12 +110,12 @@ namespace HotelV4
         }
         public void ClearData()
         {
-            txbIDCard.Text = txbFullName.Text = txbAddress.Text = txbPhoneNumber.Text = cbNationality.Text = String.Empty;
+            txbIDCard.Text = txbFullName.Text = txbAddress.Text = txbPhonenumber.Text = cbNationality.Text = String.Empty;
         }
 
         private void btnCusUpdate_Click(object sender, EventArgs e)
         {
-            if (txbFullName.Text != string.Empty && txbIDCard.Text != string.Empty && txbAddress.Text != string.Empty && cbNationality.Text != string.Empty && txbPhoneNumber.Text != string.Empty)
+            if (txbFullName.Text != string.Empty && txbIDCard.Text != string.Empty && txbAddress.Text != string.Empty && cbNationality.Text != string.Empty && txbPhonenumber.Text != string.Empty)
             {
                 //Kiểm tra IDCard có trùng không
                 if (!IsIdCardExists(txbIDCard.Text) || txbIDCard.Text == idCard)
@@ -153,6 +163,15 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txbPhonenumber_TextChanged(object sender, EventArgs e)
+        {
+            if (!txbPhonenumber.Text.StartsWith("20"))
+            {
+                txbPhonenumber.Text = "20";
+                txbPhonenumber.SelectionStart = txbPhonenumber.Text.Length;
+            }
         }
     }
 }
