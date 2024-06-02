@@ -45,10 +45,10 @@ namespace HotelV4
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txbPhonenumber = new System.Windows.Forms.MaskedTextBox();
             this.btnCusDelete = new System.Windows.Forms.Button();
             this.btnCusUpdate = new System.Windows.Forms.Button();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.txbPhoneNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbNationality = new System.Windows.Forms.ComboBox();
@@ -232,10 +232,10 @@ namespace HotelV4
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.txbPhonenumber);
             this.groupBox3.Controls.Add(this.btnCusDelete);
             this.groupBox3.Controls.Add(this.btnCusUpdate);
             this.groupBox3.Controls.Add(this.DateOfBirth);
-            this.groupBox3.Controls.Add(this.txbPhoneNumber);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.cbNationality);
@@ -257,6 +257,15 @@ namespace HotelV4
             this.groupBox3.TabIndex = 46;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Infomation";
+            // 
+            // txbPhonenumber
+            // 
+            this.txbPhonenumber.Location = new System.Drawing.Point(21, 230);
+            this.txbPhonenumber.Mask = "20-0000-0000";
+            this.txbPhonenumber.Name = "txbPhonenumber";
+            this.txbPhonenumber.Size = new System.Drawing.Size(202, 29);
+            this.txbPhonenumber.TabIndex = 65;
+            this.txbPhonenumber.TextChanged += new System.EventHandler(this.txbPhonenumber_TextChanged);
             // 
             // btnCusDelete
             // 
@@ -286,14 +295,6 @@ namespace HotelV4
             this.DateOfBirth.Size = new System.Drawing.Size(202, 29);
             this.DateOfBirth.TabIndex = 49;
             this.DateOfBirth.Value = new System.DateTime(2024, 5, 21, 8, 55, 36, 0);
-            // 
-            // txbPhoneNumber
-            // 
-            this.txbPhoneNumber.Location = new System.Drawing.Point(21, 233);
-            this.txbPhoneNumber.Name = "txbPhoneNumber";
-            this.txbPhoneNumber.Size = new System.Drawing.Size(202, 29);
-            this.txbPhoneNumber.TabIndex = 47;
-            this.txbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPhoneNumber_KeyPress);
             // 
             // label14
             // 
@@ -509,7 +510,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
-        private System.Windows.Forms.TextBox txbPhoneNumber;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbNationality;
@@ -528,5 +528,6 @@ namespace HotelV4
         private System.Windows.Forms.Button btnCusUpdate;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.MaskedTextBox txbPhonenumber;
     }
 }

@@ -29,56 +29,60 @@ namespace HotelV4
         /// </summary>
         private void InitializeComponent()
         {
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblDisplayName = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.cbSex = new System.Windows.Forms.ComboBox();
+            this.dpkDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtStartDay = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtIDCard = new System.Windows.Forms.TextBox();
+            this.btnSavebasicInfo = new System.Windows.Forms.Button();
+            this.txtNewPass = new System.Windows.Forms.MaskedTextBox();
+            this.txtPass = new System.Windows.Forms.MaskedTextBox();
+            this.btnSavePass = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtReNewPass = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSaveInfo = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtStaffType = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbExit = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label15
+            // lblDisplayName
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(118, 309);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(182, 31);
-            this.label15.TabIndex = 55;
-            this.label15.Text = "Account Type:";
+            this.lblDisplayName.AutoSize = true;
+            this.lblDisplayName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayName.Location = new System.Drawing.Point(179, 374);
+            this.lblDisplayName.Name = "lblDisplayName";
+            this.lblDisplayName.Size = new System.Drawing.Size(182, 31);
+            this.lblDisplayName.TabIndex = 55;
+            this.lblDisplayName.Text = "Account Type:";
+            this.lblDisplayName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button7
             // 
@@ -114,19 +118,19 @@ namespace HotelV4
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.txtPhoneNumber);
+            this.groupBox4.Controls.Add(this.cbSex);
+            this.groupBox4.Controls.Add(this.dpkDateOfBirth);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.textBox12);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.txtStartDay);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.txtAddress);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.txtIDCard);
+            this.groupBox4.Controls.Add(this.btnSavebasicInfo);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(23, 408);
@@ -136,21 +140,33 @@ namespace HotelV4
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Basic information";
             // 
-            // comboBox1
+            // txtPhoneNumber
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(761, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(270, 32);
-            this.comboBox1.TabIndex = 19;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(414, 60);
+            this.txtPhoneNumber.Mask = "20-0000-0000";
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(270, 32);
+            this.txtPhoneNumber.TabIndex = 20;
+            this.txtPhoneNumber.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtPhoneNumber_MaskInputRejected);
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
+            this.txtPhoneNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhoneNumber_KeyDown);
             // 
-            // dateTimePicker1
+            // cbSex
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(414, 117);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(270, 32);
-            this.dateTimePicker1.TabIndex = 18;
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.Location = new System.Drawing.Point(761, 57);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(270, 32);
+            this.cbSex.TabIndex = 19;
+            // 
+            // dpkDateOfBirth
+            // 
+            this.dpkDateOfBirth.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpkDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpkDateOfBirth.Location = new System.Drawing.Point(414, 117);
+            this.dpkDateOfBirth.Name = "dpkDateOfBirth";
+            this.dpkDateOfBirth.Size = new System.Drawing.Size(270, 32);
+            this.dpkDateOfBirth.TabIndex = 18;
             // 
             // label13
             // 
@@ -172,14 +188,6 @@ namespace HotelV4
             this.label14.TabIndex = 15;
             this.label14.Text = "Phone number:";
             // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(414, 57);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(270, 35);
-            this.textBox12.TabIndex = 14;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -190,13 +198,13 @@ namespace HotelV4
             this.label11.TabIndex = 13;
             this.label11.Text = "Date of employment:";
             // 
-            // textBox9
+            // txtStartDay
             // 
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(761, 117);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(270, 35);
-            this.textBox9.TabIndex = 12;
+            this.txtStartDay.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStartDay.Location = new System.Drawing.Point(761, 117);
+            this.txtStartDay.Name = "txtStartDay";
+            this.txtStartDay.Size = new System.Drawing.Size(270, 35);
+            this.txtStartDay.TabIndex = 12;
             // 
             // label12
             // 
@@ -218,13 +226,13 @@ namespace HotelV4
             this.label7.TabIndex = 9;
             this.label7.Text = "Address:";
             // 
-            // textBox7
+            // txtAddress
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(72, 117);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(270, 35);
-            this.textBox7.TabIndex = 8;
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(72, 117);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(270, 35);
+            this.txtAddress.TabIndex = 8;
             // 
             // label10
             // 
@@ -236,53 +244,57 @@ namespace HotelV4
             this.label10.TabIndex = 7;
             this.label10.Text = "Identification Card/Id card:";
             // 
-            // textBox8
+            // txtIDCard
             // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(72, 57);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(270, 35);
-            this.textBox8.TabIndex = 6;
+            this.txtIDCard.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCard.Location = new System.Drawing.Point(72, 57);
+            this.txtIDCard.Name = "txtIDCard";
+            this.txtIDCard.Size = new System.Drawing.Size(270, 35);
+            this.txtIDCard.TabIndex = 6;
             // 
-            // button5
+            // btnSavebasicInfo
             // 
-            this.button5.Location = new System.Drawing.Point(761, 166);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(274, 41);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Save Change";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSavebasicInfo.Location = new System.Drawing.Point(761, 166);
+            this.btnSavebasicInfo.Name = "btnSavebasicInfo";
+            this.btnSavebasicInfo.Size = new System.Drawing.Size(274, 41);
+            this.btnSavebasicInfo.TabIndex = 2;
+            this.btnSavebasicInfo.Text = "Save Change";
+            this.btnSavebasicInfo.UseVisualStyleBackColor = true;
+            this.btnSavebasicInfo.Click += new System.EventHandler(this.btnSavebasicInfo_Click);
             // 
-            // maskedTextBox2
+            // txtNewPass
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(33, 122);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(270, 32);
-            this.maskedTextBox2.TabIndex = 10;
+            this.txtNewPass.Location = new System.Drawing.Point(33, 122);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
+            this.txtNewPass.Size = new System.Drawing.Size(270, 32);
+            this.txtNewPass.TabIndex = 10;
             // 
-            // maskedTextBox1
+            // txtPass
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(33, 62);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(270, 32);
-            this.maskedTextBox1.TabIndex = 9;
+            this.txtPass.Location = new System.Drawing.Point(33, 62);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(270, 32);
+            this.txtPass.TabIndex = 9;
             // 
-            // button3
+            // btnSavePass
             // 
-            this.button3.Location = new System.Drawing.Point(55, 245);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 41);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Save Change";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSavePass.Location = new System.Drawing.Point(55, 245);
+            this.btnSavePass.Name = "btnSavePass";
+            this.btnSavePass.Size = new System.Drawing.Size(234, 41);
+            this.btnSavePass.TabIndex = 8;
+            this.btnSavePass.Text = "Save Change";
+            this.btnSavePass.UseVisualStyleBackColor = true;
+            this.btnSavePass.Click += new System.EventHandler(this.btnSavePass_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.maskedTextBox3);
-            this.groupBox2.Controls.Add(this.maskedTextBox2);
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.txtReNewPass);
+            this.groupBox2.Controls.Add(this.txtNewPass);
+            this.groupBox2.Controls.Add(this.txtPass);
+            this.groupBox2.Controls.Add(this.btnSavePass);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
@@ -295,12 +307,13 @@ namespace HotelV4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Security";
             // 
-            // maskedTextBox3
+            // txtReNewPass
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(33, 182);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(270, 32);
-            this.maskedTextBox3.TabIndex = 11;
+            this.txtReNewPass.Location = new System.Drawing.Point(33, 182);
+            this.txtReNewPass.Name = "txtReNewPass";
+            this.txtReNewPass.PasswordChar = '*';
+            this.txtReNewPass.Size = new System.Drawing.Size(270, 32);
+            this.txtReNewPass.TabIndex = 11;
             // 
             // label6
             // 
@@ -312,14 +325,15 @@ namespace HotelV4
             this.label6.TabIndex = 3;
             this.label6.Text = "Password:";
             // 
-            // button2
+            // btnSaveInfo
             // 
-            this.button2.Location = new System.Drawing.Point(55, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Save Change";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Location = new System.Drawing.Point(55, 245);
+            this.btnSaveInfo.Name = "btnSaveInfo";
+            this.btnSaveInfo.Size = new System.Drawing.Size(234, 41);
+            this.btnSaveInfo.TabIndex = 3;
+            this.btnSaveInfo.Text = "Save Change";
+            this.btnSaveInfo.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
             // label9
             // 
@@ -331,13 +345,13 @@ namespace HotelV4
             this.label9.TabIndex = 7;
             this.label9.Text = "Display name:";
             // 
-            // textBox4
+            // txtDisplayName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(33, 179);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(270, 35);
-            this.textBox4.TabIndex = 6;
+            this.txtDisplayName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisplayName.Location = new System.Drawing.Point(33, 179);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Size = new System.Drawing.Size(270, 35);
+            this.txtDisplayName.TabIndex = 6;
             // 
             // label8
             // 
@@ -349,21 +363,21 @@ namespace HotelV4
             this.label8.TabIndex = 5;
             this.label8.Text = "User name:";
             // 
-            // textBox3
+            // txtUserName
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(33, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(270, 35);
-            this.textBox3.TabIndex = 4;
+            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(33, 119);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(270, 35);
+            this.txtUserName.TabIndex = 4;
             // 
-            // textBox1
+            // txtStaffType
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(33, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 35);
-            this.textBox1.TabIndex = 1;
+            this.txtStaffType.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffType.Location = new System.Drawing.Point(33, 59);
+            this.txtStaffType.Name = "txtStaffType";
+            this.txtStaffType.Size = new System.Drawing.Size(270, 35);
+            this.txtStaffType.TabIndex = 1;
             // 
             // button1
             // 
@@ -409,13 +423,13 @@ namespace HotelV4
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnSaveInfo);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtDisplayName);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtUserName);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtStaffType);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(404, 88);
@@ -439,13 +453,36 @@ namespace HotelV4
             this.lbExit.Text = "X";
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(181, 348);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(93, 23);
+            this.lblUserName.TabIndex = 58;
+            this.lblUserName.Text = "Username";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelV4.Properties.Resources.houp;
+            this.pictureBox1.Location = new System.Drawing.Point(83, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 251);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 688);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lbExit);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.lblDisplayName);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -462,6 +499,7 @@ namespace HotelV4
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,41 +507,43 @@ namespace HotelV4
 
         #endregion
 
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblDisplayName;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbSex;
+        private System.Windows.Forms.DateTimePicker dpkDateOfBirth;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtStartDay;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtIDCard;
+        private System.Windows.Forms.Button btnSavebasicInfo;
+        private System.Windows.Forms.MaskedTextBox txtNewPass;
+        private System.Windows.Forms.MaskedTextBox txtPass;
+        private System.Windows.Forms.Button btnSavePass;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox txtReNewPass;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSaveInfo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDisplayName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtStaffType;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox txtPhoneNumber;
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 using HotelV4.aclass;
 using HotelV4.bclass;
 
@@ -23,6 +23,8 @@ namespace HotelV4
             FormMover.Moveform(this);
             LoadCustomerType();
             ListIdCustomer = new List<int>();
+            txtPhonenumber.Text = "20";
+
         }
         public void LoadCustomerType()
         {
@@ -71,6 +73,14 @@ namespace HotelV4
             else
                 ListIdCustomer.Add(idCustomer);
         }
+        private int ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
+
+            // Convert the cleaned string to an integer
+            return int.Parse(numericPhoneNumber);
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -79,7 +89,7 @@ namespace HotelV4
                 if (!IsIdCardExists(txtIDcard.Text))
                 {
                     int idCustomerType = (cbCusType.SelectedItem as CustomerType).Id;
-                    InsertCustomer(txtIDcard.Text, txtFullname.Text, idCustomerType, dbo.Value, txtAddress.Text, int.Parse(txtPhonenumber.Text), cbSex.Text, cbNationality.Text);
+                    InsertCustomer(txtIDcard.Text, txtFullname.Text, idCustomerType, dbo.Value, txtAddress.Text, ParsePhoneNumber(txtPhonenumber.Text), cbSex.Text, cbNationality.Text);
                 }
                 MessageBox.Show("Successfully added customers.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AddIdCustomer(CustomerDAO.Instance.GetInfoByIdCard(txtIDcard.Text).Id);
@@ -131,6 +141,15 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPhonenumber_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtPhonenumber.Text.StartsWith("20"))
+            {
+                txtPhonenumber.Text = "20";
+                txtPhonenumber.SelectionStart = txtPhonenumber.Text.Length;
+            }
         }
     }
 }
