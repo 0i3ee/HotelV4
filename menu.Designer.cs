@@ -48,28 +48,31 @@ namespace HotelV4
             this.btnservice = new System.Windows.Forms.Button();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.lbExit = new System.Windows.Forms.Label();
+            this.rightpanel = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelLeft.SuspendLayout();
+            this.rightpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(343, 72);
+            this.label2.Location = new System.Drawing.Point(28, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(883, 13);
+            this.label2.Size = new System.Drawing.Size(985, 13);
             this.label2.TabIndex = 41;
             this.label2.Text = "_________________________________________________________________________________" +
-    "_________________________________________________________________";
+    "________________________________________________________________________________" +
+    "__";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 21);
+            this.label1.Location = new System.Drawing.Point(20, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 64);
             this.label1.TabIndex = 40;
@@ -81,7 +84,7 @@ namespace HotelV4
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.Image = global::HotelV4.Properties.Resources._1138563;
-            this.btnRevenue.Location = new System.Drawing.Point(957, 492);
+            this.btnRevenue.Location = new System.Drawing.Point(679, 475);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(268, 99);
             this.btnRevenue.TabIndex = 39;
@@ -122,7 +125,7 @@ namespace HotelV4
             this.btnCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustom.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustom.Image = global::HotelV4.Properties.Resources._6140240;
-            this.btnCustom.Location = new System.Drawing.Point(663, 492);
+            this.btnCustom.Location = new System.Drawing.Point(385, 475);
             this.btnCustom.Name = "btnCustom";
             this.btnCustom.Size = new System.Drawing.Size(268, 99);
             this.btnCustom.TabIndex = 38;
@@ -177,7 +180,7 @@ namespace HotelV4
             this.btninvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btninvoice.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninvoice.Image = global::HotelV4.Properties.Resources._7176657;
-            this.btninvoice.Location = new System.Drawing.Point(957, 139);
+            this.btninvoice.Location = new System.Drawing.Point(679, 122);
             this.btninvoice.Name = "btninvoice";
             this.btninvoice.Size = new System.Drawing.Size(119, 293);
             this.btninvoice.TabIndex = 31;
@@ -203,7 +206,7 @@ namespace HotelV4
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployee.Image = global::HotelV4.Properties.Resources._554846;
-            this.btnEmployee.Location = new System.Drawing.Point(808, 139);
+            this.btnEmployee.Location = new System.Drawing.Point(530, 122);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(123, 293);
             this.btnEmployee.TabIndex = 37;
@@ -218,7 +221,7 @@ namespace HotelV4
             this.btnaddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnaddRoom.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddRoom.Image = global::HotelV4.Properties.Resources.Layer_0;
-            this.btnaddRoom.Location = new System.Drawing.Point(663, 139);
+            this.btnaddRoom.Location = new System.Drawing.Point(385, 122);
             this.btnaddRoom.Name = "btnaddRoom";
             this.btnaddRoom.Size = new System.Drawing.Size(119, 293);
             this.btnaddRoom.TabIndex = 36;
@@ -233,7 +236,7 @@ namespace HotelV4
             this.btbSerandpay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btbSerandpay.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbSerandpay.Image = global::HotelV4.Properties.Resources._01;
-            this.btbSerandpay.Location = new System.Drawing.Point(346, 492);
+            this.btbSerandpay.Location = new System.Drawing.Point(68, 475);
             this.btbSerandpay.Name = "btbSerandpay";
             this.btbSerandpay.Size = new System.Drawing.Size(268, 99);
             this.btbSerandpay.TabIndex = 35;
@@ -248,7 +251,7 @@ namespace HotelV4
             this.btnCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckin.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckin.Image = global::HotelV4.Properties.Resources._262408;
-            this.btnCheckin.Location = new System.Drawing.Point(491, 139);
+            this.btnCheckin.Location = new System.Drawing.Point(213, 122);
             this.btnCheckin.Name = "btnCheckin";
             this.btnCheckin.Size = new System.Drawing.Size(123, 293);
             this.btnCheckin.TabIndex = 34;
@@ -263,7 +266,7 @@ namespace HotelV4
             this.btnBookroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookroom.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookroom.Image = global::HotelV4.Properties.Resources._7050939;
-            this.btnBookroom.Location = new System.Drawing.Point(346, 139);
+            this.btnBookroom.Location = new System.Drawing.Point(68, 122);
             this.btnBookroom.Name = "btnBookroom";
             this.btnBookroom.Size = new System.Drawing.Size(119, 293);
             this.btnBookroom.TabIndex = 33;
@@ -278,7 +281,7 @@ namespace HotelV4
             this.btnservice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnservice.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnservice.Image = global::HotelV4.Properties.Resources.pngtree_spoon_fork_and_knife_vector_icon_icon_table_restaurant_vector_png_image_31426040;
-            this.btnservice.Location = new System.Drawing.Point(1102, 139);
+            this.btnservice.Location = new System.Drawing.Point(824, 122);
             this.btnservice.Name = "btnservice";
             this.btnservice.Size = new System.Drawing.Size(123, 293);
             this.btnservice.TabIndex = 32;
@@ -313,23 +316,32 @@ namespace HotelV4
             this.lbExit.Text = "X";
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
+            // rightpanel
+            // 
+            this.rightpanel.Controls.Add(this.label1);
+            this.rightpanel.Controls.Add(this.btnservice);
+            this.rightpanel.Controls.Add(this.label2);
+            this.rightpanel.Controls.Add(this.btnBookroom);
+            this.rightpanel.Controls.Add(this.btnCheckin);
+            this.rightpanel.Controls.Add(this.btnRevenue);
+            this.rightpanel.Controls.Add(this.btbSerandpay);
+            this.rightpanel.Controls.Add(this.btnCustom);
+            this.rightpanel.Controls.Add(this.btnaddRoom);
+            this.rightpanel.Controls.Add(this.btninvoice);
+            this.rightpanel.Controls.Add(this.btnEmployee);
+            this.rightpanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightpanel.Location = new System.Drawing.Point(226, 0);
+            this.rightpanel.Name = "rightpanel";
+            this.rightpanel.Size = new System.Drawing.Size(1034, 680);
+            this.rightpanel.TabIndex = 45;
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 680);
+            this.Controls.Add(this.rightpanel);
             this.Controls.Add(this.lbExit);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRevenue);
-            this.Controls.Add(this.btnCustom);
-            this.Controls.Add(this.btninvoice);
-            this.Controls.Add(this.btnEmployee);
-            this.Controls.Add(this.btnaddRoom);
-            this.Controls.Add(this.btbSerandpay);
-            this.Controls.Add(this.btnCheckin);
-            this.Controls.Add(this.btnBookroom);
-            this.Controls.Add(this.btnservice);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menu";
@@ -340,6 +352,8 @@ namespace HotelV4
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
+            this.rightpanel.ResumeLayout(false);
+            this.rightpanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +380,7 @@ namespace HotelV4
         private System.Windows.Forms.Button btnservice;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.Panel rightpanel;
     }
 }
 
