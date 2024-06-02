@@ -11,6 +11,7 @@ using HotelV4.aclass;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Globalization;
 
+
 namespace HotelV4
 {
     public partial class Revenue : Form
@@ -32,20 +33,36 @@ namespace HotelV4
                 InitialDirectory = @"M:\NUOL\py3\report3" // Set your desired initial directory here
             };
             
+            
         }
         private void LoadFullReport(int month, int year)
         {
             this.month = month;
             this.year = year;
             DataTable table = GetFulReport(month, year);
-            BindingSource source = new BindingSource();
             ChangePrice(table);
-            source.DataSource = table;
+
+            // Debug: Print DataTable contents
+
+
+            BindingSource source = new BindingSource
+            {
+                DataSource = table
+            };
+
             dataGridReport.DataSource = source;
             bindingReport.BindingSource = source;
+
+            // Set the header text for the value_Display column
+            dataGridReport.Columns["value_Display"].HeaderText = "Revenue";
+            dataGridReport.Columns["value_Display"].Width = 250;
+
+            dataGridReport.Columns["rate"].Visible = false;
             DrawChart(source);
             GC.Collect();
         }
+
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -62,8 +79,23 @@ namespace HotelV4
         }
         private void DrawChart(BindingSource source)
         {
+            chartReport.Series.Clear(); // Clear any existing series
+
+            Series series = new Series
+            {
+                XValueMember = "name", // Set X value member to 'name'
+                YValueMembers = "value", // Set Y value member to numeric 'value'
+                ChartType = SeriesChartType.Column // Choose the type of chart you want
+                
+            };
+
+            chartReport.Series.Add(series);
             chartReport.DataSource = source;
             chartReport.DataBind();
+
+ 
+
+            // Debugging: Log the series points
             foreach (DataPoint item in chartReport.Series[0].Points)
             {
                 if (item.YValues[0] == 0)
@@ -72,24 +104,32 @@ namespace HotelV4
                 }
             }
         }
+        
+
         private void ChangePrice(DataTable table)
         {
-            table.Columns.Add("value_New", typeof(string));
-            table.Columns.Add("rate_New", typeof(string));
+            table.Columns.Add("value_Display", typeof(string));
+            
             int sum = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+
+            foreach (DataRow row in table.Rows)
             {
-                int node = ((int)table.Rows[i]["value"]);
-                table.Rows[i]["value_New"] = node.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
-                table.Rows[i]["rate_New"] = (((double)table.Rows[i]["rate"]) / 100).ToString("#0.##%");
-                sum += node;
+                int value = Convert.ToInt32(row["value"]);
+                row["value_Display"] = value.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+                
+                sum += value;
             }
-            table.Columns.Remove("value");
-            DataRow row = table.NewRow();
-            table.Columns["value_new"].ColumnName = "value";
-            row["value"] = sum.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
-            table.Rows.Add(row);
+
+            DataRow totalRow = table.NewRow();
+            totalRow["name"] = "Total";
+            totalRow["value"] = sum; // Keep as numeric
+            totalRow["value_Display"] = sum.ToString("C0", CultureInfo.CreateSpecificCulture("lo-LA"));
+            table.Rows.Add(totalRow);
         }
+
+
+
+
 
         private void Revenue_Load(object sender, EventArgs e)
         {
@@ -136,6 +176,11 @@ namespace HotelV4
         private void lbExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chartReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
