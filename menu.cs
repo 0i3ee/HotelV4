@@ -211,7 +211,10 @@ namespace HotelV4
 
         private void btnuser_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            user fProfile = new user(username);
+            fProfile.ShowDialog();
+            this.Show();
         }
     }
 }

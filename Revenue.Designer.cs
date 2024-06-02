@@ -58,14 +58,14 @@ namespace HotelV4
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridReport = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.savereport = new System.Windows.Forms.SaveFileDialog();
+            this.lbExit = new System.Windows.Forms.Label();
+            this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRevenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.savereport = new System.Windows.Forms.SaveFileDialog();
-            this.lbExit = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -84,9 +84,9 @@ namespace HotelV4
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(18, 76);
+            this.groupBox2.Location = new System.Drawing.Point(12, 76);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1222, 115);
+            this.groupBox2.Size = new System.Drawing.Size(1228, 115);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Function";
@@ -238,7 +238,7 @@ namespace HotelV4
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -315,7 +315,7 @@ namespace HotelV4
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(41, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(52, 24);
             this.toolStripLabel1.Text = "Export";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -336,74 +336,6 @@ namespace HotelV4
             this.dataGridReport.ReadOnly = true;
             this.dataGridReport.Size = new System.Drawing.Size(541, 364);
             this.dataGridReport.TabIndex = 0;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colId.DataPropertyName = "name";
-            this.colId.HeaderText = "RoomTypeName";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Width = 163;
-            // 
-            // col
-            // 
-            this.col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.col.DataPropertyName = "rate_new";
-            this.col.HeaderText = "Price";
-            this.col.Name = "col";
-            this.col.ReadOnly = true;
-            this.col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.col.Width = 54;
-            // 
-            // colRevenue
-            // 
-            this.colRevenue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRevenue.DataPropertyName = "value";
-            this.colRevenue.HeaderText = "Revenue";
-            this.colRevenue.Name = "colRevenue";
-            this.colRevenue.ReadOnly = true;
-            this.colRevenue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colRate
-            // 
-            this.colRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRate.DataPropertyName = "rate";
-            this.colRate.HeaderText = "";
-            this.colRate.Name = "colRate";
-            this.colRate.ReadOnly = true;
-            this.colRate.Visible = false;
-            // 
-            // chartReport
-            // 
-            this.chartReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            chartArea1.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartReport.Legends.Add(legend1);
-            this.chartReport.Location = new System.Drawing.Point(12, 197);
-            this.chartReport.Name = "chartReport";
-            this.chartReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.chartReport.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.Tomato,
-        System.Drawing.Color.Violet,
-        System.Drawing.Color.DeepSkyBlue,
-        System.Drawing.Color.LimeGreen};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.IsValueShownAsLabel = true;
-            series1.LabelFormat = "{0:0.##}%";
-            series1.Legend = "Legend1";
-            series1.Name = "s1";
-            series1.XValueMember = "name";
-            series1.YValueMembers = "rate";
-            this.chartReport.Series.Add(series1);
-            this.chartReport.Size = new System.Drawing.Size(663, 436);
-            this.chartReport.TabIndex = 59;
-            this.chartReport.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Revenue rate by room type";
-            this.chartReport.Titles.Add(title1);
             // 
             // btnClose
             // 
@@ -430,14 +362,75 @@ namespace HotelV4
             this.lbExit.Text = "X";
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
+            // chartReport
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReport.Legends.Add(legend1);
+            this.chartReport.Location = new System.Drawing.Point(12, 197);
+            this.chartReport.Name = "chartReport";
+            this.chartReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            series1.XValueMember = "value";
+            series1.YValueMembers = "name";
+            this.chartReport.Series.Add(series1);
+            this.chartReport.Size = new System.Drawing.Size(659, 436);
+            this.chartReport.TabIndex = 62;
+            this.chartReport.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Revenue rate by room type";
+            this.chartReport.Titles.Add(title1);
+            this.chartReport.UseWaitCursor = true;
+            // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.DataPropertyName = "name";
+            this.colId.HeaderText = "RoomTypeName";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // col
+            // 
+            this.col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col.DataPropertyName = "rate_new";
+            this.col.HeaderText = "Ratio";
+            this.col.Name = "col";
+            this.col.ReadOnly = true;
+            this.col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col.Visible = false;
+            this.col.Width = 56;
+            // 
+            // colRevenue
+            // 
+            this.colRevenue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRevenue.DataPropertyName = "value";
+            this.colRevenue.HeaderText = "Revenue";
+            this.colRevenue.Name = "colRevenue";
+            this.colRevenue.ReadOnly = true;
+            this.colRevenue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colRevenue.Visible = false;
+            // 
+            // colRate
+            // 
+            this.colRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRate.HeaderText = "";
+            this.colRate.Name = "colRate";
+            this.colRate.ReadOnly = true;
+            this.colRate.Visible = false;
+            // 
             // Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 700);
+            this.Controls.Add(this.chartReport);
             this.Controls.Add(this.lbExit);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.chartReport);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -485,14 +478,14 @@ namespace HotelV4
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.SaveFileDialog savereport;
+        private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn col;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRevenue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.SaveFileDialog savereport;
-        private System.Windows.Forms.Label lbExit;
     }
 }

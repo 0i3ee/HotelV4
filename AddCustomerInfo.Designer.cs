@@ -36,6 +36,7 @@ namespace HotelV4
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtPhonenumber = new System.Windows.Forms.MaskedTextBox();
             this.txtIDcard = new System.Windows.Forms.TextBox();
             this.cbCusType = new System.Windows.Forms.ComboBox();
             this.cbSex = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,6 @@ namespace HotelV4
             this.label5 = new System.Windows.Forms.Label();
             this.cbNationality = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -132,6 +132,7 @@ namespace HotelV4
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.Controls.Add(this.txtPhonenumber);
             this.groupBox4.Controls.Add(this.txtIDcard);
             this.groupBox4.Controls.Add(this.cbCusType);
             this.groupBox4.Controls.Add(this.cbSex);
@@ -140,7 +141,6 @@ namespace HotelV4
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.cbNationality);
             this.groupBox4.Controls.Add(this.txtAddress);
-            this.groupBox4.Controls.Add(this.txtPhonenumber);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.textBox6);
             this.groupBox4.Controls.Add(this.label12);
@@ -156,6 +156,15 @@ namespace HotelV4
             this.groupBox4.TabIndex = 72;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Customer Info";
+            // 
+            // txtPhonenumber
+            // 
+            this.txtPhonenumber.Location = new System.Drawing.Point(11, 243);
+            this.txtPhonenumber.Mask = "20-0000-0000";
+            this.txtPhonenumber.Name = "txtPhonenumber";
+            this.txtPhonenumber.Size = new System.Drawing.Size(221, 29);
+            this.txtPhonenumber.TabIndex = 64;
+            this.txtPhonenumber.TextChanged += new System.EventHandler(this.txtPhonenumber_TextChanged);
             // 
             // txtIDcard
             // 
@@ -251,16 +260,6 @@ namespace HotelV4
             this.txtAddress.Size = new System.Drawing.Size(221, 35);
             this.txtAddress.TabIndex = 55;
             // 
-            // txtPhonenumber
-            // 
-            this.txtPhonenumber.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhonenumber.Location = new System.Drawing.Point(11, 243);
-            this.txtPhonenumber.Multiline = true;
-            this.txtPhonenumber.Name = "txtPhonenumber";
-            this.txtPhonenumber.Size = new System.Drawing.Size(221, 35);
-            this.txtPhonenumber.TabIndex = 54;
-            this.txtPhonenumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhonenumber_KeyPress);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -292,6 +291,7 @@ namespace HotelV4
             // dbo
             // 
             this.dbo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dbo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dbo.Location = new System.Drawing.Point(256, 62);
             this.dbo.Name = "dbo";
             this.dbo.Size = new System.Drawing.Size(221, 35);
@@ -333,7 +333,7 @@ namespace HotelV4
             this.txtFullname.Location = new System.Drawing.Point(14, 62);
             this.txtFullname.Multiline = true;
             this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(221, 35);
+            this.txtFullname.Size = new System.Drawing.Size(218, 35);
             this.txtFullname.TabIndex = 42;
             // 
             // groupBox2
@@ -434,7 +434,6 @@ namespace HotelV4
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbNationality;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
@@ -448,5 +447,6 @@ namespace HotelV4
         private System.Windows.Forms.TextBox txtIDCardSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.MaskedTextBox txtPhonenumber;
     }
 }

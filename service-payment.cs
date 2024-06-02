@@ -236,7 +236,7 @@ namespace HotelV4
 
         public void ShowBillRoom(int idRoom)
         {
-            CultureInfo cultureInfo = new CultureInfo("lo-la");
+            CultureInfo cultureInfo = new CultureInfo("lo-LA");
             listViewBillRoom.Items.Clear();
             if (IsExistsBill(idRoom))
             {
@@ -278,7 +278,7 @@ namespace HotelV4
 
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CultureInfo cultureInfo = new CultureInfo("lo-la");
+            CultureInfo cultureInfo = new CultureInfo("lo-LA");
             if (cbService.SelectedItem != null)
                 txbPrice.Text = (cbService.SelectedItem as Service).Price.ToString("c0", cultureInfo);
         }
@@ -292,7 +292,7 @@ namespace HotelV4
             nrudQty.Value = 1;
 
             ShowBillRoom(room.Id);
-            txbTotalPrice.Text = totalPrice.ToString("c0", new CultureInfo("lo-la"));
+            txbTotalPrice.Text = totalPrice.ToString("c0", new CultureInfo("lo-LA"));
         }
 
         private void btnPay_Click(object sender, EventArgs e)

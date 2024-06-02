@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 using HotelV4.aclass;
 using HotelV4.bclass;
@@ -27,6 +28,7 @@ namespace HotelV4
             txtSearch.KeyPress += txtSearch_KeyPress;
             KeyPress += employee_KeyPress;
             dataGridStaff.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Phetsarath OT", 9.75F);
+            txtphonenumber.Text = "20";
         }
         private void hidecol() {
             dataGridStaff.Columns[2].HeaderText = "Type";
@@ -89,6 +91,14 @@ namespace HotelV4
             }
             return true;
         }
+        private string ParsePhoneNumber(string maskedPhoneNumber)
+        {
+            // Remove non-numeric characters using regular expressions
+            string numericPhoneNumber = Regex.Replace(maskedPhoneNumber, @"[^\d]", "");
+
+            // Convert the cleaned string to an integer
+            return numericPhoneNumber;
+        }
         private Accout GetStaffNow()
         {
             Accout account = new Accout();
@@ -100,7 +110,8 @@ namespace HotelV4
             account.IdCard = txtidnumber.Text;
             account.Sex = cbbsex.Text;
             account.DateOfBirth = dob.Value;
-            account.PhoneNumber = int.Parse(txtphonenumber.Text);
+            int phonenum = int.Parse(ParsePhoneNumber(txtphonenumber.Text));
+            account.PhoneNumber = phonenum; 
             account.Address = txtaddress.Text;
             account.StartDay = dos.Value;
             return account;
@@ -125,8 +136,7 @@ namespace HotelV4
             else
             {
                 Accout accountPre = groupstaff.Tag as Accout;
-                try
-                {
+
                     Accout accountnow = GetStaffNow();
                     if (accountnow.Equals(accountPre))
                     {
@@ -157,12 +167,9 @@ namespace HotelV4
                         }
                     }
             }
-                catch
-            {
-                MessageBox.Show("Don't know Error", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+               
         }
-        }
+        
         private DataTable GetFullStaff()
         {
             return AccountB.Instance.LoadFullStaff();
@@ -281,7 +288,7 @@ namespace HotelV4
                 txtusername.Text = row.Cells[colUserName.Name].Value as string;
                 txtaddress.Text = row.Cells[colAddress.Name].Value as string;
                 txtname.Text = row.Cells[colname.Name].Value as string;
-                txtphonenumber.Text = row.Cells[colPhone.Name].Value.ToString();
+                txtphonenumber.Text =row.Cells[colPhone.Name].Value.ToString();
                 txtidnumber.Text = row.Cells[colIDCard.Name].Value as string;
                 dob.Text = row.Cells[colDateOfBirth.Name].Value as string;
                 dos.Text = row.Cells[colStartDay.Name].Value as string;
@@ -351,6 +358,15 @@ namespace HotelV4
         private void employee_FormClosing(object sender, FormClosingEventArgs e)
         {
             btnCancel_Click(null, null);
+        }
+
+        private void txtphonenumber_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtphonenumber.Text.StartsWith("20"))
+            {
+                txtphonenumber.Text = "20";
+                txtphonenumber.SelectionStart = txtphonenumber.Text.Length;
+            }
         }
     }
 }

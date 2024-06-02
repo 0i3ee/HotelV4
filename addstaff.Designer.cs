@@ -40,7 +40,6 @@ namespace HotelV4
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtaddress = new System.Windows.Forms.TextBox();
-            this.txtphone = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@ namespace HotelV4
             this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
+            this.txtphone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,7 @@ namespace HotelV4
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.Controls.Add(this.txtphone);
             this.groupBox4.Controls.Add(this.cbsex);
             this.groupBox4.Controls.Add(this.mtpass);
             this.groupBox4.Controls.Add(this.txtdis);
@@ -72,7 +73,6 @@ namespace HotelV4
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.txtaddress);
-            this.groupBox4.Controls.Add(this.txtphone);
             this.groupBox4.Controls.Add(this.txtid);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
@@ -105,6 +105,7 @@ namespace HotelV4
             // 
             this.mtpass.Location = new System.Drawing.Point(25, 185);
             this.mtpass.Name = "mtpass";
+            this.mtpass.PasswordChar = '*';
             this.mtpass.Size = new System.Drawing.Size(221, 29);
             this.mtpass.TabIndex = 65;
             // 
@@ -182,16 +183,6 @@ namespace HotelV4
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(221, 27);
             this.txtaddress.TabIndex = 56;
-            // 
-            // txtphone
-            // 
-            this.txtphone.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphone.Location = new System.Drawing.Point(25, 345);
-            this.txtphone.Multiline = true;
-            this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(221, 27);
-            this.txtphone.TabIndex = 55;
-            this.txtphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtphone_KeyPress);
             // 
             // txtid
             // 
@@ -339,6 +330,15 @@ namespace HotelV4
             this.lbExit.Text = "X";
             this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
+            // txtphone
+            // 
+            this.txtphone.Location = new System.Drawing.Point(25, 345);
+            this.txtphone.Mask = "20-0000-0000";
+            this.txtphone.Name = "txtphone";
+            this.txtphone.Size = new System.Drawing.Size(221, 29);
+            this.txtphone.TabIndex = 67;
+            this.txtphone.TextChanged += new System.EventHandler(this.txtphone_TextChanged);
+            // 
             // addstaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +368,6 @@ namespace HotelV4
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtaddress;
-        private System.Windows.Forms.TextBox txtphone;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -387,5 +386,6 @@ namespace HotelV4
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.ComboBox cbsex;
+        private System.Windows.Forms.MaskedTextBox txtphone;
     }
 }
